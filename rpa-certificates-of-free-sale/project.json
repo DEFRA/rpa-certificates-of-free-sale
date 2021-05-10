@@ -5,6 +5,7 @@
   "dependencies": {
     "GetWorkflowDetailActivities": "[1.0.1]",
     "Reusable.Components": "[1.0.7]",
+    "TraderCRM": "[1.0.1]",
     "UiPath.Excel.Activities": "[2.8.6]",
     "UiPath.Mail.Activities": "[1.10.4]",
     "UiPath.System.Activities": "[20.4.0]",

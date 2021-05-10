@@ -445,6 +445,21 @@
           "lib/net461/System.ValueTuple.dll": {}
         }
       },
+      "TraderCRM/1.0.1": {
+        "type": "package",
+        "dependencies": {
+          "UiPath.Excel.Activities": "2.8.6",
+          "UiPath.Mail.Activities": "1.8.6",
+          "UiPath.System.Activities": "20.4.0",
+          "UiPath.UIAutomation.Activities": "20.4.2"
+        },
+        "compile": {
+          "lib/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/TraderCRM.dll": {}
+        }
+      },
       "UiPath/20.4.7472.17184": {
         "type": "package",
         "compile": {
@@ -1790,6 +1805,22 @@
         "version.txt"
       ]
     },
+    "TraderCRM/1.0.1": {
+      "sha512": "dm/fnaKUM2Ayr6/shc7aLg2Db5Kb4UfRLiXawpRqpsgRiqSote5xfIxuKgAcfxwDbr0AJjg2oApXCbdz0qWAOg==",
+      "type": "package",
+      "path": "tradercrm/1.0.1",
+      "files": [
+        ".nupkg.metadata",
+        "lib/net45/.settings/Release/settings-1a5b880a.json",
+        "lib/net45/.settings/Release/settings-5190454b.json",
+        "lib/net45/.settings/Release/settings-590bb27b.json",
+        "lib/net45/.settings/Release/settings-9e9290da.json",
+        "lib/net45/TraderCRM.dll",
+        "lib/net45/project.json",
+        "tradercrm.1.0.1.nupkg.sha512",
+        "tradercrm.nuspec"
+      ]
+    },
     "UiPath/20.4.7472.17184": {
       "sha512": "Z3QB3Sft8PFmh2u+rWobnGBZ+Hmb9tkVoygMbhcyEI1PWyqu1wVfraxC9/GtZVfukYl/UDc5lA3tZf8LVEMnAw==",
       "type": "package",
@@ -2245,6 +2276,7 @@
     ".NETFramework,Version=v4.6.1": [
       "GetWorkflowDetailActivities >= 1.0.1 <= 1.0.1",
       "Reusable.Components >= 1.0.7 <= 1.0.7",
+      "TraderCRM >= 1.0.1 <= 1.0.1",
       "UiPath.Excel.Activities >= 2.8.6 <= 2.8.6",
       "UiPath.Mail.Activities >= 1.10.4 <= 1.10.4",
       "UiPath.System.Activities >= 20.4.0 <= 20.4.0",
@@ -2275,6 +2307,11 @@
             "target": "Package",
             "version": "[1.0.7, 1.0.7]"
           },
+          "TraderCRM": {
+            "include": "Runtime",
+            "target": "Package",
+            "version": "[1.0.1, 1.0.1]"
+          },
           "UiPath.Excel.Activities": {
             "include": "Runtime",
             "target": "Package",
@@ -2298,42 +2335,5 @@
         }
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU3034",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Portable.BouncyCastle 1.8.8' from source 'https://www.myget.org/F/workflow/': This package is signed but not by a trusted signer.",
-      "libraryId": "Portable.BouncyCastle"
-    },
-    {
-      "code": "NU3034",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Microsoft.Extensions.FileSystemGlobbing 5.0.0' from source 'https://www.myget.org/F/workflow/': This package is signed but not by a trusted signer.",
-      "libraryId": "Microsoft.Extensions.FileSystemGlobbing"
-    },
-    {
-      "code": "NU3034",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Microsoft.Identity.Client 4.14.0' from source 'https://www.myget.org/F/workflow/': This package is signed but not by a trusted signer.",
-      "libraryId": "Microsoft.Identity.Client"
-    },
-    {
-      "code": "NU3034",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'System.Buffers 4.5.1' from source 'https://www.myget.org/F/workflow/': This package is signed but not by a trusted signer.",
-      "libraryId": "System.Buffers"
-    },
-    {
-      "code": "NU3034",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'System.Data.DataSetExtensions 4.5.0' from source 'https://www.myget.org/F/workflow/': This package is signed but not by a trusted signer.",
-      "libraryId": "System.Data.DataSetExtensions"
-    }
-  ]
+  }
 }
