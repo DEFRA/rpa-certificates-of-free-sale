@@ -1,16 +1,16 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="CheckTimeEntered" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="CheckCountryEntered" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="IN_browserCRM" Type="InArgument(ui:Browser)" />
-    <x:Property Name="IN_strTimeReceived" Type="InArgument(x:String)" />
-    <x:Property Name="OUT_boolTimeEntered" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="IN_strCountry" Type="InArgument(x:String)" />
+    <x:Property Name="OUT_boolCountryEntered" Type="OutArgument(x:Boolean)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1319,888</sap:VirtualizedContainerService.HintSize>
-  <sap2010:WorkflowViewState.IdRef>CheckTimeEntered_1</sap2010:WorkflowViewState.IdRef>
+  <sap:VirtualizedContainerService.HintSize>1319,830</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>CheckCountryEntered_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="22">
+    <scg:List x:TypeArguments="x:String" Capacity="21">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -32,7 +32,6 @@
       <x:String>UiPath.Core</x:String>
       <x:String>UiPath.Core.Activities</x:String>
       <x:String>System.Windows.Markup</x:String>
-      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -54,37 +53,36 @@
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>System.ValueTuple</AssemblyReference>
-      <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="CheckTimeEntered" sap:VirtualizedContainerService.HintSize="687,783" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="CheckCountryEntered" sap:VirtualizedContainerService.HintSize="476,637" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[IN_browserCRM]" BrowserType="IE" DisplayName="Attach Browser Trader CRM" sap:VirtualizedContainerService.HintSize="645,691" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="b6875c845410a651e60c0251f2ea5c1a">
+    <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[IN_browserCRM]" BrowserType="IE" DisplayName="Attach Browser Trader CRM" sap:VirtualizedContainerService.HintSize="434,545" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="b6875c845410a651e60c0251f2ea5c1a">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="611,545" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,399" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
-              <Variable x:TypeArguments="x:String" Name="strTimeEntered" />
-              <Variable x:TypeArguments="x:Int32" Name="intTimeComparisonValue" />
+              <Variable x:TypeArguments="x:String" Name="strCountryOutput" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text Time Received" sap:VirtualizedContainerService.HintSize="569,106" sap2010:WorkflowViewState.IdRef="GetValue_1">
+            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text  License No." sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_1">
               <ui:GetValue.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7ef8ee33-1e30-4b07-ae1c-df517b60671b" InformativeScreenshot="dfb9ac69795ad8af581426f848607486" Selector="&lt;webctrl tag='INPUT' aaname='Time*' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b4cfb5fd-34ac-4ef1-a3ab-1949f07522da" InformativeScreenshot="fa3342467a4a572abf48b8678b6d1c30" Selector="&lt;webctrl tag='INPUT' aaname='License*' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
@@ -94,39 +92,18 @@
                 </ui:Target>
               </ui:GetValue.Target>
               <ui:GetValue.Value>
-                <OutArgument x:TypeArguments="x:String">[strTimeEntered]</OutArgument>
+                <OutArgument x:TypeArguments="x:String">[strCountryOutput]</OutArgument>
               </ui:GetValue.Value>
             </ui:GetValue>
-            <Assign DisplayName="Assign Comparison value" sap:VirtualizedContainerService.HintSize="569,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_1">
               <Assign.To>
-                <OutArgument x:TypeArguments="x:Int32">[intTimeComparisonValue]</OutArgument>
+                <OutArgument x:TypeArguments="x:Boolean">[OUT_boolCountryEntered]</OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="x:Int32">[IN_strTimeReceived.Trim.CompareTo(strTimeEntered.trim)]</InArgument>
+                <InArgument x:TypeArguments="x:Boolean">[IN_strCountry.Trim.ToLower.Equals(strCountryOutput.trim.ToLower)]</InArgument>
               </Assign.Value>
             </Assign>
-            <If Condition="[intTimeComparisonValue = 0]" sap:VirtualizedContainerService.HintSize="569,207" sap2010:WorkflowViewState.IdRef="If_1">
-              <If.Then>
-                <Assign DisplayName="Assign OutBoolTimeEntered" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_2">
-                  <Assign.To>
-                    <OutArgument x:TypeArguments="x:Boolean">[OUT_boolTimeEntered]</OutArgument>
-                  </Assign.To>
-                  <Assign.Value>
-                    <InArgument x:TypeArguments="x:Boolean">True</InArgument>
-                  </Assign.Value>
-                </Assign>
-              </If.Then>
-              <If.Else>
-                <Assign DisplayName="Assign OutBoolTimeEntered" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_3">
-                  <Assign.To>
-                    <OutArgument x:TypeArguments="x:Boolean">[OUT_boolTimeEntered]</OutArgument>
-                  </Assign.To>
-                  <Assign.Value>
-                    <InArgument x:TypeArguments="x:Boolean">False</InArgument>
-                  </Assign.Value>
-                </Assign>
-              </If.Else>
-            </If>
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[OUT_boolCountryEntered.ToString]" />
           </Sequence>
         </ActivityAction>
       </ui:BrowserScope.Body>
