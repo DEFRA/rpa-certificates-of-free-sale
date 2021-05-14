@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1794,830</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1319,830</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>CheckFilePathsExist_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -138,7 +138,7 @@
                   <av:PointCollection x:Key="ConnectorLocation">300,178.5 300,236.5</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:PathExists DisplayName="Working Folder Path Exists" Exists="[boolWorkingFolderExists]" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[String.Format(IN_dictConfig(&quot;RobotWorkingFolder&quot;), Environment.GetEnvironmentVariable(&quot;USERPROFILE&quot;).Replace(&quot;C:\Users\&quot;,&quot;&quot;))]" PathType="Folder">
+              <ui:PathExists DisplayName="Working Folder Path Exists" Exists="[boolWorkingFolderExists]" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[Environment.GetEnvironmentVariable(&quot;USERPROFILE&quot;) + IN_dictConfig(&quot;RobotWorkingFolder&quot;)]" PathType="Folder">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>

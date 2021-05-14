@@ -88,7 +88,7 @@
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">200,127.5</av:Point>
           <av:Size x:Key="ShapeSize">200,66</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">300,193.5 300,243.5</av:PointCollection>
+          <av:PointCollection x:Key="ConnectorLocation">300,193.5 300,253.5</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <Sequence DisplayName="Log Start" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -104,9 +104,9 @@
         <FlowStep x:Name="__ReferenceID8">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <av:Point x:Key="ShapeLocation">200,243.5</av:Point>
+              <av:Point x:Key="ShapeLocation">200,253.5</av:Point>
               <av:Size x:Key="ShapeSize">200,51</av:Size>
-              <av:PointCollection x:Key="ConnectorLocation">300,294.5 300,377</av:PointCollection>
+              <av:PointCollection x:Key="ConnectorLocation">300,304.5 300,377</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Flowchart DisplayName="Main Logic" sap:VirtualizedContainerService.HintSize="634,787" sap2010:WorkflowViewState.IdRef="Flowchart_2">
@@ -142,10 +142,7 @@
                 </sap:WorkflowViewStateService.ViewState>
               </ta:CheckForAssign>
               <FlowStep.Next>
-                <FlowDecision x:Name="__ReferenceID4" DisplayName="Assign Exists?" sap:VirtualizedContainerService.HintSize="77,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
-                  <FlowDecision.Condition>
-                    <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="boolAssignExists" />
-                  </FlowDecision.Condition>
+                <FlowDecision x:Name="__ReferenceID4" Condition="[boolAssignExists]" DisplayName="Assign Exists?" sap:VirtualizedContainerService.HintSize="77,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -203,10 +200,7 @@
                                 </sap:WorkflowViewStateService.ViewState>
                               </ta:CheckAssignToEntered>
                               <FlowStep.Next>
-                                <FlowDecision x:Name="__ReferenceID5" DisplayName="AssignTo In?" sap:VirtualizedContainerService.HintSize="72,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
-                                  <FlowDecision.Condition>
-                                    <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="boolAssignToIn" />
-                                  </FlowDecision.Condition>
+                                <FlowDecision x:Name="__ReferenceID5" Condition="[boolAssignToIn]" DisplayName="AssignTo In?" sap:VirtualizedContainerService.HintSize="72,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>

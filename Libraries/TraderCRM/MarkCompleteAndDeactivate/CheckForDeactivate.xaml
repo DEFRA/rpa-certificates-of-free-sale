@@ -80,9 +80,9 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:UiElementExists Exists="{x:Null}" DisplayName="Element Exists Deactivate" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+            <ui:UiElementExists DisplayName="Element Exists Deactivate" Exists="[OUT_boolDeactivateExists]" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
               <ui:UiElementExists.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="db52745b-b1fa-456f-8b12-1bb698f5f349" InformativeScreenshot="210d12cb549dd687b5b9cf39fdd79f34" Selector="&lt;webctrl tag='BUTTON' aaname='Deactivate' /&gt;" TimeoutMS="[IN_intTimeOut]">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="db52745b-b1fa-456f-8b12-1bb698f5f349" InformativeScreenshot="c9eb8ba877a48eb98ab6354ad385362e" Selector="&lt;webctrl tag='BUTTON' aaname='Deactivate' /&gt;" TimeoutMS="[IN_intTimeOut]">
                   <ui:Target.WaitForReady>
                     <InArgument x:TypeArguments="ui:WaitForReady" />
                   </ui:Target.WaitForReady>

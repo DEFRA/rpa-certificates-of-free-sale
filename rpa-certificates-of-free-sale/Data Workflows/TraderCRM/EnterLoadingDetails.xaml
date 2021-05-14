@@ -540,12 +540,8 @@
                                                                                                                                 </sap:WorkflowViewStateService.ViewState>
                                                                                                                                 <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke EnterReferenceDetails" sap:VirtualizedContainerService.HintSize="359,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Data Workflows/TraderCRM/GetCRMReference.xaml">
                                                                                                                                   <ui:InvokeWorkflowFile.Arguments>
-                                                                                                                                    <InArgument x:TypeArguments="ui:Browser" x:Key="IN_browserCRM">
-                                                                                                                                      <mva:VisualBasicValue x:TypeArguments="ui:Browser" ExpressionText="IN_browserCRM" />
-                                                                                                                                    </InArgument>
-                                                                                                                                    <OutArgument x:TypeArguments="x:String" x:Key="OUT_strReferenceNumber">
-                                                                                                                                      <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="OUT_strReferenceNumber" />
-                                                                                                                                    </OutArgument>
+                                                                                                                                    <InArgument x:TypeArguments="ui:Browser" x:Key="IN_browserCRM">[IN_browserCRM]</InArgument>
+                                                                                                                                    <OutArgument x:TypeArguments="x:String" x:Key="OUT_strReferenceNumber">[OUT_strReferenceNumber]</OutArgument>
                                                                                                                                   </ui:InvokeWorkflowFile.Arguments>
                                                                                                                                   <sap:WorkflowViewStateService.ViewState>
                                                                                                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -706,7 +702,7 @@
                                                                                                           <av:Size x:Key="ShapeSize">200,22</av:Size>
                                                                                                         </scg:Dictionary>
                                                                                                       </sap:WorkflowViewStateService.ViewState>
-                                                                                                      <Throw Exception="[New BusinessRuleException(&quot;Couldn't enter Time Received in to CRM&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_2">
+                                                                                                      <Throw Exception="[New System.Exception(&quot;Couldn't enter Time Received in to CRM&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_2">
                                                                                                         <sap:WorkflowViewStateService.ViewState>
                                                                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -729,7 +725,7 @@
                                                                                               <av:Size x:Key="ShapeSize">200,22</av:Size>
                                                                                             </scg:Dictionary>
                                                                                           </sap:WorkflowViewStateService.ViewState>
-                                                                                          <Throw Exception="[New BusinessRuleException(&quot;Couldn't enter Date Received in to CRM&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_3">
+                                                                                          <Throw Exception="[New System.Exception(&quot;Couldn't enter Date Received in to CRM&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_3">
                                                                                             <sap:WorkflowViewStateService.ViewState>
                                                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
