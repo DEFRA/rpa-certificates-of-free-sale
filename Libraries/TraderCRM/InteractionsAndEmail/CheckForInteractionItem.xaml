@@ -3,6 +3,7 @@
     <x:Property Name="IN_browserCRM" Type="InArgument(ui:Browser)" />
     <x:Property Name="OUT_boolLinkExists" Type="OutArgument(x:Boolean)" />
     <x:Property Name="IN_intTimeOut" Type="InArgument(x:Int32)" />
+    <x:Property Name="IN_strLinkName" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
@@ -80,9 +81,9 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:UiElementExists DisplayName="Element Exists Item Link - Verify Application" Exists="[OUT_boolLinkExists]" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+            <ui:UiElementExists DisplayName="Element Exists Item Link " Exists="[OUT_boolLinkExists]" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
               <ui:UiElementExists.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="99dce28a-fc10-4ed8-ac38-b8054ae41989" InformativeScreenshot="d97c25fa6d744214d074372bd151778a" Selector="&lt;webctrl aaname='Verify application*' casesensitive:aaname='false' /&gt;" TimeoutMS="[IN_intTimeOut]">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="99dce28a-fc10-4ed8-ac38-b8054ae41989" InformativeScreenshot="d97c25fa6d744214d074372bd151778a" Selector="&lt;webctrl tag='A' aaname='*{{IN_strLinkName}}*' casesensitive:aaname='false' /&gt;" TimeoutMS="[IN_intTimeOut]">
                   <ui:Target.WaitForReady>
                     <InArgument x:TypeArguments="ui:WaitForReady" />
                   </ui:Target.WaitForReady>
