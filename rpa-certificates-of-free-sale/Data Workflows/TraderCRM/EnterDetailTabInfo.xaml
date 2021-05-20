@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1794,830</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1319,830</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>EnterDetailTabInfo_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -35,7 +35,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="16">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="32">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -52,6 +52,11 @@
       <AssemblyReference>System.Xaml</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Flowchart DisplayName="EnterDetailTabInfo" sap:VirtualizedContainerService.HintSize="634,636" sap2010:WorkflowViewState.IdRef="Flowchart_1">
@@ -111,7 +116,7 @@
               <av:PointCollection x:Key="ConnectorLocation">300,304.5 300,377</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Flowchart DisplayName="Main Logic" sap:VirtualizedContainerService.HintSize="730,1392" sap2010:WorkflowViewState.IdRef="Flowchart_2">
+          <Flowchart DisplayName="Main Logic" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Flowchart_2">
             <Flowchart.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="boolRequestedEntered" />
               <Variable x:TypeArguments="x:Boolean" Name="boolCopiesEntered" />
@@ -163,10 +168,7 @@
                     </sap:WorkflowViewStateService.ViewState>
                   </tde:CheckNoRequestedEntered>
                   <FlowStep.Next>
-                    <FlowDecision x:Name="__ReferenceID1" DisplayName="Requested In?" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
-                      <FlowDecision.Condition>
-                        <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="boolRequestedEntered" />
-                      </FlowDecision.Condition>
+                    <FlowDecision x:Name="__ReferenceID1" Condition="[boolRequestedEntered]" DisplayName="Requested In?" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -209,10 +211,7 @@
                                 </sap:WorkflowViewStateService.ViewState>
                               </tde:CheckCopiesIssuedEntered>
                               <FlowStep.Next>
-                                <FlowDecision x:Name="__ReferenceID4" DisplayName="Copies In?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
-                                  <FlowDecision.Condition>
-                                    <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="boolCopiesEntered" />
-                                  </FlowDecision.Condition>
+                                <FlowDecision x:Name="__ReferenceID4" Condition="[boolCopiesEntered]" DisplayName="Copies In?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -255,10 +254,7 @@
                                             </sap:WorkflowViewStateService.ViewState>
                                           </tde:CheckDateIssuedEntered>
                                           <FlowStep.Next>
-                                            <FlowDecision x:Name="__ReferenceID7" DisplayName="Date In?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
-                                              <FlowDecision.Condition>
-                                                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="boolDateEntered" />
-                                              </FlowDecision.Condition>
+                                            <FlowDecision x:Name="__ReferenceID7" Condition="[boolDateEntered]" DisplayName="Date In?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -285,10 +281,7 @@
                                                     </sap:WorkflowViewStateService.ViewState>
                                                   </tcs:CheckForSave>
                                                   <FlowStep.Next>
-                                                    <FlowDecision x:Name="__ReferenceID13" DisplayName="Save Exists?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_4">
-                                                      <FlowDecision.Condition>
-                                                        <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="boolSaveExists" />
-                                                      </FlowDecision.Condition>
+                                                    <FlowDecision x:Name="__ReferenceID13" Condition="[boolSaveExists]" DisplayName="Save Exists?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_4">
                                                       <sap:WorkflowViewStateService.ViewState>
                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>

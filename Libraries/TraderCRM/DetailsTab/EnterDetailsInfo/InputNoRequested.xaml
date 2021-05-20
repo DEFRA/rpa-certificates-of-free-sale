@@ -59,7 +59,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[IN_browserCRM]" BrowserType="IE" DisplayName="Attach Browser - Trader CRM" sap:VirtualizedContainerService.HintSize="434,372" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="abdae55dd4bb4a5b3abe735535c4eb78">
+    <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[IN_browserCRM]" BrowserType="IE" DisplayName="Attach Browser - Trader CRM" sap:VirtualizedContainerService.HintSize="434,372" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="2ea30c08c9c6a9ba28480387ba194676">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -71,7 +71,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into - No Requested" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" SimulateType="True" Text="[IN_strNoRequested]">
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into - No Requested" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="[IN_strNoRequested]">
               <ui:TypeInto.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b94d2504-c684-4961-ba83-9d2de725ca1d" InformativeScreenshot="7d3648954ae2443096375ae9d897b510" Selector="&lt;webctrl tag='INPUT' aaname='*Requested' casesensitive:aaname='false' /&gt;">
                   <ui:Target.TimeoutMS>

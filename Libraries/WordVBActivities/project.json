@@ -1,21 +1,18 @@
 {
-  "name": "rpa-certificates-of-free-sale",
-  "description": "RPA Certificates of Free Sale process which receives applications via email, logs cases in CRM and creates certificates",
-  "main": "Main.xaml",
+  "name": "WordVBActivities",
+  "description": "Activities for interacting with Microsoft Word using vb.net code. ",
+  "main": "NewActivity.xaml",
   "dependencies": {
-    "GetWorkflowDetailActivities": "[1.0.1]",
-    "Reusable.Components": "[1.0.7]",
-    "TraderCRM": "[1.0.12]",
-    "UiPath.Excel.Activities": "[2.8.6]",
-    "UiPath.Mail.Activities": "[1.10.4]",
-    "UiPath.System.Activities": "[20.4.0]",
-    "UiPath.UIAutomation.Activities": "[20.4.2]",
-    "WordVBActivities": "[1.0.2]"
+    "Microsoft.Office.Interop.Word": "15.0.4797.1003",
+    "UiPath.Excel.Activities": "2.8.6",
+    "UiPath.Mail.Activities": "1.8.6",
+    "UiPath.System.Activities": "20.4.0",
+    "UiPath.UIAutomation.Activities": "20.4.2"
   },
   "webServices": [],
   "schemaVersion": "4.0",
   "studioVersion": "20.4.3.0",
-  "projectVersion": "1.0.0",
+  "projectVersion": "1.0.2",
   "runtimeOptions": {
     "autoDispose": false,
     "isPausable": true,
@@ -29,7 +26,7 @@
   },
   "designOptions": {
     "projectProfile": "Developement",
-    "outputType": "Process",
+    "outputType": "Library",
     "libraryOptions": {
       "includeOriginalXaml": false,
       "privateWorkflows": []
