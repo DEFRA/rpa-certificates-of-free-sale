@@ -4,11 +4,12 @@
     <x:Property Name="OUT_strDateReceived" Type="OutArgument(x:String)" />
     <x:Property Name="OUT_mailInProgress" Type="OutArgument(snm:MailMessage)" />
     <x:Property Name="OUT_strWorkingFolderPath" Type="OutArgument(x:String)" />
+    <x:Property Name="OUT_strTimeReceived" Type="OutArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1319,830</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1344,830</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>PopulateQueue_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="23">
@@ -145,7 +146,7 @@
                   <av:PointCollection x:Key="ConnectorLocation">300,425.58 300,485.58</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence DisplayName="Email from Inbox" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <Sequence DisplayName="Email from Inbox" sap:VirtualizedContainerService.HintSize="454,829" sap2010:WorkflowViewState.IdRef="Sequence_5">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="listMailMessages" />
                 </Sequence.Variables>
@@ -161,13 +162,13 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:GetOutlookMailMessages>
-                <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each email - get one Email" sap:VirtualizedContainerService.HintSize="412,575" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[listMailMessages]">
+                <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each email - get one Email" sap:VirtualizedContainerService.HintSize="412,675" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[listMailMessages]">
                   <ui:ForEach.Body>
                     <ActivityAction x:TypeArguments="snm:MailMessage">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="snm:MailMessage" Name="email" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,441" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,541" sap2010:WorkflowViewState.IdRef="Sequence_4">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -189,6 +190,14 @@
                             <InArgument x:TypeArguments="x:String">[email.Headers("DateReceived")]</InArgument>
                           </Assign.Value>
                         </Assign>
+                        <Assign DisplayName="Assign email time" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_17">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[OUT_strTimeReceived]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">[email.Headers("DateReceived")]</InArgument>
+                          </Assign.Value>
+                        </Assign>
                         <ui:MoveOutlookMessage Account="[IN_dictConfig(&quot;TraderMailbox&quot;)]" DisplayName="Move Outlook Mail Message to In Progress" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="MoveOutlookMessage_2" MailFolder="[IN_dictConfig(&quot;OutlookInProgress&quot;)]" MailMessage="[email]" />
                         <ui:Break sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Break_2" />
                       </Sequence>
@@ -197,10 +206,7 @@
                 </ui:ForEach>
               </Sequence>
               <FlowStep.Next>
-                <FlowDecision x:Name="__ReferenceID2" DisplayName="Got Email?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
-                  <FlowDecision.Condition>
-                    <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="not strEmailSubject.Equals(&quot;&quot;)" />
-                  </FlowDecision.Condition>
+                <FlowDecision x:Name="__ReferenceID2" Condition="[not strEmailSubject.Equals(&quot;&quot;)]" DisplayName="Got Email?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
