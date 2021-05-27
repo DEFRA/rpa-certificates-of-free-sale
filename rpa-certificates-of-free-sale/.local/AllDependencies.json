@@ -1107,7 +1107,7 @@
           "lib/net461/UiPath.Vision.dll": {}
         }
       },
-      "WordVBActivities/1.0.2": {
+      "WordVBActivities/1.0.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.Office.Interop.Word": "15.0.4797.1003",
@@ -2307,10 +2307,10 @@
         "uipath.vision.nuspec"
       ]
     },
-    "WordVBActivities/1.0.2": {
-      "sha512": "Bjbf42XxDgymGOle2zYjQbd7Bs5pSw4nIP4KOuTfAJ5z3JO3iQ1/uwCv26kBhxMUItVvm79a0twWCTsl6jPLRQ==",
+    "WordVBActivities/1.0.3": {
+      "sha512": "5G9g0sHnCBJpzn1jUmgkI8S2ZfUOiMoLPPG4h4HrltVf/4dUX5BBGLd6kQn7reTPrNlWuBaD9FW3vjE/602jYg==",
       "type": "package",
-      "path": "wordvbactivities/1.0.2",
+      "path": "wordvbactivities/1.0.3",
       "files": [
         ".nupkg.metadata",
         "lib/net45/.settings/Release/settings-1a5b880a.json",
@@ -2319,7 +2319,7 @@
         "lib/net45/.settings/Release/settings-9e9290da.json",
         "lib/net45/WordVBActivities.dll",
         "lib/net45/project.json",
-        "wordvbactivities.1.0.2.nupkg.sha512",
+        "wordvbactivities.1.0.3.nupkg.sha512",
         "wordvbactivities.nuspec"
       ]
     }
@@ -2334,7 +2334,7 @@
       "UiPath.Mail.Activities >= 1.10.4 <= 1.10.4",
       "UiPath.System.Activities >= 20.4.0 <= 20.4.0",
       "UiPath.UIAutomation.Activities >= 20.4.2 <= 20.4.2",
-      "WordVBActivities >= 1.0.2 <= 1.0.2"
+      "WordVBActivities >= 1.0.3 <= 1.0.3"
     ]
   },
   "packageFolders": {
@@ -2389,7 +2389,7 @@
           "WordVBActivities": {
             "include": "Runtime",
             "target": "Package",
-            "version": "[1.0.2, 1.0.2]"
+            "version": "[1.0.3, 1.0.3]"
           }
         }
       }

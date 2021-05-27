@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1375,830</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1464,830</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>PopulateQueue_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="23">
@@ -38,7 +38,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="42">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="23">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -61,6 +61,7 @@
       <AssemblyReference>UiPath.CV</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Flowchart DisplayName="PopulateQueue" sap:VirtualizedContainerService.HintSize="634,636" sap2010:WorkflowViewState.IdRef="Flowchart_1">
@@ -120,7 +121,7 @@
               <av:PointCollection x:Key="ConnectorLocation">300,304.5 300,367</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Flowchart DisplayName="Main Logic" sap:VirtualizedContainerService.HintSize="719,984" sap2010:WorkflowViewState.IdRef="Flowchart_2">
+          <Flowchart DisplayName="Main Logic" sap:VirtualizedContainerService.HintSize="724,984" sap2010:WorkflowViewState.IdRef="Flowchart_2">
             <Flowchart.Variables>
               <Variable x:TypeArguments="x:String" Name="strEmailSubject" />
             </Flowchart.Variables>
@@ -131,13 +132,13 @@
                 <av:Size x:Key="ShapeSize">60,75</av:Size>
                 <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,107.5 299.685,107.5 299.685,135.62</av:PointCollection>
                 <x:Double x:Key="Height">948</x:Double>
-                <x:Double x:Key="Width">685.01666666666665</x:Double>
+                <x:Double x:Key="Width">690</x:Double>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <Flowchart.StartNode>
               <x:Reference>__ReferenceID4</x:Reference>
             </Flowchart.StartNode>
-            <FlowStep x:Name="__ReferenceID1">
+            <FlowStep x:Name="__ReferenceID0">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">200,359.58</av:Point>
@@ -186,7 +187,7 @@
                             <OutArgument x:TypeArguments="x:String">[OUT_strDateReceived]</OutArgument>
                           </Assign.To>
                           <Assign.Value>
-                            <InArgument x:TypeArguments="x:String">[email.Headers("DateReceived")]</InArgument>
+                            <InArgument x:TypeArguments="x:String">[email.Headers("Date")]</InArgument>
                           </Assign.Value>
                         </Assign>
                         <ui:MoveOutlookMessage Account="[IN_dictConfig(&quot;TraderMailbox&quot;)]" DisplayName="Move Outlook Mail Message to In Progress" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="MoveOutlookMessage_2" MailFolder="[IN_dictConfig(&quot;OutlookInProgress&quot;)]" MailMessage="[email]" />
@@ -197,24 +198,24 @@
                 </ui:ForEach>
               </Sequence>
               <FlowStep.Next>
-                <FlowDecision x:Name="__ReferenceID2" Condition="[not strEmailSubject.Equals(&quot;&quot;)]" DisplayName="Got Email?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+                <FlowDecision x:Name="__ReferenceID1" Condition="[not strEmailSubject.Equals(&quot;&quot;)]" DisplayName="Got Email?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <av:Point x:Key="ShapeLocation">265,485.58</av:Point>
                       <av:Size x:Key="ShapeSize">70,87</av:Size>
-                      <av:PointCollection x:Key="TrueConnector">265,529.08 235,529.08 235,617 290,617 290,647</av:PointCollection>
+                      <av:PointCollection x:Key="TrueConnector">265,529.08 240,529.08 240,637 300,637 300,667</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <FlowDecision.True>
-                    <FlowStep x:Name="__ReferenceID0">
+                    <FlowStep x:Name="__ReferenceID3">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <av:Point x:Key="ShapeLocation">190,647</av:Point>
+                          <av:Point x:Key="ShapeLocation">200,667</av:Point>
                           <av:Size x:Key="ShapeSize">200,66</av:Size>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Sequence DisplayName="Email from In Progress" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                      <Sequence DisplayName="Email from In Progress" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_22">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="listMailInProgress" />
                         </Sequence.Variables>
@@ -223,30 +224,30 @@
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:GetOutlookMailMessages Filter="{x:Null}" FilterByMessageIds="{x:Null}" TimeoutMS="{x:Null}" Account="[IN_dictConfig(&quot;TraderMailbox&quot;)]" DisplayName="Get Outlook Mail Messages" GetAttachements="False" sap:VirtualizedContainerService.HintSize="729,22" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_4" MailFolder="[IN_dictConfig(&quot;OutlookInProgress&quot;)]" MarkAsRead="False" Messages="[listMailInProgress]" OnlyUnreadMessages="True" OrderByDate="NewestFirst" Top="-1" />
-                        <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each In Progress Email" sap:VirtualizedContainerService.HintSize="729,1044" sap2010:WorkflowViewState.IdRef="ForEach`1_6" Values="[listMailInProgress]">
+                        <ui:GetOutlookMailMessages Filter="{x:Null}" FilterByMessageIds="{x:Null}" TimeoutMS="{x:Null}" Account="[IN_dictConfig(&quot;TraderMailbox&quot;)]" DisplayName="Get Outlook Mail Messages" GetAttachements="False" sap:VirtualizedContainerService.HintSize="599,22" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_5" MailFolder="[IN_dictConfig(&quot;OutlookInProgress&quot;)]" MarkAsRead="False" Messages="[listMailInProgress]" OnlyUnreadMessages="False" OrderByDate="NewestFirst" Top="-1" />
+                        <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="599,1044" sap2010:WorkflowViewState.IdRef="ForEach`1_7" Values="[listMailInProgress]">
                           <ui:ForEach.Body>
                             <ActivityAction x:TypeArguments="snm:MailMessage">
                               <ActivityAction.Argument>
                                 <DelegateInArgument x:TypeArguments="snm:MailMessage" Name="mail" />
                               </ActivityAction.Argument>
-                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="693,910" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="563,910" sap2010:WorkflowViewState.IdRef="Sequence_21">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="651,61" sap2010:WorkflowViewState.IdRef="WriteLine_15" Text="[&quot;Subject: &quot; + mail.Subject]" />
-                                <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="651,61" sap2010:WorkflowViewState.IdRef="WriteLine_16" Text="[&quot;Date: &quot; + mail.Headers(&quot;DateReceived&quot;)]" />
-                                <If Condition="[mail.Subject.Equals(strEmailSubject) and OUT_strDateReceived.Equals(mail.Headers(&quot;DateReceived&quot;))]" DisplayName="If subject and date match " sap:VirtualizedContainerService.HintSize="651,616" sap2010:WorkflowViewState.IdRef="If_3">
+                                <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="521,61" sap2010:WorkflowViewState.IdRef="WriteLine_17" Text="[&quot;Subject: &quot; + mail.Subject]" />
+                                <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="521,61" sap2010:WorkflowViewState.IdRef="WriteLine_18" Text="[&quot;Date: &quot; + mail.Headers(&quot;Date&quot;)]" />
+                                <If Condition="[mail.Subject.Equals(strEmailSubject) and OUT_strDateReceived.Equals(mail.Headers(&quot;Date&quot;))]" DisplayName="If Subject and Date match" sap:VirtualizedContainerService.HintSize="521,616" sap2010:WorkflowViewState.IdRef="If_4">
                                   <If.Then>
-                                    <Sequence sap:VirtualizedContainerService.HintSize="376,468" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                                    <Sequence sap:VirtualizedContainerService.HintSize="376,468" sap2010:WorkflowViewState.IdRef="Sequence_20">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <Assign DisplayName="Assign mail message" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_13">
+                                      <Assign DisplayName="Assign OUT_mailInProgress" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_17">
                                         <Assign.To>
                                           <OutArgument x:TypeArguments="snm:MailMessage">[OUT_mailInProgress]</OutArgument>
                                         </Assign.To>
@@ -254,14 +255,11 @@
                                           <InArgument x:TypeArguments="snm:MailMessage">[mail]</InArgument>
                                         </Assign.Value>
                                       </Assign>
-                                      <ui:SaveMail DisplayName="Save Mail Message" FilePath="[OUT_strWorkingFolderPath + mail.Subject + &quot;.eml&quot;]" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="SaveMail_3" MailMessage="[mail]" />
-                                      <ui:SaveMailAttachments Attachments="{x:Null}" DisplayName="Save Attachments" FolderPath="[OUT_strWorkingFolderPath]" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="SaveMailAttachments_3" Message="[mail]" OverwriteExisting="False" />
-                                      <ui:Break sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Break_5" />
+                                      <ui:SaveMail DisplayName="Save Mail Message" FilePath="[OUT_strWorkingFolderPath + mail.Subject + &quot;.eml&quot;]" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="SaveMail_4" MailMessage="[mail]" />
+                                      <ui:SaveMailAttachments Attachments="{x:Null}" DisplayName="Save Attachments" FolderPath="[OUT_strWorkingFolderPath]" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="SaveMailAttachments_4" Message="[mail]" OverwriteExisting="False" />
+                                      <ui:Break sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Break_6" />
                                     </Sequence>
                                   </If.Then>
-                                  <If.Else>
-                                    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="230,61" sap2010:WorkflowViewState.IdRef="WriteLine_12" Text="Couldn't find email" />
-                                  </If.Else>
                                 </If>
                               </Sequence>
                             </ActivityAction>
@@ -273,8 +271,69 @@
                 </FlowDecision>
               </FlowStep.Next>
             </FlowStep>
-            <x:Reference>__ReferenceID0</x:Reference>
-            <FlowStep x:Name="__ReferenceID3">
+            <FlowStep>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <av:Point x:Key="ShapeLocation">490,547</av:Point>
+                  <av:Size x:Key="ShapeSize">200,66</av:Size>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Sequence DisplayName="Email from In Progress (Old)" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="listMailInProgress" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:GetOutlookMailMessages Filter="{x:Null}" FilterByMessageIds="{x:Null}" TimeoutMS="{x:Null}" Account="[IN_dictConfig(&quot;TraderMailbox&quot;)]" DisplayName="Get Outlook Mail Messages" GetAttachements="False" sap:VirtualizedContainerService.HintSize="729,22" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_4" MailFolder="[IN_dictConfig(&quot;OutlookInProgress&quot;)]" MarkAsRead="False" Messages="[listMailInProgress]" OnlyUnreadMessages="True" OrderByDate="NewestFirst" Top="-1" />
+                <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each In Progress Email" sap:VirtualizedContainerService.HintSize="729,1044" sap2010:WorkflowViewState.IdRef="ForEach`1_6" Values="[listMailInProgress]">
+                  <ui:ForEach.Body>
+                    <ActivityAction x:TypeArguments="snm:MailMessage">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="snm:MailMessage" Name="mail" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="693,910" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="651,61" sap2010:WorkflowViewState.IdRef="WriteLine_15" Text="[&quot;Subject: &quot; + mail.Subject]" />
+                        <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="651,61" sap2010:WorkflowViewState.IdRef="WriteLine_16" Text="[&quot;Date: &quot; + mail.Headers(&quot;Date&quot;)]" />
+                        <If Condition="[mail.Subject.Equals(strEmailSubject) and OUT_strDateReceived.Equals(mail.Headers(&quot;Date&quot;))]" DisplayName="If subject and date match " sap:VirtualizedContainerService.HintSize="651,616" sap2010:WorkflowViewState.IdRef="If_3">
+                          <If.Then>
+                            <Sequence sap:VirtualizedContainerService.HintSize="376,468" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Assign DisplayName="Assign mail message" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_13">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="snm:MailMessage">[OUT_mailInProgress]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="snm:MailMessage">[mail]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <ui:SaveMail DisplayName="Save Mail Message" FilePath="[OUT_strWorkingFolderPath + mail.Subject + &quot;.eml&quot;]" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="SaveMail_3" MailMessage="[mail]" />
+                              <ui:SaveMailAttachments Attachments="{x:Null}" DisplayName="Save Attachments" FolderPath="[OUT_strWorkingFolderPath]" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="SaveMailAttachments_3" Message="[mail]" OverwriteExisting="False" />
+                              <ui:Break sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Break_5" />
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="230,61" sap2010:WorkflowViewState.IdRef="WriteLine_12" Text="Couldn't find email" />
+                          </If.Else>
+                        </If>
+                      </Sequence>
+                    </ActivityAction>
+                  </ui:ForEach.Body>
+                </ui:ForEach>
+              </Sequence>
+            </FlowStep>
+            <FlowStep x:Name="__ReferenceID2">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">200,253.54</av:Point>
@@ -306,10 +365,10 @@
                 </ui:ForEach.Body>
               </ui:ForEach>
               <FlowStep.Next>
-                <x:Reference>__ReferenceID1</x:Reference>
+                <x:Reference>__ReferenceID0</x:Reference>
               </FlowStep.Next>
             </FlowStep>
-            <x:Reference>__ReferenceID2</x:Reference>
+            <x:Reference>__ReferenceID1</x:Reference>
             <FlowStep x:Name="__ReferenceID4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -354,9 +413,10 @@
                 </Assign>
               </Sequence>
               <FlowStep.Next>
-                <x:Reference>__ReferenceID3</x:Reference>
+                <x:Reference>__ReferenceID2</x:Reference>
               </FlowStep.Next>
             </FlowStep>
+            <x:Reference>__ReferenceID3</x:Reference>
           </Flowchart>
           <FlowStep.Next>
             <x:Reference>__ReferenceID5</x:Reference>

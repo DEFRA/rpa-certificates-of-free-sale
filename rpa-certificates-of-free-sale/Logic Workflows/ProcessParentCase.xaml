@@ -14,7 +14,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1344,830</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1464,830</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessCase_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="23">
@@ -272,10 +272,7 @@
                     </TryCatch.Catches>
                   </TryCatch>
                   <FlowStep.Next>
-                    <FlowDecision x:Name="__ReferenceID49" DisplayName="Stop?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_21">
-                      <FlowDecision.Condition>
-                        <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="OUT_strFlow = &quot;Stop&quot;" />
-                      </FlowDecision.Condition>
+                    <FlowDecision x:Name="__ReferenceID49" Condition="[OUT_strFlow = &quot;Stop&quot;]" DisplayName="Stop?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_21">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1284,7 +1281,7 @@
                 <InArgument x:TypeArguments="x:Int32">[intRetryCounter + 1]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="KillProcess_2" ProcessName="word.exe" />
+            <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="KillProcess_2" ProcessName="WINWORD" />
           </Sequence>
           <FlowStep.Next>
             <FlowStep x:Name="__ReferenceID20">
@@ -1484,7 +1481,7 @@
                                         <InArgument x:TypeArguments="x:Int32">[intRetryCounter + 1]</InArgument>
                                       </Assign.Value>
                                     </Assign>
-                                    <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="KillProcess_4" ProcessName="word.exe" />
+                                    <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="KillProcess_4" ProcessName="WINWORD" />
                                   </Sequence>
                                   <FlowStep.Next>
                                     <x:Reference>__ReferenceID15</x:Reference>
