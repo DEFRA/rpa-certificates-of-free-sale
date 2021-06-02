@@ -83,7 +83,7 @@
             </sap:WorkflowViewStateService.ViewState>
             <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text Status Reason" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_1">
               <ui:GetValue.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b740b952-28be-436e-99d4-0e4e520283b5" InformativeScreenshot="699314082f7c838d32e7be02e3451815" Selector="&lt;html title='Application: Information: NA0737 - The Hut Group (t/a My Protein) - TRD-11721860 - Dynamics 365' /&gt;&lt;webctrl tag='SELECT' aaname='Status Reason' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b740b952-28be-436e-99d4-0e4e520283b5" InformativeScreenshot="699314082f7c838d32e7be02e3451815" Selector="&lt;webctrl tag='SELECT' aaname='Status Reason' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>

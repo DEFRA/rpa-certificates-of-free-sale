@@ -1,0 +1,37 @@
+{
+  "name": "WordVBActivities",
+  "description": "Activities for interacting with Microsoft Word using vb.net code. ",
+  "main": "NewActivity.xaml",
+  "dependencies": {
+    "Microsoft.Office.Interop.Word": "15.0.4797.1003",
+    "UiPath.Excel.Activities": "2.8.6",
+    "UiPath.Mail.Activities": "1.8.6",
+    "UiPath.System.Activities": "20.4.0",
+    "UiPath.UIAutomation.Activities": "20.4.2"
+  },
+  "webServices": [],
+  "schemaVersion": "4.0",
+  "studioVersion": "20.4.3.0",
+  "projectVersion": "1.0.4",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "isPausable": true,
+    "requiresUserInteraction": true,
+    "supportsPersistence": false,
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ],
+    "executionType": "Workflow"
+  },
+  "designOptions": {
+    "projectProfile": "Developement",
+    "outputType": "Library",
+    "libraryOptions": {
+      "includeOriginalXaml": false,
+      "privateWorkflows": []
+    },
+    "fileInfoCollection": []
+  },
+  "expressionLanguage": "VisualBasic"
+}
