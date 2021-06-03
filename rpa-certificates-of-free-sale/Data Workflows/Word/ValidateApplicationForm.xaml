@@ -1441,7 +1441,7 @@
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
                                     </ui:CommentOut>
-                                    <w:ReadCheckBox DisplayName="Read Sep Certificates CheckBox" sap:VirtualizedContainerService.HintSize="242,22" IN_docWord="[docWord]" IN_strCheckboxName="[IN_dictFormFields(&quot;ProductList&quot;)]" sap2010:WorkflowViewState.IdRef="ReadCheckBox_4" OUT_strOutput="[dictAttachmentFields(&quot;ProductList&quot;)]" />
+                                    <w:ReadCheckBox DisplayName="Read Sep Certificates CheckBox" sap:VirtualizedContainerService.HintSize="242,22" IN_docWord="[docWord]" IN_strCheckboxName="[IN_dictFormFields(&quot;ProductList&quot;)]" sap2010:WorkflowViewState.IdRef="ReadCheckBox_4" OUT_strOutput="[dictAttachmentFields(&quot;SeparateCerts&quot;)]" />
                                     <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="242,51" sap2010:WorkflowViewState.IdRef="CommentOut_15">
                                       <ui:CommentOut.Body>
                                         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="526,299" sap2010:WorkflowViewState.IdRef="Sequence_50">
@@ -1867,7 +1867,7 @@
                                               <av:PointCollection x:Key="ConnectorLocation">298.895,924 298.895,973</av:PointCollection>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <Sequence DisplayName="Validate Part C and/or D" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_41">
+                                          <Sequence DisplayName="Validate Part C and/or D" sap:VirtualizedContainerService.HintSize="526,1540" sap2010:WorkflowViewState.IdRef="Sequence_41">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1887,6 +1887,17 @@
                                             <If Condition="[dictAttachmentFields(&quot;AdditionalHeader&quot;).Equals(&quot;&quot;) and IN_boolLoading = False]" DisplayName="If Additional Header is Nothing" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_59">
                                               <If.Then>
                                                 <Throw Exception="[new BusinessRuleException(&quot;Couldn't read Additional Header from Application form&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_60">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                </Throw>
+                                              </If.Then>
+                                            </If>
+                                            <If Condition="[dictAttachmentFields(&quot;AdditionalHeader&quot;).toLower.Contains(&quot;other&quot;) and IN_boolLoading = False]" DisplayName="If Additional Header is &quot;Other&quot;" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_64">
+                                              <If.Then>
+                                                <Throw Exception="[new BusinessRuleException(&quot;Additional Header is 'Other', Application needs to be processed manually.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_65">
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
