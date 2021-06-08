@@ -12,7 +12,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1344,830</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1240,741</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>EnterLoadingDetails_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -225,7 +225,7 @@
                                       <av:PointCollection x:Key="ConnectorLocation">400,1211 400,1261</av:PointCollection>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <tce:CheckOrderNumberSelected sap:VirtualizedContainerService.HintSize="200,22" IN_browserCRM="[IN_browserCRM]" IN_intTimeOut="[IN_dictConfig(&quot;timeoutXS&quot;)]" sap2010:WorkflowViewState.IdRef="CheckOrderNumberSelected_1" OUT_boolOrderNumberExists="[boolOrderNumberExists]">
+                                  <tce:CheckOrderNumberSelected sap:VirtualizedContainerService.HintSize="200,22" IN_browserCRM="[IN_browserCRM]" IN_intTimeOut="[IN_dictConfig(&quot;timeoutXS&quot;)]" IN_strOrderNumber="[IN_dictAttachmentFields(&quot;Consignment&quot;)]" sap2010:WorkflowViewState.IdRef="CheckOrderNumberSelected_1" OUT_boolOrderNumberExists="[boolOrderNumberExists]">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -284,7 +284,7 @@
                                                       <av:PointCollection x:Key="ConnectorLocation">400,1545 400,1595</av:PointCollection>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
-                                                  <tce:CheckOrderNumberSelected sap:VirtualizedContainerService.HintSize="200,22" IN_browserCRM="[IN_browserCRM]" IN_intTimeOut="[IN_dictConfig(&quot;timeoutXS&quot;)]" sap2010:WorkflowViewState.IdRef="CheckOrderNumberSelected_2" OUT_boolOrderNumberExists="[boolOrderNumberExists]">
+                                                  <tce:CheckOrderNumberSelected sap:VirtualizedContainerService.HintSize="200,22" IN_browserCRM="[IN_browserCRM]" IN_intTimeOut="[IN_dictConfig(&quot;timeoutS&quot;)]" IN_strOrderNumber="[IN_dictAttachmentFields(&quot;Consignment&quot;)]" sap2010:WorkflowViewState.IdRef="CheckOrderNumberSelected_2" OUT_boolOrderNumberExists="[boolOrderNumberExists]">
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -432,10 +432,7 @@
                                                                                             </scg:Dictionary>
                                                                                           </sap:WorkflowViewStateService.ViewState>
                                                                                           <FlowDecision.True>
-                                                                                            <FlowDecision x:Name="__ReferenceID30" DisplayName="Breakpoint 1?" sap:VirtualizedContainerService.HintSize="77,87" sap2010:WorkflowViewState.IdRef="FlowDecision_11">
-                                                                                              <FlowDecision.Condition>
-                                                                                                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="IN_dictConfig(&quot;boolSupervision&quot;) = false and IN_dictConfig(&quot;boolControlPoint1&quot;) = false" />
-                                                                                              </FlowDecision.Condition>
+                                                                                            <FlowDecision x:Name="__ReferenceID30" Condition="[IN_dictConfig(&quot;boolSupervision&quot;) = false and IN_dictConfig(&quot;boolControlPoint1&quot;) = false]" DisplayName="Breakpoint 1?" sap:VirtualizedContainerService.HintSize="77,87" sap2010:WorkflowViewState.IdRef="FlowDecision_11">
                                                                                               <sap:WorkflowViewStateService.ViewState>
                                                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
