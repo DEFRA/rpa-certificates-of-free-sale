@@ -59,7 +59,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[IN_browserCRM]" BrowserType="IE" DisplayName="Attach Browser Trader CRM" sap:VirtualizedContainerService.HintSize="434,490" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="a4fecc8c743efca65c3ff9150f538aa6">
+    <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[IN_browserCRM]" BrowserType="IE" DisplayName="Attach Browser Trader CRM" sap:VirtualizedContainerService.HintSize="434,490" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="b6875c845410a651e60c0251f2ea5c1a">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -86,7 +86,7 @@
                 </ui:CursorPosition>
               </ui:Hover.CursorPosition>
               <ui:Hover.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8a2bc48c-d218-4569-9026-716f403495ab" InformativeScreenshot="38d6a9349dafa86345e92a554c10c29b" Selector="&lt;webctrl id='*rpa_organisationid8-rp*' parentid='*rpa_organisationid8-rp*' tag='DIV' idx='5' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8a2bc48c-d218-4569-9026-716f403495ab" InformativeScreenshot="38d6a9349dafa86345e92a554c10c29b" Selector="&lt;webctrl tag='SPAN' class='*ccount*' /&gt;&#xD;&#xA;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>

@@ -74,7 +74,7 @@
             </sap:WorkflowViewStateService.ViewState>
             <ui:UiElementExists DisplayName="Element Exists - Contact" Exists="[OUT_boolContactExists]" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
               <ui:UiElementExists.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="76115d5a-ca90-4657-bca1-03b086a8538b" InformativeScreenshot="1a7f41775fc946fe9e0836132b9dc7d3" Selector="&lt;webctrl id='*rpa_contact*' parentid='LookupResultsDropdown*rpa_contact*' tag='DIV' /&gt;" TimeoutMS="[IN_intTimeOut]">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="76115d5a-ca90-4657-bca1-03b086a8538b" InformativeScreenshot="1a7f41775fc946fe9e0836132b9dc7d3" Selector="&lt;webctrl id='*rpa_contact*' parentid='LookupResultsDropdown*contactid*' tag='DIV' /&gt;" TimeoutMS="[IN_intTimeOut]">
                   <ui:Target.WaitForReady>
                     <InArgument x:TypeArguments="ui:WaitForReady" />
                   </ui:Target.WaitForReady>
