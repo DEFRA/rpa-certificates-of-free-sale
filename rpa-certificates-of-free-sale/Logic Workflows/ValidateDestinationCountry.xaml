@@ -58,6 +58,8 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.Word</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Flowchart DisplayName="ValidateCountries" sap:VirtualizedContainerService.HintSize="634,636" sap2010:WorkflowViewState.IdRef="Flowchart_1">
@@ -123,7 +125,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
                 <av:Size x:Key="ShapeSize">60,75</av:Size>
-                <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,127.5</av:PointCollection>
+                <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,187.5</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <Flowchart.StartNode>
@@ -132,9 +134,9 @@
             <FlowStep x:Name="__ReferenceID1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <av:Point x:Key="ShapeLocation">200,127.5</av:Point>
+                  <av:Point x:Key="ShapeLocation">200,187.5</av:Point>
                   <av:Size x:Key="ShapeSize">200,51</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">300,178.5 300,208.5 300.016666666667,208.5 300.016666666667,228.5</av:PointCollection>
+                  <av:PointCollection x:Key="ConnectorLocation">300,238.5 300,268.5 300.016666666667,268.5 300.016666666667,288.5</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[IN_dtCountries]" DisplayName="For Each Row in DT" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
@@ -149,7 +151,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <If Condition="[IN_dictAttachmentFields(&quot;DestinationCountry&quot;).trim.ToLower.Equals(row.ToString.trim.tolower)]" DisplayName="If match country" sap:VirtualizedContainerService.HintSize="484,362" sap2010:WorkflowViewState.IdRef="If_1">
+                      <If Condition="[IN_dictAttachmentFields(&quot;DestinationCountry&quot;).trim.ToLower.Equals(row(0).ToString.trim.tolower)]" DisplayName="If match country" sap:VirtualizedContainerService.HintSize="484,362" sap2010:WorkflowViewState.IdRef="If_1">
                         <If.Then>
                           <Sequence sap:VirtualizedContainerService.HintSize="304,214" sap2010:WorkflowViewState.IdRef="Sequence_3">
                             <sap:WorkflowViewStateService.ViewState>
@@ -182,7 +184,7 @@
                 <FlowStep x:Name="__ReferenceID0">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <av:Point x:Key="ShapeLocation">185.016666666667,228.5</av:Point>
+                      <av:Point x:Key="ShapeLocation">185.016666666667,288.5</av:Point>
                       <av:Size x:Key="ShapeSize">230,61</av:Size>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
