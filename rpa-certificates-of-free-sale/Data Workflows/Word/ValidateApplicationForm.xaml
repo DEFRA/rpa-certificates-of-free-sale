@@ -1162,10 +1162,7 @@
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
                                           <FlowDecision.False>
-                                            <FlowDecision x:Name="__ReferenceID31" DisplayName="Not Just Dioxin?" sap:VirtualizedContainerService.HintSize="90,87" sap2010:WorkflowViewState.IdRef="FlowDecision_16">
-                                              <FlowDecision.Condition>
-                                                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="dictAttachmentFields(&quot;CertificateType&quot;).Equals(&quot;Non-Alcohol\FREESALE CERT&quot;) or dictAttachmentFields(&quot;CertificateType&quot;).Equals(&quot;Non-Alcohol\MANUFACTURING and FREESALE CERT&quot;)" />
-                                              </FlowDecision.Condition>
+                                            <FlowDecision x:Name="__ReferenceID31" Condition="[dictAttachmentFields(&quot;CertificateType&quot;).Equals(&quot;Non-Alcohol\FREESALE CERT&quot;) or dictAttachmentFields(&quot;CertificateType&quot;).Equals(&quot;Non-Alcohol\MANUFACTURING and FREESALE CERT&quot;)]" DisplayName="Not Just Dioxin?" sap:VirtualizedContainerService.HintSize="90,87" sap2010:WorkflowViewState.IdRef="FlowDecision_16">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1670,10 +1667,7 @@
                                 </TryCatch.Catches>
                               </TryCatch>
                               <FlowStep.Next>
-                                <FlowDecision x:Name="__ReferenceID51" DisplayName="Part D?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_15">
-                                  <FlowDecision.Condition>
-                                    <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="dictAttachmentFields(&quot;CertificateType&quot;).Equals(&quot;Non-Alcohol\MANUFACTURING and FREESALE CERT&quot;) Or dictAttachmentFields(&quot;Dioxin&quot;).ToLower.Equals(&quot;true&quot;)" />
-                                  </FlowDecision.Condition>
+                                <FlowDecision x:Name="__ReferenceID51" Condition="[dictAttachmentFields(&quot;CertificateType&quot;).Equals(&quot;Non-Alcohol\MANUFACTURING and FREESALE CERT&quot;) Or dictAttachmentFields(&quot;Dioxin&quot;).ToLower.Equals(&quot;true&quot;)]" DisplayName="Part D?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_15">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1895,7 +1889,7 @@
                                               <av:PointCollection x:Key="ConnectorLocation">298.895,924 298.895,973</av:PointCollection>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <Sequence DisplayName="Validate Part C and/or D" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_41">
+                                          <Sequence DisplayName="Validate Part C and/or D" sap:VirtualizedContainerService.HintSize="526,1631" sap2010:WorkflowViewState.IdRef="Sequence_41">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1912,17 +1906,34 @@
                                                 </Throw>
                                               </If.Then>
                                             </If>
-                                            <If Condition="[dictAttachmentFields(&quot;AdditionalHeader&quot;).Equals(&quot;&quot;) and IN_boolLoading = False]" DisplayName="If Additional Header is Nothing" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_59">
-                                              <If.Then>
-                                                <Throw Exception="[new BusinessRuleException(&quot;Couldn't read Additional Header from Application form&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_60">
+                                            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="CommentOut_16">
+                                              <ui:CommentOut.Body>
+                                                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="526,299" sap2010:WorkflowViewState.IdRef="Sequence_52">
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
-                                                </Throw>
-                                              </If.Then>
-                                            </If>
+                                                  <If Condition="[dictAttachmentFields(&quot;AdditionalHeader&quot;).Equals(&quot;&quot;) and IN_boolLoading = False]" DisplayName="If Additional Header is Nothing" sap:VirtualizedContainerService.HintSize="484,207" sap2010:WorkflowViewState.IdRef="If_59">
+                                                    <If.Then>
+                                                      <Throw Exception="[new BusinessRuleException(&quot;Couldn't read Additional Header from Application form&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_60">
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                      </Throw>
+                                                    </If.Then>
+                                                  </If>
+                                                </Sequence>
+                                              </ui:CommentOut.Body>
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                            </ui:CommentOut>
                                             <If Condition="[dictAttachmentFields(&quot;AdditionalHeader&quot;).toLower.Contains(&quot;other&quot;) and IN_boolLoading = False]" DisplayName="If Additional Header is &quot;Other&quot;" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_64">
                                               <If.Then>
                                                 <Throw Exception="[new BusinessRuleException(&quot;Additional Header is 'Other', Application needs to be processed manually.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_65">
@@ -1934,15 +1945,32 @@
                                                 </Throw>
                                               </If.Then>
                                             </If>
+                                            <If Condition="[dictAttachmentFields(&quot;AdditionalHeader&quot;).toLower.Contains(&quot;an item&quot;) and IN_boolLoading = False]" DisplayName="If Additional Header is &quot;Other&quot;" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_65">
+                                              <If.Then>
+                                                <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_43">
+                                                  <Assign.To>
+                                                    <OutArgument x:TypeArguments="x:String">[dictAttachmentFields("AdditionalHeader")]</OutArgument>
+                                                  </Assign.To>
+                                                  <Assign.Value>
+                                                    <InArgument x:TypeArguments="x:String">
+                                                      <Literal x:TypeArguments="x:String" Value="" />
+                                                    </InArgument>
+                                                  </Assign.Value>
+                                                </Assign>
+                                              </If.Then>
+                                            </If>
                                             <If Condition="[dictAttachmentFields(&quot;AdditionalDetails&quot;).Equals(&quot;&quot;) and not dictAttachmentFields(&quot;AdditionalHeader&quot;).Contains(&quot;an item&quot;) and IN_boolLoading = False]" DisplayName="If Additional Details is Nothing" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_60">
                                               <If.Then>
-                                                <Throw Exception="[new BusinessRuleException(&quot;Couldn't read Additional Details from Application form&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_61">
-                                                  <sap:WorkflowViewStateService.ViewState>
-                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                    </scg:Dictionary>
-                                                  </sap:WorkflowViewStateService.ViewState>
-                                                </Throw>
+                                                <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_44">
+                                                  <Assign.To>
+                                                    <OutArgument x:TypeArguments="x:String">[dictAttachmentFields("AdditionalHeader")]</OutArgument>
+                                                  </Assign.To>
+                                                  <Assign.Value>
+                                                    <InArgument x:TypeArguments="x:String">
+                                                      <Literal x:TypeArguments="x:String" Value="" />
+                                                    </InArgument>
+                                                  </Assign.Value>
+                                                </Assign>
                                               </If.Then>
                                             </If>
                                             <If Condition="[dictAttachmentFields(&quot;ConsigneeName&quot;).Equals(&quot;&quot;) and IN_boolLoading = False]" DisplayName="If Consignee Name is Nothing" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_61">
@@ -1969,10 +1997,7 @@
                                             </If>
                                           </Sequence>
                                           <FlowStep.Next>
-                                            <FlowDecision x:Name="__ReferenceID50" DisplayName="ManFS Animal?" sap:VirtualizedContainerService.HintSize="88,87" sap2010:WorkflowViewState.IdRef="FlowDecision_14">
-                                              <FlowDecision.Condition>
-                                                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="dictAttachmentFields(&quot;CertificateType&quot;).Equals(&quot;ANIMAL MANUFACTURING AND FREESALE&quot;)" />
-                                              </FlowDecision.Condition>
+                                            <FlowDecision x:Name="__ReferenceID50" Condition="[dictAttachmentFields(&quot;CertificateType&quot;).Equals(&quot;ANIMAL MANUFACTURING AND FREESALE&quot;)]" DisplayName="ManFS Animal?" sap:VirtualizedContainerService.HintSize="88,87" sap2010:WorkflowViewState.IdRef="FlowDecision_14">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
