@@ -12,6 +12,7 @@
     <x:Property Name="IN_boolEngCompleted" Type="InArgument(x:Boolean)" />
     <x:Property Name="IN_boolSpanCompleted" Type="InArgument(x:Boolean)" />
     <x:Property Name="OUT_boolSpanishCertificate" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="OUT_strTemplatePath" Type="OutArgument(x:String)" />
   </x:Members>
   <this:FindCertificateTemplate.IN_boolEngCompleted>
     <InArgument x:TypeArguments="x:Boolean" />
@@ -350,7 +351,7 @@
                                                       <av:Size x:Key="ShapeSize">200,66</av:Size>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
-                                                  <Sequence DisplayName="Copy template to working folder" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                                                  <Sequence DisplayName="Copy template to working folder" sap:VirtualizedContainerService.HintSize="689,1362" sap2010:WorkflowViewState.IdRef="Sequence_3">
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -429,6 +430,14 @@
                                                         </scg:Dictionary>
                                                       </sap:WorkflowViewStateService.ViewState>
                                                     </ui:CopyFile>
+                                                    <Assign DisplayName="Assign OUT_strTemplatePath" sap:VirtualizedContainerService.HintSize="647,60" sap2010:WorkflowViewState.IdRef="Assign_25">
+                                                      <Assign.To>
+                                                        <OutArgument x:TypeArguments="x:String">[OUT_strTemplatePath]</OutArgument>
+                                                      </Assign.To>
+                                                      <Assign.Value>
+                                                        <InArgument x:TypeArguments="x:String">[strCertificateTemplateFilePath + ".doc"]</InArgument>
+                                                      </Assign.Value>
+                                                    </Assign>
                                                     <Assign DisplayName="Assign OUT_intCertificateCounter" sap:VirtualizedContainerService.HintSize="647,60" sap2010:WorkflowViewState.IdRef="Assign_20">
                                                       <Assign.To>
                                                         <OutArgument x:TypeArguments="x:Int32">[OUT_intCertificateCounter]</OutArgument>
