@@ -7,11 +7,13 @@
     <x:Property Name="IN_strReferenceNumber" Type="InArgument(x:String)" />
     <x:Property Name="IN_arrProducts" Type="InArgument(s:String[])" />
     <x:Property Name="IN_intProductCounter" Type="InArgument(x:Int32)" />
+    <x:Property Name="IN_boolDioxinInProgress" Type="InArgument(x:Boolean)" />
+    <x:Property Name="OUT_boolDioxinCompleted" Type="OutArgument(x:Boolean)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1794,830</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1240,741</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>EnterCertificateDetails_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -79,9 +81,9 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID32</x:Reference>
+      <x:Reference>__ReferenceID33</x:Reference>
     </Flowchart.StartNode>
-    <FlowStep x:Name="__ReferenceID29">
+    <FlowStep x:Name="__ReferenceID30">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">200,477</av:Point>
@@ -97,7 +99,7 @@
         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;Ending Workflow - &quot; + strWorkflowName]" />
       </Sequence>
     </FlowStep>
-    <FlowStep x:Name="__ReferenceID32">
+    <FlowStep x:Name="__ReferenceID33">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">200,127.5</av:Point>
@@ -115,7 +117,7 @@
         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Starting Workflow - &quot;+strWorkflowName]" />
       </Sequence>
       <FlowStep.Next>
-        <FlowStep x:Name="__ReferenceID31">
+        <FlowStep x:Name="__ReferenceID32">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">200,233.5</av:Point>
@@ -155,7 +157,7 @@
             <If Condition="[IN_strCertificatePath is Nothing]" sap:VirtualizedContainerService.HintSize="508,208" sap2010:WorkflowViewState.IdRef="If_3" />
           </Sequence>
           <FlowStep.Next>
-            <FlowStep x:Name="__ReferenceID30">
+            <FlowStep x:Name="__ReferenceID31">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">200,343.5</av:Point>
@@ -176,16 +178,17 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <Flowchart.StartNode>
-                  <x:Reference>__ReferenceID28</x:Reference>
+                  <x:Reference>__ReferenceID29</x:Reference>
                 </Flowchart.StartNode>
-                <FlowStep x:Name="__ReferenceID28">
+                <FlowStep x:Name="__ReferenceID29">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:Point x:Key="ShapeLocation">200,127.5</av:Point>
                       <av:Size x:Key="ShapeSize">200,51</av:Size>
+                      <av:PointCollection x:Key="ConnectorLocation">300,178.5 300,228.5</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <p:WordApplicationScope DisplayName="Word Application Scope - fill out certificate" FilePath="[IN_strCertificatePath]" sap:VirtualizedContainerService.HintSize="938,2041" sap2010:WorkflowViewState.IdRef="WordApplicationScope_1">
+                  <p:WordApplicationScope DisplayName="Word Application Scope - fill out certificate" FilePath="[IN_strCertificatePath]" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="WordApplicationScope_1">
                     <p:WordApplicationScope.Body>
                       <ActivityAction x:TypeArguments="ui:WordDocument">
                         <ActivityAction.Argument>
@@ -247,7 +250,10 @@
                             </sap:WorkflowViewStateService.ViewState>
                             <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Producer" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="WordReplaceText_4" Replace="[IN_dictAttachmentFields(&quot;OrganisationName&quot;)]" Search="[IN_dictConfig(&quot;Producer&quot;)]" />
                             <FlowStep.Next>
-                              <FlowDecision x:Name="__ReferenceID18" Condition="[IN_dictAttachmentFields(&quot;Dioxin&quot;).ToLower.Equals(&quot;true&quot;) or IN_dictAttachmentFields(&quot;CertificateType&quot;).Equals(&quot;Non-Alcohol\MANUFACTURING and FREESALE CERT&quot;)]" DisplayName="No Country?" sap:VirtualizedContainerService.HintSize="73,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
+                              <FlowDecision x:Name="__ReferenceID18" DisplayName="No Country?" sap:VirtualizedContainerService.HintSize="73,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
+                                <FlowDecision.Condition>
+                                  <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="IN_boolDioxinInProgress = True or IN_dictAttachmentFields(&quot;CertificateType&quot;).Equals(&quot;Non-Alcohol\MANUFACTURING and FREESALE CERT&quot;)" />
+                                </FlowDecision.Condition>
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -310,7 +316,10 @@
                                                     </sap:WorkflowViewStateService.ViewState>
                                                     <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Packages" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="WordReplaceText_8" Replace="[IN_dictAttachmentFields(&quot;NumPackages&quot;)]" Search="[IN_dictConfig(&quot;Packages&quot;)]" />
                                                     <FlowStep.Next>
-                                                      <FlowDecision x:Name="__ReferenceID10" Condition="[IN_dictAttachmentFields(&quot;Dioxin&quot;).ToLower.Equals(&quot;true&quot;)]" DisplayName="Dioxin?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_8">
+                                                      <FlowDecision x:Name="__ReferenceID10" DisplayName="Dioxin?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_8">
+                                                        <FlowDecision.Condition>
+                                                          <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="IN_boolDioxinInProgress = True" />
+                                                        </FlowDecision.Condition>
                                                         <sap:WorkflowViewStateService.ViewState>
                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -404,7 +413,7 @@
                                                                     <av:PointCollection x:Key="ConnectorLocation">770,1362.58 770,1414.5</av:PointCollection>
                                                                   </scg:Dictionary>
                                                                 </sap:WorkflowViewStateService.ViewState>
-                                                                <Sequence DisplayName="Enter Additional Header" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                                                                <Sequence DisplayName="Enter Additional Header - Spanish or English" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_4">
                                                                   <Sequence.Variables>
                                                                     <Variable x:TypeArguments="x:String" Name="strSpanishHeader" />
                                                                   </Sequence.Variables>
@@ -459,7 +468,7 @@
                                                                                   <OutArgument x:TypeArguments="x:String">[strSpanishHeader]</OutArgument>
                                                                                 </Assign.To>
                                                                                 <Assign.Value>
-                                                                                  <InArgument x:TypeArguments="x:String">Declaración del Comerciante</InArgument>
+                                                                                  <InArgument x:TypeArguments="x:String">Declaración del comerciante</InArgument>
                                                                                 </Assign.Value>
                                                                                 <sap:WorkflowViewStateService.ViewState>
                                                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -627,7 +636,10 @@
                           <x:Reference>__ReferenceID15</x:Reference>
                           <x:Reference>__ReferenceID16</x:Reference>
                           <x:Reference>__ReferenceID17</x:Reference>
-                          <FlowDecision x:Name="__ReferenceID27" Condition="[IN_dictAttachmentFields(&quot;Dioxin&quot;).ToLower.Equals(&quot;true&quot;) or IN_dictAttachmentFields(&quot;CertificateType&quot;).Equals(&quot;ANIMAL MANUFACTURING AND FREESALE&quot;)]" DisplayName="No Product?" sap:VirtualizedContainerService.HintSize="72,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+                          <FlowDecision x:Name="__ReferenceID27" DisplayName="No Product?" sap:VirtualizedContainerService.HintSize="72,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+                            <FlowDecision.Condition>
+                              <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="IN_boolDioxinInProgress = True or IN_dictAttachmentFields(&quot;CertificateType&quot;).Equals(&quot;ANIMAL MANUFACTURING AND FREESALE&quot;)" />
+                            </FlowDecision.Condition>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -702,17 +714,45 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </p:WordApplicationScope>
+                  <FlowStep.Next>
+                    <FlowStep x:Name="__ReferenceID28">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <av:Point x:Key="ShapeLocation">200,228.5</av:Point>
+                          <av:Size x:Key="ShapeSize">200,51</av:Size>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If Condition="[IN_boolDioxinInProgress = True]" DisplayName="If Dioxin" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_6">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <If.Then>
+                          <Assign DisplayName="Assign dioxin completed" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Boolean">[OUT_boolDioxinCompleted]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </If.Then>
+                      </If>
+                    </FlowStep>
+                  </FlowStep.Next>
                 </FlowStep>
+                <x:Reference>__ReferenceID28</x:Reference>
               </Flowchart>
               <FlowStep.Next>
-                <x:Reference>__ReferenceID29</x:Reference>
+                <x:Reference>__ReferenceID30</x:Reference>
               </FlowStep.Next>
             </FlowStep>
           </FlowStep.Next>
         </FlowStep>
       </FlowStep.Next>
     </FlowStep>
-    <x:Reference>__ReferenceID30</x:Reference>
     <x:Reference>__ReferenceID31</x:Reference>
+    <x:Reference>__ReferenceID32</x:Reference>
   </Flowchart>
 </Activity>
