@@ -80,9 +80,9 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID58</x:Reference>
+      <x:Reference>__ReferenceID59</x:Reference>
     </Flowchart.StartNode>
-    <FlowStep x:Name="__ReferenceID54">
+    <FlowStep x:Name="__ReferenceID55">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">200,537</av:Point>
@@ -98,7 +98,7 @@
         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;Ending Workflow - &quot; + strWorkflowName]" />
       </Sequence>
     </FlowStep>
-    <FlowStep x:Name="__ReferenceID58">
+    <FlowStep x:Name="__ReferenceID59">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">200,127.5</av:Point>
@@ -116,7 +116,7 @@
         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Starting Workflow - &quot;+strWorkflowName]" />
       </Sequence>
       <FlowStep.Next>
-        <FlowStep x:Name="__ReferenceID57">
+        <FlowStep x:Name="__ReferenceID58">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">200,235.58</av:Point>
@@ -130,9 +130,9 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[IN_dictFormFields is nothing]" sap:VirtualizedContainerService.HintSize="521,527" sap2010:WorkflowViewState.IdRef="If_51">
+            <If Condition="[IN_dictFormFields is nothing]" sap:VirtualizedContainerService.HintSize="521,327" sap2010:WorkflowViewState.IdRef="If_51">
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="376,379" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                <Sequence sap:VirtualizedContainerService.HintSize="376,179" sap2010:WorkflowViewState.IdRef="Sequence_22">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -145,28 +145,12 @@
                       <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="OUT_dictFormFields">[IN_dictFormFields]</OutArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
-                  <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_32">
-                    <Assign.To>
-                      <OutArgument x:TypeArguments="x:Boolean">[IN_boolLoading]</OutArgument>
-                    </Assign.To>
-                    <Assign.Value>
-                      <InArgument x:TypeArguments="x:Boolean">False</InArgument>
-                    </Assign.Value>
-                  </Assign>
-                  <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_3">
-                    <Assign.To>
-                      <OutArgument x:TypeArguments="x:String">[IN_strApplicationFilePath]</OutArgument>
-                    </Assign.To>
-                    <Assign.Value>
-                      <InArgument x:TypeArguments="x:String">\\GFD218DF\x953922$\Documents\COFS\NewCoFSApplicationForm\CoFS Application Test2 Live.docx</InArgument>
-                    </Assign.Value>
-                  </Assign>
                 </Sequence>
               </If.Then>
             </If>
           </Sequence>
           <FlowStep.Next>
-            <FlowStep x:Name="__ReferenceID55">
+            <FlowStep x:Name="__ReferenceID56">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">200,343.5</av:Point>
@@ -174,7 +158,7 @@
                   <av:PointCollection x:Key="ConnectorLocation">300,394.5 300,439.08</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Flowchart DisplayName="Main Logic" sap:VirtualizedContainerService.HintSize="693,1636" sap2010:WorkflowViewState.IdRef="Flowchart_2">
+              <Flowchart DisplayName="Main Logic" sap:VirtualizedContainerService.HintSize="693,1674" sap2010:WorkflowViewState.IdRef="Flowchart_2">
                 <Flowchart.Variables>
                   <Variable x:TypeArguments="moiw:Application" Name="appWord" />
                   <Variable x:TypeArguments="moiw:Document" Name="docWord" />
@@ -186,11 +170,11 @@
                     <av:Size x:Key="ShapeSize">60,75</av:Size>
                     <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,107</av:PointCollection>
                     <x:Double x:Key="Width">658.536666666667</x:Double>
-                    <x:Double x:Key="Height">1599.5</x:Double>
+                    <x:Double x:Key="Height">1638.5</x:Double>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <Flowchart.StartNode>
-                  <x:Reference>__ReferenceID53</x:Reference>
+                  <x:Reference>__ReferenceID54</x:Reference>
                 </Flowchart.StartNode>
                 <FlowStep x:Name="__ReferenceID52">
                   <sap:WorkflowViewStateService.ViewState>
@@ -208,7 +192,7 @@
                     </sap:WorkflowViewStateService.ViewState>
                   </w:OpenWord>
                   <FlowStep.Next>
-                    <FlowStep x:Name="__ReferenceID44">
+                    <FlowStep x:Name="__ReferenceID45">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <av:Point x:Key="ShapeLocation">198.895,290.5</av:Point>
@@ -470,12 +454,12 @@
                         </TryCatch.Catches>
                       </TryCatch>
                       <FlowStep.Next>
-                        <FlowStep x:Name="__ReferenceID49">
+                        <FlowStep x:Name="__ReferenceID50">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <av:Point x:Key="ShapeLocation">198.895,388.5</av:Point>
                               <av:Size x:Key="ShapeSize">200,51</av:Size>
-                              <av:PointCollection x:Key="ConnectorLocation">298.895,439.5 298.895,497</av:PointCollection>
+                              <av:PointCollection x:Key="ConnectorLocation">298.895,439.5 298.895,469.5 294.536666666667,469.5 294.536666666667,486.5</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <TryCatch DisplayName="Try Part B of Form" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_2">
@@ -680,7 +664,7 @@
                                                   <av:PointCollection x:Key="ConnectorLocation">320,745 320,796</av:PointCollection>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <Flowchart DisplayName="Animal Consumption (Alcohol)" sap:VirtualizedContainerService.HintSize="774,1184" sap2010:WorkflowViewState.IdRef="Flowchart_6">
+                                              <Flowchart DisplayName="Animal Consumption (Alcohol)" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Flowchart_6">
                                                 <Flowchart.Variables>
                                                   <Variable x:TypeArguments="x:String" Name="strFreeSaleAnimalOut" />
                                                   <Variable x:TypeArguments="x:String" Name="strManFSAnimalOut" />
@@ -1245,7 +1229,7 @@
                                                   <av:PointCollection x:Key="ConnectorLocation">674,464.5 704,464.5 704,594.5 440.641666666667,594.5 440.641666666667,624.5</av:PointCollection>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <Sequence DisplayName="Assign Dictionary Variables" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                                              <Sequence DisplayName="Assign Dictionary Variables" sap:VirtualizedContainerService.HintSize="304,252" sap2010:WorkflowViewState.IdRef="Sequence_26">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1412,294 +1396,40 @@
                             </TryCatch.Catches>
                           </TryCatch>
                           <FlowStep.Next>
-                            <FlowStep x:Name="__ReferenceID45">
+                            <FlowDecision x:Name="__ReferenceID53" DisplayName="Man&amp;FS" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_17">
+                              <FlowDecision.Condition>
+                                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="dictAttachmentFields(&quot;CertificateType&quot;).Equals(&quot;Non-Alcohol\MANUFACTURING and FREESALE CERT&quot;)" />
+                              </FlowDecision.Condition>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <av:Point x:Key="ShapeLocation">198.895,497</av:Point>
-                                  <av:Size x:Key="ShapeSize">200,51</av:Size>
-                                  <av:PointCollection x:Key="ConnectorLocation">298.895,548 298.895,608</av:PointCollection>
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <av:Point x:Key="ShapeLocation">259.536666666667,486.5</av:Point>
+                                  <av:Size x:Key="ShapeSize">70,87</av:Size>
+                                  <av:PointCollection x:Key="TrueConnector">259.536666666667,530 169.536666666667,530 169.536666666667,718 298.895,718 298.895,748</av:PointCollection>
+                                  <av:PointCollection x:Key="FalseConnector">329.536666666667,530 358.895,530 358.895,597 298.895,597 298.895,627</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <TryCatch DisplayName="Try Part C of Form" sap:VirtualizedContainerService.HintSize="564,1537" sap2010:WorkflowViewState.IdRef="TryCatch_3">
-                                <TryCatch.Try>
-                                  <Sequence DisplayName="Part C of Form" sap:VirtualizedContainerService.HintSize="526,1310" sap2010:WorkflowViewState.IdRef="Sequence_10">
-                                    <sap:WorkflowViewStateService.ViewState>
-                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                      </scg:Dictionary>
-                                    </sap:WorkflowViewStateService.ViewState>
-                                    <w:ReadTextFormField DisplayName="Read Product Names" sap:VirtualizedContainerService.HintSize="484,22" IN_docWord="[docWord]" IN_strFieldName="[IN_dictFormFields(&quot;ProductName&quot;)]" sap2010:WorkflowViewState.IdRef="ReadTextFormField_11" OUT_strOutput="[dictAttachmentFields(&quot;ProductName&quot;)]">
-                                      <sap:WorkflowViewStateService.ViewState>
-                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                        </scg:Dictionary>
-                                      </sap:WorkflowViewStateService.ViewState>
-                                    </w:ReadTextFormField>
-                                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="CommentOut_7">
-                                      <ui:CommentOut.Body>
-                                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="526,299" sap2010:WorkflowViewState.IdRef="Sequence_42">
-                                          <sap:WorkflowViewStateService.ViewState>
-                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            </scg:Dictionary>
-                                          </sap:WorkflowViewStateService.ViewState>
-                                          <If Condition="[dictAttachmentFields(&quot;ProductName&quot;).Equals(&quot;&quot;) and IN_boolLoading = False]" DisplayName="If Product Name is Nothing" sap:VirtualizedContainerService.HintSize="484,207" sap2010:WorkflowViewState.IdRef="If_11">
-                                            <If.Then>
-                                              <Throw Exception="[new BusinessRuleException(&quot;Couldn't read Product Name(s) from Application form&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_11">
-                                                <sap:WorkflowViewStateService.ViewState>
-                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                  </scg:Dictionary>
-                                                </sap:WorkflowViewStateService.ViewState>
-                                              </Throw>
-                                            </If.Then>
-                                          </If>
-                                        </Sequence>
-                                      </ui:CommentOut.Body>
-                                      <sap:WorkflowViewStateService.ViewState>
-                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                        </scg:Dictionary>
-                                      </sap:WorkflowViewStateService.ViewState>
-                                    </ui:CommentOut>
-                                    <w:ReadCheckBox DisplayName="Read Sep Certificates CheckBox" sap:VirtualizedContainerService.HintSize="484,22" IN_docWord="[docWord]" IN_strCheckboxName="[IN_dictFormFields(&quot;ProductList&quot;)]" sap2010:WorkflowViewState.IdRef="ReadCheckBox_4" OUT_strOutput="[dictAttachmentFields(&quot;SeparateCerts&quot;)]" />
-                                    <If Condition="[dictAttachmentFields(&quot;SeparateCerts&quot;).ToLower.Equals(&quot;true&quot;)]" DisplayName="If sep certs, create array" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_66">
-                                      <If.Then>
-                                        <Assign DisplayName="Assign arrProducts" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_46">
-                                          <Assign.To>
-                                            <OutArgument x:TypeArguments="s:String[]">[OUT_arrProducts]</OutArgument>
-                                          </Assign.To>
-                                          <Assign.Value>
-                                            <InArgument x:TypeArguments="s:String[]">[dictAttachmentFields("SeparateCerts").Split({vbLf}, StringSplitOptions.RemoveEmptyEntries)]</InArgument>
-                                          </Assign.Value>
-                                        </Assign>
-                                      </If.Then>
-                                    </If>
-                                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="CommentOut_15">
-                                      <ui:CommentOut.Body>
-                                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="526,299" sap2010:WorkflowViewState.IdRef="Sequence_50">
-                                          <sap:WorkflowViewStateService.ViewState>
-                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            </scg:Dictionary>
-                                          </sap:WorkflowViewStateService.ViewState>
-                                          <If Condition="[dictAttachmentFields(&quot;ProductList&quot;).Equals(&quot;&quot;) and IN_boolLoading = False]" DisplayName="If SepCertificates is Nothing" sap:VirtualizedContainerService.HintSize="484,207" sap2010:WorkflowViewState.IdRef="If_27">
-                                            <sap:WorkflowViewStateService.ViewState>
-                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                              </scg:Dictionary>
-                                            </sap:WorkflowViewStateService.ViewState>
-                                            <If.Then>
-                                              <Throw Exception="[new BusinessRuleException(&quot;Couldn't read Product List Checkbox from Application form&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_27">
-                                                <sap:WorkflowViewStateService.ViewState>
-                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                  </scg:Dictionary>
-                                                </sap:WorkflowViewStateService.ViewState>
-                                              </Throw>
-                                            </If.Then>
-                                          </If>
-                                        </Sequence>
-                                      </ui:CommentOut.Body>
-                                      <sap:WorkflowViewStateService.ViewState>
-                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                        </scg:Dictionary>
-                                      </sap:WorkflowViewStateService.ViewState>
-                                    </ui:CommentOut>
-                                    <Sequence DisplayName="Trader Declaration" sap:VirtualizedContainerService.HintSize="484,664" sap2010:WorkflowViewState.IdRef="Sequence_17">
-                                      <sap:WorkflowViewStateService.ViewState>
-                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                        </scg:Dictionary>
-                                      </sap:WorkflowViewStateService.ViewState>
-                                      <w:ReadDropDown DisplayName="Read Additional Header DropDown" sap:VirtualizedContainerService.HintSize="200,22" IN_docWord="[docWord]" IN_strDropDownName="[IN_dictFormFields(&quot;CAdditionalHeader&quot;)]" sap2010:WorkflowViewState.IdRef="ReadDropDown_1" OUT_strOutput="[dictAttachmentFields(&quot;AdditionalHeader&quot;)]" />
-                                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CommentOut_8">
-                                        <ui:CommentOut.Body>
-                                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="526,299" sap2010:WorkflowViewState.IdRef="Sequence_43">
-                                            <sap:WorkflowViewStateService.ViewState>
-                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                              </scg:Dictionary>
-                                            </sap:WorkflowViewStateService.ViewState>
-                                            <If Condition="[dictAttachmentFields(&quot;AdditionalHeader&quot;).Equals(&quot;&quot;)]" DisplayName="If Additional Header is Nothing" sap:VirtualizedContainerService.HintSize="484,207" sap2010:WorkflowViewState.IdRef="If_28">
-                                              <If.Then>
-                                                <Throw Exception="[new BusinessRuleException(&quot;Couldn't read Additional Header from Application form&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_28">
-                                                  <sap:WorkflowViewStateService.ViewState>
-                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                    </scg:Dictionary>
-                                                  </sap:WorkflowViewStateService.ViewState>
-                                                </Throw>
-                                              </If.Then>
-                                            </If>
-                                          </Sequence>
-                                        </ui:CommentOut.Body>
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                      </ui:CommentOut>
-                                      <w:ReadTextFormField DisplayName="Read Additional Details" sap:VirtualizedContainerService.HintSize="200,22" IN_docWord="[docWord]" IN_strFieldName="[IN_dictFormFields(&quot;CAdditionalDetails&quot;)]" sap2010:WorkflowViewState.IdRef="ReadTextFormField_27" OUT_strOutput="[dictAttachmentFields(&quot;AdditionalDetails&quot;)]">
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                      </w:ReadTextFormField>
-                                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CommentOut_9">
-                                        <ui:CommentOut.Body>
-                                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="526,299" sap2010:WorkflowViewState.IdRef="Sequence_44">
-                                            <sap:WorkflowViewStateService.ViewState>
-                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                              </scg:Dictionary>
-                                            </sap:WorkflowViewStateService.ViewState>
-                                            <If Condition="[dictAttachmentFields(&quot;AdditionalDetails&quot;).Equals(&quot;&quot;)]" DisplayName="If Additional Details is Nothing" sap:VirtualizedContainerService.HintSize="484,207" sap2010:WorkflowViewState.IdRef="If_29">
-                                              <If.Then>
-                                                <Throw Exception="[new BusinessRuleException(&quot;Couldn't read Additional Details from Application form&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_29">
-                                                  <sap:WorkflowViewStateService.ViewState>
-                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                    </scg:Dictionary>
-                                                  </sap:WorkflowViewStateService.ViewState>
-                                                </Throw>
-                                              </If.Then>
-                                            </If>
-                                          </Sequence>
-                                        </ui:CommentOut.Body>
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                      </ui:CommentOut>
-                                      <w:ReadTextFormField DisplayName="Read Consignee Name" sap:VirtualizedContainerService.HintSize="200,22" IN_docWord="[docWord]" IN_strFieldName="[IN_dictFormFields(&quot;CConsigneeName&quot;)]" sap2010:WorkflowViewState.IdRef="ReadTextFormField_28" OUT_strOutput="[dictAttachmentFields(&quot;ConsigneeName&quot;)]">
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                      </w:ReadTextFormField>
-                                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CommentOut_10">
-                                        <ui:CommentOut.Body>
-                                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="526,299" sap2010:WorkflowViewState.IdRef="Sequence_45">
-                                            <sap:WorkflowViewStateService.ViewState>
-                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                              </scg:Dictionary>
-                                            </sap:WorkflowViewStateService.ViewState>
-                                            <If Condition="[dictAttachmentFields(&quot;ConsigneeName&quot;).Equals(&quot;&quot;)]" DisplayName="If Consignee Name is Nothing" sap:VirtualizedContainerService.HintSize="484,207" sap2010:WorkflowViewState.IdRef="If_30">
-                                              <If.Then>
-                                                <Throw Exception="[new BusinessRuleException(&quot;Couldn't read Consignee Name from Application form&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_30">
-                                                  <sap:WorkflowViewStateService.ViewState>
-                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                    </scg:Dictionary>
-                                                  </sap:WorkflowViewStateService.ViewState>
-                                                </Throw>
-                                              </If.Then>
-                                            </If>
-                                          </Sequence>
-                                        </ui:CommentOut.Body>
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                      </ui:CommentOut>
-                                      <w:ReadTextFormField DisplayName="Read Destination Country" sap:VirtualizedContainerService.HintSize="200,22" IN_docWord="[docWord]" IN_strFieldName="[IN_dictFormFields(&quot;CDestinationCountry&quot;)]" sap2010:WorkflowViewState.IdRef="ReadTextFormField_48" OUT_strOutput="[dictAttachmentFields(&quot;DestinationCountry&quot;)]">
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                      </w:ReadTextFormField>
-                                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CommentOut_11">
-                                        <ui:CommentOut.Body>
-                                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="526,299" sap2010:WorkflowViewState.IdRef="Sequence_46">
-                                            <sap:WorkflowViewStateService.ViewState>
-                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                              </scg:Dictionary>
-                                            </sap:WorkflowViewStateService.ViewState>
-                                            <If Condition="[dictAttachmentFields(&quot;DestinationCountry&quot;).Equals(&quot;&quot;)]" DisplayName="If Destination Country is Nothing" sap:VirtualizedContainerService.HintSize="484,207" sap2010:WorkflowViewState.IdRef="If_50">
-                                              <If.Then>
-                                                <Throw Exception="[new BusinessRuleException(&quot;Couldn't read Destination Country from Application form&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_50">
-                                                  <sap:WorkflowViewStateService.ViewState>
-                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                    </scg:Dictionary>
-                                                  </sap:WorkflowViewStateService.ViewState>
-                                                </Throw>
-                                              </If.Then>
-                                            </If>
-                                          </Sequence>
-                                        </ui:CommentOut.Body>
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                      </ui:CommentOut>
-                                    </Sequence>
-                                  </Sequence>
-                                </TryCatch.Try>
-                                <TryCatch.Catches>
-                                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_3">
-                                    <sap:WorkflowViewStateService.ViewState>
-                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                      </scg:Dictionary>
-                                    </sap:WorkflowViewStateService.ViewState>
-                                    <ActivityAction x:TypeArguments="s:Exception">
-                                      <ActivityAction.Argument>
-                                        <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-                                      </ActivityAction.Argument>
-                                      <If Condition="[exception.Message.Contains(&quot;thrown by the target of an invocation&quot;)]" DisplayName="If thrown by word activities" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_54">
-                                        <If.Then>
-                                          <Throw Exception="[new BusinessRuleException(&quot;Couldn't read Part C of application form.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_55" />
-                                        </If.Then>
-                                        <If.Else>
-                                          <Rethrow sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Rethrow_3" />
-                                        </If.Else>
-                                      </If>
-                                    </ActivityAction>
-                                  </Catch>
-                                </TryCatch.Catches>
-                              </TryCatch>
-                              <FlowStep.Next>
-                                <FlowDecision x:Name="__ReferenceID51" Condition="[dictAttachmentFields(&quot;CertificateType&quot;).Equals(&quot;Non-Alcohol\MANUFACTURING and FREESALE CERT&quot;) Or dictAttachmentFields(&quot;Dioxin&quot;).ToLower.Equals(&quot;true&quot;)]" DisplayName="Part D?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_15">
+                              <FlowDecision.True>
+                                <FlowDecision x:Name="__ReferenceID43" Condition="[dictAttachmentFields(&quot;CertificateType&quot;).Equals(&quot;Non-Alcohol\MANUFACTURING and FREESALE CERT&quot;) Or dictAttachmentFields(&quot;Dioxin&quot;).ToLower.Equals(&quot;true&quot;)]" DisplayName="Part D?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_15">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                      <av:Point x:Key="ShapeLocation">263.895,608</av:Point>
+                                      <av:Point x:Key="ShapeLocation">263.895,748</av:Point>
                                       <av:Size x:Key="ShapeSize">70,87</av:Size>
-                                      <av:PointCollection x:Key="TrueConnector">263.895,651.5 238.895,651.5 238.895,717 298.895,717 298.895,747</av:PointCollection>
-                                      <av:PointCollection x:Key="FalseConnector">333.895,651.5 428.895,651.5 428.895,891 398.895,891</av:PointCollection>
+                                      <av:PointCollection x:Key="TrueConnector">263.895,791.5 238.895,791.5 238.895,857 298.895,857 298.895,887</av:PointCollection>
+                                      <av:PointCollection x:Key="FalseConnector">333.895,791.5 428.895,791.5 428.895,1031 398.895,1031</av:PointCollection>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                   <FlowDecision.True>
-                                    <FlowStep x:Name="__ReferenceID46">
+                                    <FlowStep x:Name="__ReferenceID47">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <av:Point x:Key="ShapeLocation">198.895,747</av:Point>
+                                          <av:Point x:Key="ShapeLocation">198.895,887</av:Point>
                                           <av:Size x:Key="ShapeSize">200,51</av:Size>
-                                          <av:PointCollection x:Key="ConnectorLocation">298.895,798 298.895,858</av:PointCollection>
+                                          <av:PointCollection x:Key="ConnectorLocation">298.895,938 298.895,998</av:PointCollection>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <TryCatch DisplayName="Try Part D of Form" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+                                      <TryCatch DisplayName="Try Part D of Form" sap:VirtualizedContainerService.HintSize="606,1914" sap2010:WorkflowViewState.IdRef="TryCatch_4">
                                         <TryCatch.Try>
                                           <Sequence DisplayName="Part D of Form" sap:VirtualizedContainerService.HintSize="568,1687" sap2010:WorkflowViewState.IdRef="Sequence_11">
                                             <sap:WorkflowViewStateService.ViewState>
@@ -1785,7 +1515,7 @@
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
                                               </ui:CommentOut>
-                                              <w:ReadTextFormField DisplayName="Read Product Details" sap:VirtualizedContainerService.HintSize="200,22" IN_docWord="[docWord]" IN_strFieldName="[IN_dictFormFields(&quot;ProductDetails&quot;)]" sap2010:WorkflowViewState.IdRef="ReadTextFormField_20" OUT_strOutput="[dictAttachmentFields(&quot;ProductDetails&quot;)]">
+                                              <w:ReadTextFormField DisplayName="Read Product Details" sap:VirtualizedContainerService.HintSize="200,22" IN_docWord="[docWord]" IN_strFieldName="[IN_dictFormFields(&quot;ProductDetails&quot;)]" sap2010:WorkflowViewState.IdRef="ReadTextFormField_20" OUT_strOutput="[dictAttachmentFields(&quot;ProductName&quot;)]">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1897,9 +1627,9 @@
                                         <FlowStep x:Name="__ReferenceID42">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <av:Point x:Key="ShapeLocation">198.895,858</av:Point>
+                                              <av:Point x:Key="ShapeLocation">198.895,998</av:Point>
                                               <av:Size x:Key="ShapeSize">200,66</av:Size>
-                                              <av:PointCollection x:Key="ConnectorLocation">298.895,924 298.895,973</av:PointCollection>
+                                              <av:PointCollection x:Key="ConnectorLocation">298.895,1064 298.895,1113</av:PointCollection>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
                                           <Sequence DisplayName="Validate Part C and/or D" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_41">
@@ -2010,23 +1740,23 @@
                                             </If>
                                           </Sequence>
                                           <FlowStep.Next>
-                                            <FlowDecision x:Name="__ReferenceID50" Condition="[dictAttachmentFields(&quot;CertificateType&quot;).Equals(&quot;ANIMAL MANUFACTURING AND FREESALE&quot;)]" DisplayName="ManFS Animal?" sap:VirtualizedContainerService.HintSize="88,87" sap2010:WorkflowViewState.IdRef="FlowDecision_14">
+                                            <FlowDecision x:Name="__ReferenceID51" Condition="[dictAttachmentFields(&quot;CertificateType&quot;).Equals(&quot;ANIMAL MANUFACTURING AND FREESALE&quot;)]" DisplayName="ManFS Animal?" sap:VirtualizedContainerService.HintSize="88,87" sap2010:WorkflowViewState.IdRef="FlowDecision_14">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                  <av:Point x:Key="ShapeLocation">254.895,973</av:Point>
+                                                  <av:Point x:Key="ShapeLocation">254.895,1113</av:Point>
                                                   <av:Size x:Key="ShapeSize">88,87</av:Size>
-                                                  <av:PointCollection x:Key="TrueConnector">254.895,1016.5 238.895,1016.5 238.895,1087 298.895,1087 298.895,1117</av:PointCollection>
-                                                  <av:PointCollection x:Key="FalseConnector">342.895,1016.5 428.895,1016.5 428.895,1272.5 398.895,1272.5</av:PointCollection>
+                                                  <av:PointCollection x:Key="TrueConnector">254.895,1156.5 238.895,1156.5 238.895,1227 298.895,1227 298.895,1257</av:PointCollection>
+                                                  <av:PointCollection x:Key="FalseConnector">342.895,1156.5 428.895,1156.5 428.895,1412.5 398.895,1412.5</av:PointCollection>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
                                               <FlowDecision.True>
-                                                <FlowStep x:Name="__ReferenceID47">
+                                                <FlowStep x:Name="__ReferenceID48">
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                      <av:Point x:Key="ShapeLocation">198.895,1117</av:Point>
+                                                      <av:Point x:Key="ShapeLocation">198.895,1257</av:Point>
                                                       <av:Size x:Key="ShapeSize">200,51</av:Size>
-                                                      <av:PointCollection x:Key="ConnectorLocation">298.895,1168 298.895,1247</av:PointCollection>
+                                                      <av:PointCollection x:Key="ConnectorLocation">298.895,1308 298.895,1387</av:PointCollection>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
                                                   <TryCatch DisplayName="Try Part E of Form" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_5">
@@ -2086,9 +1816,9 @@
                                                     <FlowStep x:Name="__ReferenceID41">
                                                       <sap:WorkflowViewStateService.ViewState>
                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                          <av:Point x:Key="ShapeLocation">198.895,1247</av:Point>
+                                                          <av:Point x:Key="ShapeLocation">198.895,1387</av:Point>
                                                           <av:Size x:Key="ShapeSize">200,51</av:Size>
-                                                          <av:PointCollection x:Key="ConnectorLocation">298.895,1298 298.895,1363</av:PointCollection>
+                                                          <av:PointCollection x:Key="ConnectorLocation">298.895,1438 298.895,1503</av:PointCollection>
                                                         </scg:Dictionary>
                                                       </sap:WorkflowViewStateService.ViewState>
                                                       <TryCatch DisplayName="Try Part F of Form" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_6">
@@ -2163,12 +1893,12 @@
                                                         </TryCatch.Catches>
                                                       </TryCatch>
                                                       <FlowStep.Next>
-                                                        <FlowStep x:Name="__ReferenceID48">
+                                                        <FlowStep x:Name="__ReferenceID49">
                                                           <sap:WorkflowViewStateService.ViewState>
                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                              <av:Point x:Key="ShapeLocation">198.895,1363</av:Point>
+                                                              <av:Point x:Key="ShapeLocation">198.895,1503</av:Point>
                                                               <av:Size x:Key="ShapeSize">200,51</av:Size>
-                                                              <av:PointCollection x:Key="ConnectorLocation">298.895,1414 298.895,1476.5</av:PointCollection>
+                                                              <av:PointCollection x:Key="ConnectorLocation">298.895,1554 298.895,1616.5</av:PointCollection>
                                                             </scg:Dictionary>
                                                           </sap:WorkflowViewStateService.ViewState>
                                                           <TryCatch DisplayName="Try Part G of Form" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_7">
@@ -2261,10 +1991,10 @@
                                                             </TryCatch.Catches>
                                                           </TryCatch>
                                                           <FlowStep.Next>
-                                                            <FlowStep x:Name="__ReferenceID43">
+                                                            <FlowStep x:Name="__ReferenceID44">
                                                               <sap:WorkflowViewStateService.ViewState>
                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                  <av:Point x:Key="ShapeLocation">198.895,1476.5</av:Point>
+                                                                  <av:Point x:Key="ShapeLocation">198.895,1616.5</av:Point>
                                                                   <av:Size x:Key="ShapeSize">200,22</av:Size>
                                                                 </scg:Dictionary>
                                                               </sap:WorkflowViewStateService.ViewState>
@@ -2296,26 +2026,299 @@
                                     <x:Reference>__ReferenceID42</x:Reference>
                                   </FlowDecision.False>
                                 </FlowDecision>
-                              </FlowStep.Next>
-                            </FlowStep>
+                              </FlowDecision.True>
+                              <FlowDecision.False>
+                                <FlowStep x:Name="__ReferenceID46">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <av:Point x:Key="ShapeLocation">198.895,627</av:Point>
+                                      <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                      <av:PointCollection x:Key="ConnectorLocation">298.895,678 298.895,748</av:PointCollection>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <TryCatch DisplayName="Try Part C of Form" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                                    <TryCatch.Try>
+                                      <Sequence DisplayName="Part C of Form" sap:VirtualizedContainerService.HintSize="526,1310" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <w:ReadTextFormField DisplayName="Read Product Names" sap:VirtualizedContainerService.HintSize="484,22" IN_docWord="[docWord]" IN_strFieldName="[IN_dictFormFields(&quot;ProductName&quot;)]" sap2010:WorkflowViewState.IdRef="ReadTextFormField_11" OUT_strOutput="[dictAttachmentFields(&quot;ProductName&quot;)]">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </w:ReadTextFormField>
+                                        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="CommentOut_7">
+                                          <ui:CommentOut.Body>
+                                            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="526,299" sap2010:WorkflowViewState.IdRef="Sequence_42">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <If Condition="[dictAttachmentFields(&quot;ProductName&quot;).Equals(&quot;&quot;) and IN_boolLoading = False]" DisplayName="If Product Name is Nothing" sap:VirtualizedContainerService.HintSize="484,207" sap2010:WorkflowViewState.IdRef="If_11">
+                                                <If.Then>
+                                                  <Throw Exception="[new BusinessRuleException(&quot;Couldn't read Product Name(s) from Application form&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_11">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                  </Throw>
+                                                </If.Then>
+                                              </If>
+                                            </Sequence>
+                                          </ui:CommentOut.Body>
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </ui:CommentOut>
+                                        <w:ReadCheckBox DisplayName="Read Sep Certificates CheckBox" sap:VirtualizedContainerService.HintSize="484,22" IN_docWord="[docWord]" IN_strCheckboxName="[IN_dictFormFields(&quot;ProductList&quot;)]" sap2010:WorkflowViewState.IdRef="ReadCheckBox_4" OUT_strOutput="[dictAttachmentFields(&quot;SeparateCerts&quot;)]" />
+                                        <If Condition="[dictAttachmentFields(&quot;SeparateCerts&quot;).ToLower.Equals(&quot;true&quot;)]" DisplayName="If sep certs, create array" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_66">
+                                          <If.Then>
+                                            <Assign DisplayName="Assign arrProducts" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_46">
+                                              <Assign.To>
+                                                <OutArgument x:TypeArguments="s:String[]">[OUT_arrProducts]</OutArgument>
+                                              </Assign.To>
+                                              <Assign.Value>
+                                                <InArgument x:TypeArguments="s:String[]">[dictAttachmentFields("ProductName").Split({vbLf}, StringSplitOptions.RemoveEmptyEntries)]</InArgument>
+                                              </Assign.Value>
+                                            </Assign>
+                                          </If.Then>
+                                        </If>
+                                        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="CommentOut_15">
+                                          <ui:CommentOut.Body>
+                                            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="526,299" sap2010:WorkflowViewState.IdRef="Sequence_50">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <If Condition="[dictAttachmentFields(&quot;ProductList&quot;).Equals(&quot;&quot;) and IN_boolLoading = False]" DisplayName="If SepCertificates is Nothing" sap:VirtualizedContainerService.HintSize="484,207" sap2010:WorkflowViewState.IdRef="If_27">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <If.Then>
+                                                  <Throw Exception="[new BusinessRuleException(&quot;Couldn't read Product List Checkbox from Application form&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_27">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                  </Throw>
+                                                </If.Then>
+                                              </If>
+                                            </Sequence>
+                                          </ui:CommentOut.Body>
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </ui:CommentOut>
+                                        <Sequence DisplayName="Trader Declaration" sap:VirtualizedContainerService.HintSize="484,664" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <w:ReadDropDown DisplayName="Read Additional Header DropDown" sap:VirtualizedContainerService.HintSize="200,22" IN_docWord="[docWord]" IN_strDropDownName="[IN_dictFormFields(&quot;CAdditionalHeader&quot;)]" sap2010:WorkflowViewState.IdRef="ReadDropDown_1" OUT_strOutput="[dictAttachmentFields(&quot;AdditionalHeader&quot;)]" />
+                                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CommentOut_8">
+                                            <ui:CommentOut.Body>
+                                              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="526,299" sap2010:WorkflowViewState.IdRef="Sequence_43">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <If Condition="[dictAttachmentFields(&quot;AdditionalHeader&quot;).Equals(&quot;&quot;)]" DisplayName="If Additional Header is Nothing" sap:VirtualizedContainerService.HintSize="484,207" sap2010:WorkflowViewState.IdRef="If_28">
+                                                  <If.Then>
+                                                    <Throw Exception="[new BusinessRuleException(&quot;Couldn't read Additional Header from Application form&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_28">
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                    </Throw>
+                                                  </If.Then>
+                                                </If>
+                                              </Sequence>
+                                            </ui:CommentOut.Body>
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                          </ui:CommentOut>
+                                          <w:ReadTextFormField DisplayName="Read Additional Details" sap:VirtualizedContainerService.HintSize="200,22" IN_docWord="[docWord]" IN_strFieldName="[IN_dictFormFields(&quot;CAdditionalDetails&quot;)]" sap2010:WorkflowViewState.IdRef="ReadTextFormField_27" OUT_strOutput="[dictAttachmentFields(&quot;AdditionalDetails&quot;)]">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                          </w:ReadTextFormField>
+                                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CommentOut_9">
+                                            <ui:CommentOut.Body>
+                                              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="526,299" sap2010:WorkflowViewState.IdRef="Sequence_44">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <If Condition="[dictAttachmentFields(&quot;AdditionalDetails&quot;).Equals(&quot;&quot;)]" DisplayName="If Additional Details is Nothing" sap:VirtualizedContainerService.HintSize="484,207" sap2010:WorkflowViewState.IdRef="If_29">
+                                                  <If.Then>
+                                                    <Throw Exception="[new BusinessRuleException(&quot;Couldn't read Additional Details from Application form&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_29">
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                    </Throw>
+                                                  </If.Then>
+                                                </If>
+                                              </Sequence>
+                                            </ui:CommentOut.Body>
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                          </ui:CommentOut>
+                                          <w:ReadTextFormField DisplayName="Read Consignee Name" sap:VirtualizedContainerService.HintSize="200,22" IN_docWord="[docWord]" IN_strFieldName="[IN_dictFormFields(&quot;CConsigneeName&quot;)]" sap2010:WorkflowViewState.IdRef="ReadTextFormField_28" OUT_strOutput="[dictAttachmentFields(&quot;ConsigneeName&quot;)]">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                          </w:ReadTextFormField>
+                                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CommentOut_10">
+                                            <ui:CommentOut.Body>
+                                              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="526,299" sap2010:WorkflowViewState.IdRef="Sequence_45">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <If Condition="[dictAttachmentFields(&quot;ConsigneeName&quot;).Equals(&quot;&quot;)]" DisplayName="If Consignee Name is Nothing" sap:VirtualizedContainerService.HintSize="484,207" sap2010:WorkflowViewState.IdRef="If_30">
+                                                  <If.Then>
+                                                    <Throw Exception="[new BusinessRuleException(&quot;Couldn't read Consignee Name from Application form&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_30">
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                    </Throw>
+                                                  </If.Then>
+                                                </If>
+                                              </Sequence>
+                                            </ui:CommentOut.Body>
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                          </ui:CommentOut>
+                                          <w:ReadTextFormField DisplayName="Read Destination Country" sap:VirtualizedContainerService.HintSize="200,22" IN_docWord="[docWord]" IN_strFieldName="[IN_dictFormFields(&quot;CDestinationCountry&quot;)]" sap2010:WorkflowViewState.IdRef="ReadTextFormField_48" OUT_strOutput="[dictAttachmentFields(&quot;DestinationCountry&quot;)]">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                          </w:ReadTextFormField>
+                                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CommentOut_11">
+                                            <ui:CommentOut.Body>
+                                              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="526,299" sap2010:WorkflowViewState.IdRef="Sequence_46">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <If Condition="[dictAttachmentFields(&quot;DestinationCountry&quot;).Equals(&quot;&quot;)]" DisplayName="If Destination Country is Nothing" sap:VirtualizedContainerService.HintSize="484,207" sap2010:WorkflowViewState.IdRef="If_50">
+                                                  <If.Then>
+                                                    <Throw Exception="[new BusinessRuleException(&quot;Couldn't read Destination Country from Application form&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_50">
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                    </Throw>
+                                                  </If.Then>
+                                                </If>
+                                              </Sequence>
+                                            </ui:CommentOut.Body>
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                          </ui:CommentOut>
+                                        </Sequence>
+                                      </Sequence>
+                                    </TryCatch.Try>
+                                    <TryCatch.Catches>
+                                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <ActivityAction x:TypeArguments="s:Exception">
+                                          <ActivityAction.Argument>
+                                            <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                          </ActivityAction.Argument>
+                                          <If Condition="[exception.Message.Contains(&quot;thrown by the target of an invocation&quot;)]" DisplayName="If thrown by word activities" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_54">
+                                            <If.Then>
+                                              <Throw Exception="[new BusinessRuleException(&quot;Couldn't read Part C of application form.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_55" />
+                                            </If.Then>
+                                            <If.Else>
+                                              <Rethrow sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Rethrow_3" />
+                                            </If.Else>
+                                          </If>
+                                        </ActivityAction>
+                                      </Catch>
+                                    </TryCatch.Catches>
+                                  </TryCatch>
+                                  <FlowStep.Next>
+                                    <x:Reference>__ReferenceID43</x:Reference>
+                                  </FlowStep.Next>
+                                </FlowStep>
+                              </FlowDecision.False>
+                            </FlowDecision>
                           </FlowStep.Next>
                         </FlowStep>
                       </FlowStep.Next>
                     </FlowStep>
                   </FlowStep.Next>
                 </FlowStep>
-                <x:Reference>__ReferenceID43</x:Reference>
                 <x:Reference>__ReferenceID44</x:Reference>
                 <x:Reference>__ReferenceID45</x:Reference>
                 <x:Reference>__ReferenceID46</x:Reference>
                 <x:Reference>__ReferenceID47</x:Reference>
-                <x:Reference>__ReferenceID41</x:Reference>
                 <x:Reference>__ReferenceID48</x:Reference>
+                <x:Reference>__ReferenceID41</x:Reference>
                 <x:Reference>__ReferenceID49</x:Reference>
                 <x:Reference>__ReferenceID50</x:Reference>
                 <x:Reference>__ReferenceID51</x:Reference>
+                <x:Reference>__ReferenceID43</x:Reference>
                 <x:Reference>__ReferenceID42</x:Reference>
-                <FlowStep x:Name="__ReferenceID53">
+                <FlowStep x:Name="__ReferenceID54">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:Point x:Key="ShapeLocation">200,107</av:Point>
@@ -2422,9 +2425,10 @@
                     <x:Reference>__ReferenceID52</x:Reference>
                   </FlowStep.Next>
                 </FlowStep>
+                <x:Reference>__ReferenceID53</x:Reference>
               </Flowchart>
               <FlowStep.Next>
-                <FlowStep x:Name="__ReferenceID56">
+                <FlowStep x:Name="__ReferenceID57">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:Point x:Key="ShapeLocation">200,439.08</av:Point>
@@ -2448,7 +2452,7 @@
                     </Assign>
                   </Sequence>
                   <FlowStep.Next>
-                    <x:Reference>__ReferenceID54</x:Reference>
+                    <x:Reference>__ReferenceID55</x:Reference>
                   </FlowStep.Next>
                 </FlowStep>
               </FlowStep.Next>
@@ -2457,8 +2461,8 @@
         </FlowStep>
       </FlowStep.Next>
     </FlowStep>
-    <x:Reference>__ReferenceID55</x:Reference>
     <x:Reference>__ReferenceID56</x:Reference>
     <x:Reference>__ReferenceID57</x:Reference>
+    <x:Reference>__ReferenceID58</x:Reference>
   </Flowchart>
 </Activity>

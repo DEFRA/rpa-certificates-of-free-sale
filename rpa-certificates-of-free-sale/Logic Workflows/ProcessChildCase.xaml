@@ -220,33 +220,15 @@
                         </sap:WorkflowViewStateService.ViewState>
                         <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke EnterCertificateDetails" sap:VirtualizedContainerService.HintSize="349,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" UnSafe="False" WorkflowFileName="Data Workflows\Word\EnterCertificateDetails.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
-                            <InArgument x:TypeArguments="x:String" x:Key="IN_strCertificatePath">
-                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strCertificatePath" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" x:Key="IN_dictConfig">
-                              <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" ExpressionText="IN_dictConfig" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="IN_dictAttachmentFields">
-                              <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:String)" ExpressionText="dictAttachmentFields" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="x:Boolean" x:Key="IN_boolSpanishCertificate">
-                              <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="boolSpanishCertificate" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="IN_strReferenceNumber">
-                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="IN_strReferenceNumber" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="s:String[]" x:Key="IN_arrProducts">
-                              <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="arrProducts" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="x:Int32" x:Key="IN_intProductCounter">
-                              <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intProductCounter" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="x:Boolean" x:Key="IN_boolDioxinInProgress">
-                              <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="boolDioxinInProgress" />
-                            </InArgument>
-                            <OutArgument x:TypeArguments="x:Boolean" x:Key="OUT_boolDioxinCompleted">
-                              <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="boolDioxinCompleted" />
-                            </OutArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="IN_strCertificatePath">[strCertificatePath]</InArgument>
+                            <InArgument x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" x:Key="IN_dictConfig">[IN_dictConfig]</InArgument>
+                            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="IN_dictAttachmentFields">[dictAttachmentFields]</InArgument>
+                            <InArgument x:TypeArguments="x:Boolean" x:Key="IN_boolSpanishCertificate">[boolSpanishCertificate]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="IN_strReferenceNumber">[IN_strReferenceNumber]</InArgument>
+                            <InArgument x:TypeArguments="s:String[]" x:Key="IN_arrProducts">[arrProducts]</InArgument>
+                            <InArgument x:TypeArguments="x:Int32" x:Key="IN_intProductCounter">[intProductCounter]</InArgument>
+                            <InArgument x:TypeArguments="x:Boolean" x:Key="IN_boolDioxinInProgress">[boolDioxinInProgress]</InArgument>
+                            <OutArgument x:TypeArguments="x:Boolean" x:Key="OUT_boolDioxinCompleted">[boolDioxinCompleted]</OutArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -330,10 +312,7 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <FlowDecision.True>
-                                <FlowDecision x:Name="__ReferenceID5" DisplayName="Dioxin?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_46">
-                                  <FlowDecision.Condition>
-                                    <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="dictAttachmentFields(&quot;Dioxin&quot;).ToLower.Equals(&quot;true&quot;) and boolDioxinCompleted = False" />
-                                  </FlowDecision.Condition>
+                                <FlowDecision x:Name="__ReferenceID5" Condition="[dictAttachmentFields(&quot;Dioxin&quot;).ToLower.Equals(&quot;true&quot;) and boolDioxinCompleted = False]" DisplayName="Dioxin?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_46">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -366,7 +345,7 @@
                                             <InArgument x:TypeArguments="x:String">[IN_strWorkingFolderPath + IN_strReferenceNumber + " - " + OUT_intCertificateCounter.ToString + ".doc"]</InArgument>
                                           </Assign.Value>
                                         </Assign>
-                                        <ui:MoveFile ContinueOnError="{x:Null}" Destination="[strCertificatePath]" DisplayName="Move File - template to working folder" sap:VirtualizedContainerService.HintSize="384,157" sap2010:WorkflowViewState.IdRef="MoveFile_9" Overwrite="False" Path="[strTemplatePath.Replace(dictAttachmentFields(&quot;CertificateType&quot;), &quot;DIOXIN&quot;)]" />
+                                        <ui:CopyFile ContinueOnError="{x:Null}" Destination="[strCertificatePath]" DisplayName="Copy File - template to working folder" sap:VirtualizedContainerService.HintSize="384,157" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="False" Path="[strTemplatePath.Replace(dictAttachmentFields(&quot;CertificateType&quot;), &quot;DIOXIN&quot;)]" />
                                         <Assign DisplayName="Assign - dioxin in progress" sap:VirtualizedContainerService.HintSize="384,60" sap2010:WorkflowViewState.IdRef="Assign_70">
                                           <Assign.To>
                                             <OutArgument x:TypeArguments="x:Boolean">[boolDioxinInProgress]</OutArgument>
@@ -579,7 +558,7 @@
                                               <av:PointCollection x:Key="ConnectorLocation">630,2653 630,2696.5</av:PointCollection>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <Sequence DisplayName="Certificate Format Check Logic" sap:VirtualizedContainerService.HintSize="755,332" sap2010:WorkflowViewState.IdRef="Sequence_43">
+                                          <Sequence DisplayName="Certificate Format Check Logic" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_43">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -642,21 +621,11 @@
                                                         </sap:WorkflowViewStateService.ViewState>
                                                         <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke MoveCertificateToBePrinted" sap:VirtualizedContainerService.HintSize="379,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" UnSafe="False" WorkflowFileName="Data Workflows\FileExplorer\MoveCertificateToBePrinted.xaml">
                                                           <ui:InvokeWorkflowFile.Arguments>
-                                                            <InArgument x:TypeArguments="x:String" x:Key="IN_strCertificatePath">
-                                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strCertificatePath" />
-                                                            </InArgument>
-                                                            <InArgument x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" x:Key="IN_dictConfig">
-                                                              <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" ExpressionText="IN_dictConfig" />
-                                                            </InArgument>
-                                                            <InArgument x:TypeArguments="x:String" x:Key="IN_strWorkingFolder">
-                                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="IN_strWorkingFolderPath" />
-                                                            </InArgument>
-                                                            <InArgument x:TypeArguments="x:String" x:Key="IN_strReferenceNumber">
-                                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="IN_strReferenceNumber" />
-                                                            </InArgument>
-                                                            <InArgument x:TypeArguments="x:String" x:Key="IN_strCaseFilePath">
-                                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="IN_strCaseFilePath" />
-                                                            </InArgument>
+                                                            <InArgument x:TypeArguments="x:String" x:Key="IN_strCertificatePath">[strCertificatePath]</InArgument>
+                                                            <InArgument x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" x:Key="IN_dictConfig">[IN_dictConfig]</InArgument>
+                                                            <InArgument x:TypeArguments="x:String" x:Key="IN_strWorkingFolder">[IN_strWorkingFolderPath]</InArgument>
+                                                            <InArgument x:TypeArguments="x:String" x:Key="IN_strReferenceNumber">[IN_strReferenceNumber]</InArgument>
+                                                            <InArgument x:TypeArguments="x:String" x:Key="IN_strCaseFilePath">[IN_strCaseFilePath]</InArgument>
                                                           </ui:InvokeWorkflowFile.Arguments>
                                                           <sap:WorkflowViewStateService.ViewState>
                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -998,7 +967,7 @@
                                         <InArgument x:TypeArguments="x:String">[IN_strWorkingFolderPath + IN_strReferenceNumber + " - " + OUT_intCertificateCounter.ToString + ".doc"]</InArgument>
                                       </Assign.Value>
                                     </Assign>
-                                    <ui:MoveFile ContinueOnError="{x:Null}" Destination="[strCertificatePath]" DisplayName="Move File - template to working folder" sap:VirtualizedContainerService.HintSize="384,157" sap2010:WorkflowViewState.IdRef="MoveFile_8" Overwrite="False" Path="[strTemplatePath]" />
+                                    <ui:CopyFile ContinueOnError="{x:Null}" Destination="[strCertificatePath]" DisplayName="Copy File - template to working folder" sap:VirtualizedContainerService.HintSize="384,157" sap2010:WorkflowViewState.IdRef="CopyFile_2" Overwrite="False" Path="[strTemplatePath]" />
                                     <Assign DisplayName="Assign OUT_intCertificateCounter" sap:VirtualizedContainerService.HintSize="384,60" sap2010:WorkflowViewState.IdRef="Assign_64">
                                       <Assign.To>
                                         <OutArgument x:TypeArguments="x:Int32">[OUT_intCertificateCounter]</OutArgument>
