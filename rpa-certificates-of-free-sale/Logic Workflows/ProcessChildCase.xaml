@@ -16,7 +16,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1794,830</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1240,744</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessChildCase_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="23">
@@ -46,7 +46,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="48">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="25">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -558,12 +558,36 @@
                                               <av:PointCollection x:Key="ConnectorLocation">630,2653 630,2696.5</av:PointCollection>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <Sequence DisplayName="Certificate Format Check Logic" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_43">
+                                          <Sequence DisplayName="Certificate Format Check Logic" sap:VirtualizedContainerService.HintSize="755,601" sap2010:WorkflowViewState.IdRef="Sequence_43">
+                                            <Sequence.Variables>
+                                              <Variable x:TypeArguments="ui:Window" Name="appFileExplorer" />
+                                            </Sequence.Variables>
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
+                                            <ui:OpenApplication FileName="{x:Null}" TimeoutMS="{x:Null}" WorkingDirectory="{x:Null}" ApplicationWindow="[appFileExplorer]" Arguments="[Environment.GetEnvironmentVariable(&quot;USERPROFILE&quot;) + IN_dictConfig(&quot;RobotWorkingFolder&quot;)]" DisplayName="Open RobotWorkingFolder" sap:VirtualizedContainerService.HintSize="713,229" sap2010:WorkflowViewState.IdRef="OpenApplication_1" InformativeScreenshot="dfea944301b7053c6fd1b722053e5ae5" Selector="&lt;wnd app='explorer.exe' /&gt;">
+                                              <ui:OpenApplication.Body>
+                                                <ActivityAction x:TypeArguments="x:Object">
+                                                  <ActivityAction.Argument>
+                                                    <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                                                  </ActivityAction.Argument>
+                                                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="200,83" sap2010:WorkflowViewState.IdRef="Sequence_54">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                  </Sequence>
+                                                </ActivityAction>
+                                              </ui:OpenApplication.Body>
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                            </ui:OpenApplication>
                                             <If Condition="[dictAttachmentFields(&quot;PostalCompAddress&quot;).Equals(&quot;&quot;)]" DisplayName="If Postal Address" sap:VirtualizedContainerService.HintSize="713,240" sap2010:WorkflowViewState.IdRef="If_2">
                                               <If.Then>
                                                 <ui:InputDialog DisplayName="Format &amp; Address Check - Ask User" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="InputDialog_8" IsPassword="False" Label="[&quot;Please check the certificate(s) and it's formatting.&quot; + Environment.NewLine + &quot;If you would like to make any changes please make them now and save the document(s). &quot; + Environment.NewLine + Environment.NewLine + &quot;The address found is: &quot; + Environment.NewLine + dictAttachmentFields(&quot;CompanyAddress&quot;) + Environment.NewLine + &quot;If this is correct for the address label then click 'yes' to continue.&quot;]" Options="[{&quot;Yes&quot;, &quot;No&quot;}]" Title="Certificate Format &amp; Address Check">

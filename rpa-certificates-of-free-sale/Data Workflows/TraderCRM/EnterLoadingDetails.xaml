@@ -40,7 +40,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="22">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="44">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -63,6 +63,7 @@
       <AssemblyReference>UiPath.CV</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Word</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Flowchart DisplayName="EnterLoadingDetails" sap:VirtualizedContainerService.HintSize="634,636" sap2010:WorkflowViewState.IdRef="Flowchart_1">
@@ -78,9 +79,9 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID43</x:Reference>
+      <x:Reference>__ReferenceID45</x:Reference>
     </Flowchart.StartNode>
-    <FlowStep x:Name="__ReferenceID41">
+    <FlowStep x:Name="__ReferenceID43">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">200,377</av:Point>
@@ -96,7 +97,7 @@
         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;Ending Workflow - &quot; + strWorkflowName]" />
       </Sequence>
     </FlowStep>
-    <FlowStep x:Name="__ReferenceID42">
+    <FlowStep x:Name="__ReferenceID44">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">200,263.5</av:Point>
@@ -129,7 +130,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <Flowchart.StartNode>
-          <x:Reference>__ReferenceID40</x:Reference>
+          <x:Reference>__ReferenceID42</x:Reference>
         </Flowchart.StartNode>
         <FlowStep x:Name="__ReferenceID11">
           <sap:WorkflowViewStateService.ViewState>
@@ -163,7 +164,7 @@
                 </sap:WorkflowViewStateService.ViewState>
               </tce:InputOrganisation>
               <FlowStep.Next>
-                <FlowStep x:Name="__ReferenceID36">
+                <FlowStep x:Name="__ReferenceID35">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:Point x:Key="ShapeLocation">290,451</av:Point>
@@ -185,7 +186,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <av:Point x:Key="ShapeLocation">344,523</av:Point>
                           <av:Size x:Key="ShapeSize">92,87</av:Size>
-                          <av:PointCollection x:Key="FalseConnector">436,566.5 526,566.5</av:PointCollection>
+                          <av:PointCollection x:Key="FalseConnector">436,566.5 466,566.5 466,536.5 986,536.5 986,645.5</av:PointCollection>
                           <av:PointCollection x:Key="TrueConnector">344,566.5 330,566.5 330,639 390,639 390,669</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
@@ -233,7 +234,7 @@
                                     </sap:WorkflowViewStateService.ViewState>
                                   </tce:CheckOrderNumberSelected>
                                   <FlowStep.Next>
-                                    <FlowDecision x:Name="__ReferenceID16" Condition="[boolOrderNumberExists]" DisplayName="Order Number In?" sap:VirtualizedContainerService.HintSize="101,87" sap2010:WorkflowViewState.IdRef="FlowDecision_5">
+                                    <FlowDecision x:Name="__ReferenceID15" Condition="[boolOrderNumberExists]" DisplayName="Order Number In?" sap:VirtualizedContainerService.HintSize="101,87" sap2010:WorkflowViewState.IdRef="FlowDecision_5">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -244,7 +245,7 @@
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
                                       <FlowDecision.True>
-                                        <FlowStep x:Name="__ReferenceID25">
+                                        <FlowStep x:Name="__ReferenceID24">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <av:Point x:Key="ShapeLocation">170,1369</av:Point>
@@ -276,7 +277,7 @@
                                                 </sap:WorkflowViewStateService.ViewState>
                                               </tce:InputOrderNumber>
                                               <FlowStep.Next>
-                                                <FlowStep x:Name="__ReferenceID24">
+                                                <FlowStep x:Name="__ReferenceID23">
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                       <av:Point x:Key="ShapeLocation">300,1523</av:Point>
@@ -292,7 +293,7 @@
                                                     </sap:WorkflowViewStateService.ViewState>
                                                   </tce:CheckOrderNumberSelected>
                                                   <FlowStep.Next>
-                                                    <FlowDecision x:Name="__ReferenceID18" Condition="[boolOrderNumberExists]" DisplayName="Order Number In?" sap:VirtualizedContainerService.HintSize="101,87" sap2010:WorkflowViewState.IdRef="FlowDecision_4">
+                                                    <FlowDecision x:Name="__ReferenceID17" Condition="[boolOrderNumberExists]" DisplayName="Order Number In?" sap:VirtualizedContainerService.HintSize="101,87" sap2010:WorkflowViewState.IdRef="FlowDecision_4">
                                                       <sap:WorkflowViewStateService.ViewState>
                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -335,7 +336,7 @@
                                                                 </sap:WorkflowViewStateService.ViewState>
                                                               </tce:CheckDateEntered>
                                                               <FlowStep.Next>
-                                                                <FlowDecision x:Name="__ReferenceID19" Condition="[boolDateEntered]" DisplayName="Date In?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
+                                                                <FlowDecision x:Name="__ReferenceID18" Condition="[boolDateEntered]" DisplayName="Date In?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
                                                                   <sap:WorkflowViewStateService.ViewState>
                                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -378,7 +379,7 @@
                                                                             </sap:WorkflowViewStateService.ViewState>
                                                                           </tce:CheckTimeEntered>
                                                                           <FlowStep.Next>
-                                                                            <FlowDecision x:Name="__ReferenceID20" Condition="[boolTimeEntered]" DisplayName="Time In?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
+                                                                            <FlowDecision x:Name="__ReferenceID19" Condition="[boolTimeEntered]" DisplayName="Time In?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
                                                                               <sap:WorkflowViewStateService.ViewState>
                                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -389,7 +390,7 @@
                                                                                 </scg:Dictionary>
                                                                               </sap:WorkflowViewStateService.ViewState>
                                                                               <FlowDecision.True>
-                                                                                <FlowStep x:Name="__ReferenceID26">
+                                                                                <FlowStep x:Name="__ReferenceID25">
                                                                                   <sap:WorkflowViewStateService.ViewState>
                                                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                       <av:Point x:Key="ShapeLocation">310,2329</av:Point>
@@ -405,7 +406,7 @@
                                                                                     </sap:WorkflowViewStateService.ViewState>
                                                                                   </tce:InputCountry>
                                                                                   <FlowStep.Next>
-                                                                                    <FlowStep x:Name="__ReferenceID27">
+                                                                                    <FlowStep x:Name="__ReferenceID26">
                                                                                       <sap:WorkflowViewStateService.ViewState>
                                                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                           <av:Point x:Key="ShapeLocation">310,2391</av:Point>
@@ -421,7 +422,7 @@
                                                                                         </sap:WorkflowViewStateService.ViewState>
                                                                                       </tce:CheckCountryEntered>
                                                                                       <FlowStep.Next>
-                                                                                        <FlowDecision x:Name="__ReferenceID28" Condition="[boolCountryEntered]" DisplayName="Country In?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_10">
+                                                                                        <FlowDecision x:Name="__ReferenceID27" Condition="[boolCountryEntered]" DisplayName="Country In?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_10">
                                                                                           <sap:WorkflowViewStateService.ViewState>
                                                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -432,7 +433,7 @@
                                                                                             </scg:Dictionary>
                                                                                           </sap:WorkflowViewStateService.ViewState>
                                                                                           <FlowDecision.True>
-                                                                                            <FlowDecision x:Name="__ReferenceID30" Condition="[IN_dictConfig(&quot;boolSupervision&quot;) = false and IN_dictConfig(&quot;boolControlPoint1&quot;) = false]" DisplayName="Breakpoint 1?" sap:VirtualizedContainerService.HintSize="77,87" sap2010:WorkflowViewState.IdRef="FlowDecision_11">
+                                                                                            <FlowDecision x:Name="__ReferenceID29" Condition="[IN_dictConfig(&quot;boolSupervision&quot;) = false and IN_dictConfig(&quot;boolControlPoint1&quot;) = false]" DisplayName="Breakpoint 1?" sap:VirtualizedContainerService.HintSize="77,87" sap2010:WorkflowViewState.IdRef="FlowDecision_11">
                                                                                               <sap:WorkflowViewStateService.ViewState>
                                                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -513,7 +514,7 @@
                                                                                                     </TryCatch.Catches>
                                                                                                   </TryCatch>
                                                                                                   <FlowStep.Next>
-                                                                                                    <FlowDecision x:Name="__ReferenceID31" Condition="[exceptionCurrent is Nothing]" DisplayName="Continue?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_16">
+                                                                                                    <FlowDecision x:Name="__ReferenceID30" Condition="[exceptionCurrent is Nothing]" DisplayName="Continue?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_16">
                                                                                                       <sap:WorkflowViewStateService.ViewState>
                                                                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -523,7 +524,7 @@
                                                                                                         </scg:Dictionary>
                                                                                                       </sap:WorkflowViewStateService.ViewState>
                                                                                                       <FlowDecision.False>
-                                                                                                        <FlowDecision x:Name="__ReferenceID32" Condition="[intRetryCounter &lt; 3]" DisplayName="Retry?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_15">
+                                                                                                        <FlowDecision x:Name="__ReferenceID31" Condition="[intRetryCounter &lt; 3]" DisplayName="Retry?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_15">
                                                                                                           <sap:WorkflowViewStateService.ViewState>
                                                                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -534,7 +535,7 @@
                                                                                                             </scg:Dictionary>
                                                                                                           </sap:WorkflowViewStateService.ViewState>
                                                                                                           <FlowDecision.True>
-                                                                                                            <FlowStep x:Name="__ReferenceID33">
+                                                                                                            <FlowStep x:Name="__ReferenceID32">
                                                                                                               <sap:WorkflowViewStateService.ViewState>
                                                                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                                                   <av:Point x:Key="ShapeLocation">620,3087</av:Point>
@@ -563,7 +564,7 @@
                                                                                                             </FlowStep>
                                                                                                           </FlowDecision.True>
                                                                                                           <FlowDecision.False>
-                                                                                                            <FlowStep x:Name="__ReferenceID34">
+                                                                                                            <FlowStep x:Name="__ReferenceID33">
                                                                                                               <sap:WorkflowViewStateService.ViewState>
                                                                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                                                   <av:Point x:Key="ShapeLocation">1050,3109</av:Point>
@@ -586,7 +587,7 @@
                                                                                                 </FlowStep>
                                                                                               </FlowDecision.True>
                                                                                               <FlowDecision.False>
-                                                                                                <FlowStep x:Name="__ReferenceID39">
+                                                                                                <FlowStep x:Name="__ReferenceID38">
                                                                                                   <sap:WorkflowViewStateService.ViewState>
                                                                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                                       <av:Point x:Key="ShapeLocation">310,2787</av:Point>
@@ -612,7 +613,7 @@
                                                                                                     </ui:InputDialog>
                                                                                                   </Sequence>
                                                                                                   <FlowStep.Next>
-                                                                                                    <FlowDecision x:Name="__ReferenceID38" Condition="[strContinue.ToLower = &quot;yes&quot;]" DisplayName="Continue?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_17" True="{x:Reference __ReferenceID0}">
+                                                                                                    <FlowDecision x:Name="__ReferenceID37" Condition="[strContinue.ToLower = &quot;yes&quot;]" DisplayName="Continue?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_17" True="{x:Reference __ReferenceID0}">
                                                                                                       <sap:WorkflowViewStateService.ViewState>
                                                                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -623,7 +624,7 @@
                                                                                                         </scg:Dictionary>
                                                                                                       </sap:WorkflowViewStateService.ViewState>
                                                                                                       <FlowDecision.False>
-                                                                                                        <FlowStep x:Name="__ReferenceID37">
+                                                                                                        <FlowStep x:Name="__ReferenceID36">
                                                                                                           <sap:WorkflowViewStateService.ViewState>
                                                                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                                               <av:Point x:Key="ShapeLocation">535,2923.5</av:Point>
@@ -669,7 +670,7 @@
                                                                                             </FlowDecision>
                                                                                           </FlowDecision.True>
                                                                                           <FlowDecision.False>
-                                                                                            <FlowStep x:Name="__ReferenceID29">
+                                                                                            <FlowStep x:Name="__ReferenceID28">
                                                                                               <sap:WorkflowViewStateService.ViewState>
                                                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                                   <av:Point x:Key="ShapeLocation">555,2495.5</av:Point>
@@ -692,7 +693,7 @@
                                                                                 </FlowStep>
                                                                               </FlowDecision.True>
                                                                               <FlowDecision.False>
-                                                                                <FlowStep x:Name="__ReferenceID23">
+                                                                                <FlowStep x:Name="__ReferenceID22">
                                                                                   <sap:WorkflowViewStateService.ViewState>
                                                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                       <av:Point x:Key="ShapeLocation">555,2205.5</av:Point>
@@ -715,7 +716,7 @@
                                                                     </FlowStep>
                                                                   </FlowDecision.True>
                                                                   <FlowDecision.False>
-                                                                    <FlowStep x:Name="__ReferenceID22">
+                                                                    <FlowStep x:Name="__ReferenceID21">
                                                                       <sap:WorkflowViewStateService.ViewState>
                                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                           <av:Point x:Key="ShapeLocation">555,1925.5</av:Point>
@@ -738,7 +739,7 @@
                                                         </FlowStep>
                                                       </FlowDecision.True>
                                                       <FlowDecision.False>
-                                                        <FlowStep x:Name="__ReferenceID21">
+                                                        <FlowStep x:Name="__ReferenceID20">
                                                           <sap:WorkflowViewStateService.ViewState>
                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                               <av:Point x:Key="ShapeLocation">550.5,1627.5</av:Point>
@@ -802,7 +803,7 @@
                                         </sap:WorkflowViewStateService.ViewState>
                                       </tce:CheckContactSelected>
                                       <FlowStep.Next>
-                                        <FlowDecision x:Name="__ReferenceID15" Condition="[boolContactExists]" DisplayName="Contact In?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_6" True="{x:Reference __ReferenceID2}">
+                                        <FlowDecision x:Name="__ReferenceID14" Condition="[boolContactExists]" DisplayName="Contact In?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_6" True="{x:Reference __ReferenceID2}">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -813,7 +814,7 @@
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
                                           <FlowDecision.False>
-                                            <FlowStep x:Name="__ReferenceID17">
+                                            <FlowStep x:Name="__ReferenceID16">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <av:Point x:Key="ShapeLocation">525,1065.5</av:Point>
@@ -840,14 +841,14 @@
                         </FlowStep>
                       </FlowDecision.True>
                       <FlowDecision.False>
-                        <FlowStep x:Name="__ReferenceID14">
+                        <FlowStep x:Name="__ReferenceID39">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <av:Point x:Key="ShapeLocation">526,555.5</av:Point>
+                              <av:Point x:Key="ShapeLocation">886,645.5</av:Point>
                               <av:Size x:Key="ShapeSize">200,22</av:Size>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Throw Exception="[New BusinessRuleException(&quot;Couldn't enter Organisation in to CRM&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_6">
+                          <Throw Exception="[New BusinessRuleException(&quot;Couldn't enter Organisation in to CRM&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_12">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -872,7 +873,7 @@
         <x:Reference>__ReferenceID8</x:Reference>
         <x:Reference>__ReferenceID9</x:Reference>
         <x:Reference>__ReferenceID10</x:Reference>
-        <FlowDecision x:Name="__ReferenceID35" Condition="[boolOrganisationExists]" DisplayName="Organisation In?" sap:VirtualizedContainerService.HintSize="92,87" sap2010:WorkflowViewState.IdRef="FlowDecision_9" True="{x:Reference __ReferenceID11}" False="{x:Reference __ReferenceID3}">
+        <FlowDecision x:Name="__ReferenceID34" Condition="[boolOrganisationExists]" DisplayName="Organisation In?" sap:VirtualizedContainerService.HintSize="92,87" sap2010:WorkflowViewState.IdRef="FlowDecision_9" True="{x:Reference __ReferenceID11}" False="{x:Reference __ReferenceID3}">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -894,15 +895,14 @@
         <x:Reference>__ReferenceID20</x:Reference>
         <x:Reference>__ReferenceID21</x:Reference>
         <x:Reference>__ReferenceID22</x:Reference>
-        <x:Reference>__ReferenceID23</x:Reference>
         <x:Reference>__ReferenceID2</x:Reference>
+        <x:Reference>__ReferenceID23</x:Reference>
         <x:Reference>__ReferenceID24</x:Reference>
         <x:Reference>__ReferenceID25</x:Reference>
         <x:Reference>__ReferenceID26</x:Reference>
         <x:Reference>__ReferenceID27</x:Reference>
         <x:Reference>__ReferenceID28</x:Reference>
         <x:Reference>__ReferenceID29</x:Reference>
-        <x:Reference>__ReferenceID30</x:Reference>
         <FlowStep>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -919,11 +919,11 @@
           </r:Breakpoint>
         </FlowStep>
         <x:Reference>__ReferenceID0</x:Reference>
+        <x:Reference>__ReferenceID30</x:Reference>
         <x:Reference>__ReferenceID31</x:Reference>
         <x:Reference>__ReferenceID32</x:Reference>
         <x:Reference>__ReferenceID33</x:Reference>
-        <x:Reference>__ReferenceID34</x:Reference>
-        <FlowStep x:Name="__ReferenceID40">
+        <FlowStep x:Name="__ReferenceID42">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">280,127.5</av:Point>
@@ -939,19 +939,95 @@
             </sap:WorkflowViewStateService.ViewState>
           </tce:CheckOrganisationEntered>
           <FlowStep.Next>
-            <x:Reference>__ReferenceID35</x:Reference>
+            <x:Reference>__ReferenceID34</x:Reference>
           </FlowStep.Next>
         </FlowStep>
+        <x:Reference>__ReferenceID35</x:Reference>
         <x:Reference>__ReferenceID36</x:Reference>
         <x:Reference>__ReferenceID37</x:Reference>
         <x:Reference>__ReferenceID38</x:Reference>
         <x:Reference>__ReferenceID39</x:Reference>
+        <FlowDecision x:Name="__ReferenceID40" Condition="[boolOrganisationExists]" DisplayName="Organisation In?" sap:VirtualizedContainerService.HintSize="92,87" sap2010:WorkflowViewState.IdRef="FlowDecision_18" True="{x:Reference __ReferenceID4}" False="{x:Reference __ReferenceID39}">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <av:Point x:Key="ShapeLocation">704,613</av:Point>
+              <av:Size x:Key="ShapeSize">92,87</av:Size>
+              <av:PointCollection x:Key="FalseConnector">796,656.5 886,656.5</av:PointCollection>
+              <av:PointCollection x:Key="TrueConnector">704,656.5 390,656.5 390,669</av:PointCollection>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </FlowDecision>
+        <FlowStep x:Name="__ReferenceID41">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:Point x:Key="ShapeLocation">650,571</av:Point>
+              <av:Size x:Key="ShapeSize">200,22</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">750,593 750,613</av:PointCollection>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <tce:CheckOrganisationEntered sap:VirtualizedContainerService.HintSize="200,22" IN_browserCRM="[IN_browserCRM]" IN_intTimeOut="[IN_dictConfig(&quot;timeoutS&quot;)]" sap2010:WorkflowViewState.IdRef="CheckOrganisationEntered_3" OUT_boolOrganisationExists="[boolOrganisationExists]">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </tce:CheckOrganisationEntered>
+          <FlowStep.Next>
+            <x:Reference>__ReferenceID40</x:Reference>
+          </FlowStep.Next>
+        </FlowStep>
+        <FlowStep>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:Point x:Key="ShapeLocation">650,371.08</av:Point>
+              <av:Size x:Key="ShapeSize">200,66</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">750,437.08 750,571</av:PointCollection>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Sequence DisplayName="Try match organisation again" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_7">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <If Condition="[IN_dictAttachmentFields(&quot;PostalCompPostcode&quot;).Equals(&quot;&quot;)]" DisplayName="If postal postcode is nothing" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_1">
+              <If.Else>
+                <tce:InputOrganisation DisplayName="InputOrganisation - postal" sap:VirtualizedContainerService.HintSize="200,22" IN_browserCRM="[IN_browserCRM]" IN_strOrganisation="[IN_dictAttachmentFields(&quot;OrganisationName&quot;).Split(&quot; &quot;c)(0)]" IN_strPostcode="[IN_dictAttachmentFields(&quot;PostalCompPostcode&quot;)]" sap2010:WorkflowViewState.IdRef="InputOrganisation_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </tce:InputOrganisation>
+              </If.Else>
+            </If>
+          </Sequence>
+          <FlowStep.Next>
+            <x:Reference>__ReferenceID41</x:Reference>
+          </FlowStep.Next>
+        </FlowStep>
+        <FlowStep>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:Point x:Key="ShapeLocation">910,439</av:Point>
+              <av:Size x:Key="ShapeSize">200,22</av:Size>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <tce:InputOrganisation DisplayName="InputOrganisation - short name" sap:VirtualizedContainerService.HintSize="200,22" IN_browserCRM="[IN_browserCRM]" IN_strOrganisation="[IN_dictAttachmentFields(&quot;OrganisationName&quot;).Split(&quot; &quot;c)(0)]" IN_strPostcode="[IN_dictAttachmentFields(&quot;PostalCompPostcode&quot;)]" sap2010:WorkflowViewState.IdRef="InputOrganisation_4">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </tce:InputOrganisation>
+        </FlowStep>
       </Flowchart>
       <FlowStep.Next>
-        <x:Reference>__ReferenceID41</x:Reference>
+        <x:Reference>__ReferenceID43</x:Reference>
       </FlowStep.Next>
     </FlowStep>
-    <FlowStep x:Name="__ReferenceID43">
+    <FlowStep x:Name="__ReferenceID45">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">200,127.5</av:Point>
@@ -969,7 +1045,7 @@
         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Starting Workflow - &quot;+strWorkflowName]" />
       </Sequence>
       <FlowStep.Next>
-        <x:Reference>__ReferenceID42</x:Reference>
+        <x:Reference>__ReferenceID44</x:Reference>
       </FlowStep.Next>
     </FlowStep>
   </Flowchart>
