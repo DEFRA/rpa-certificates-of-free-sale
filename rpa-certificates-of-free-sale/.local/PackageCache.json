@@ -211,6 +211,19 @@
     },
     {
       "Package": {
+        "Id": "UiPath.Word.Activities",
+        "Version": "1.4.3"
+      },
+      "Assemblies": [
+        "C:\\Users\\x953922\\.nuget\\packages\\docx/1.0.0.18\\lib/net40/DocX.dll",
+        "C:\\Users\\x953922\\.nuget\\packages\\uipath.word.activities/1.4.3\\lib/net461/UiPath.Word.Activities.Design.dll",
+        "C:\\Users\\x953922\\.nuget\\packages\\uipath.word.activities/1.4.3\\lib/net461/UiPath.Word.Activities.dll",
+        "C:\\Users\\x953922\\.nuget\\packages\\uipath.word.activities/1.4.3\\lib/net461/UiPath.Word.dll"
+      ],
+      "Path": "C:\\Users\\x953922\\.nuget\\packages\\uipath.word.activities\\1.4.3"
+    },
+    {
+      "Package": {
         "Id": "WordVBActivities",
         "Version": "1.0.4"
       },
@@ -297,21 +310,8 @@
     },
     {
       "Package": {
-        "Id": "UiPath.Word.Activities",
-        "Version": "1.4.3"
-      },
-      "Assemblies": [
-        "C:\\Users\\x953922\\.nuget\\packages\\docx/1.0.0.18\\lib/net40/DocX.dll",
-        "C:\\Users\\x953922\\.nuget\\packages\\uipath.word.activities/1.4.3\\lib/net461/UiPath.Word.Activities.Design.dll",
-        "C:\\Users\\x953922\\.nuget\\packages\\uipath.word.activities/1.4.3\\lib/net461/UiPath.Word.Activities.dll",
-        "C:\\Users\\x953922\\.nuget\\packages\\uipath.word.activities/1.4.3\\lib/net461/UiPath.Word.dll"
-      ],
-      "Path": "C:\\Users\\x953922\\.nuget\\packages\\uipath.word.activities\\1.4.3"
-    },
-    {
-      "Package": {
         "Id": "TraderCRM",
-        "Version": "1.0.17"
+        "Version": "1.0.18"
       },
       "Assemblies": [
         "C:\\Users\\x953922\\.nuget\\packages\\avalonedit/5.0.3\\lib/Net40/ICSharpCode.AvalonEdit.dll",
@@ -341,7 +341,7 @@
         "C:\\Users\\x953922\\.nuget\\packages\\system.io.abstractions/3.0.10\\lib/net40/System.IO.Abstractions.dll",
         "C:\\Users\\x953922\\.nuget\\packages\\system.threading.tasks.dataflow/4.10.0\\lib/netstandard2.0/System.Threading.Tasks.Dataflow.dll",
         "C:\\Users\\x953922\\.nuget\\packages\\system.valuetuple/4.5.0\\lib/net461/System.ValueTuple.dll",
-        "C:\\Users\\x953922\\.nuget\\packages\\tradercrm/1.0.17\\lib/net45/TraderCRM.dll",
+        "C:\\Users\\x953922\\.nuget\\packages\\tradercrm/1.0.18\\lib/net45/TraderCRM.dll",
         "C:\\Users\\x953922\\.nuget\\packages\\uipath/20.4.7472.17184\\lib/UiPath.Interop.dll",
         "C:\\Users\\x953922\\.nuget\\packages\\uipath.excel.activities/2.8.6\\lib/net461/UiPath.Excel.Activities.Design.dll",
         "C:\\Users\\x953922\\.nuget\\packages\\uipath.excel.activities/2.8.6\\lib/net461/UiPath.Excel.Activities.dll",
@@ -391,7 +391,7 @@
         "C:\\Users\\x953922\\.nuget\\packages\\uipath.vision/2.0.3\\lib/net461/UiPath.Vision.Tesseract.dll",
         "C:\\Users\\x953922\\.nuget\\packages\\uipath.vision/2.0.3\\lib/net461/UiPath.Vision.dll"
       ],
-      "Path": "C:\\Users\\x953922\\.nuget\\packages\\tradercrm\\1.0.17"
+      "Path": "C:\\Users\\x953922\\.nuget\\packages\\tradercrm\\1.0.18"
     }
   ],
   "Conflicts": [],
@@ -545,7 +545,7 @@
     },
     "TraderCRM": {
       "Id": "TraderCRM",
-      "Version": "1.0.17",
+      "Version": "1.0.18",
       "Dependencies": [
         {
           "Item1": "UiPath.Excel.Activities",
@@ -1011,12 +1011,12 @@
     {
       "Package": {
         "Id": "TraderCRM",
-        "Version": "1.0.17"
+        "Version": "1.0.18"
       },
       "Assemblies": [
-        "C:\\Users\\x953922\\.nuget\\packages\\tradercrm\\1.0.17\\lib\\net45\\TraderCRM.dll"
+        "C:\\Users\\x953922\\.nuget\\packages\\tradercrm\\1.0.18\\lib\\net45\\TraderCRM.dll"
       ],
-      "Path": "C:\\Users\\x953922\\.nuget\\packages\\tradercrm\\1.0.17"
+      "Path": "C:\\Users\\x953922\\.nuget\\packages\\tradercrm\\1.0.18"
     },
     {
       "Package": {

@@ -3,6 +3,7 @@
     <x:Property Name="IN_browserCRM" Type="InArgument(ui:Browser)" />
     <x:Property Name="IN_strOrganisation" Type="InArgument(x:String)" />
     <x:Property Name="IN_strPostcode" Type="InArgument(x:String)" />
+    <x:Property Name="IN_intTimeOut" Type="InArgument(x:Int32)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
@@ -53,6 +54,10 @@
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="InputOrganisation" sap:VirtualizedContainerService.HintSize="476,610" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -97,10 +102,7 @@
                 </ui:CursorPosition>
               </ui:Click.CursorPosition>
               <ui:Click.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="73676f5c-a90b-4c02-be86-8322bfeb404d" InformativeScreenshot="a16d7e239f23570d1d89b6611b82686f" Selector="&lt;webctrl idx='1' tag='LI' aaname='*{{IN_strPostcode}}*' casesensitive:aaname='false' /&gt;">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="73676f5c-a90b-4c02-be86-8322bfeb404d" InformativeScreenshot="a16d7e239f23570d1d89b6611b82686f" Selector="&lt;webctrl idx='1' tag='LI' aaname='*{{IN_strPostcode}}*' casesensitive:aaname='false' /&gt;" TimeoutMS="[IN_intTimeOut]">
                   <ui:Target.WaitForReady>
                     <InArgument x:TypeArguments="ui:WaitForReady" />
                   </ui:Target.WaitForReady>

@@ -12,7 +12,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1240,741</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1794,830</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>EnterLoadingDetails_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -985,7 +985,7 @@
               <av:PointCollection x:Key="ConnectorLocation">750,437.08 750,571</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Try match organisation again" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_7">
+          <Sequence DisplayName="Try match organisation on Postal" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_7">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -993,7 +993,7 @@
             </sap:WorkflowViewStateService.ViewState>
             <If Condition="[IN_dictAttachmentFields(&quot;PostalCompPostcode&quot;).Equals(&quot;&quot;)]" DisplayName="If postal postcode is nothing" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Else>
-                <tce:InputOrganisation DisplayName="InputOrganisation - postal" sap:VirtualizedContainerService.HintSize="200,22" IN_browserCRM="[IN_browserCRM]" IN_strOrganisation="[IN_dictAttachmentFields(&quot;OrganisationName&quot;).Split(&quot; &quot;c)(0)]" IN_strPostcode="[IN_dictAttachmentFields(&quot;PostalCompPostcode&quot;)]" sap2010:WorkflowViewState.IdRef="InputOrganisation_3">
+                <tce:InputOrganisation DisplayName="InputOrganisation - postal" sap:VirtualizedContainerService.HintSize="200,22" IN_browserCRM="[IN_browserCRM]" IN_strOrganisation="[IN_dictAttachmentFields(&quot;OrganisationName&quot;)]" IN_strPostcode="[IN_dictAttachmentFields(&quot;PostalCompPostcode&quot;)]" sap2010:WorkflowViewState.IdRef="InputOrganisation_3">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>

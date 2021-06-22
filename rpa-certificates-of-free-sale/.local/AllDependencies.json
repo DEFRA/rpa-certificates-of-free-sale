@@ -285,7 +285,7 @@
           "lib/net461/System.ValueTuple.dll": {}
         }
       },
-      "TraderCRM/1.0.17": {
+      "TraderCRM/1.0.18": {
         "type": "package",
         "dependencies": {
           "UiPath.Excel.Activities": "2.8.6",
@@ -1499,10 +1499,10 @@
         "version.txt"
       ]
     },
-    "TraderCRM/1.0.17": {
-      "sha512": "CHCROYdVJJnpId/MDMa0daR/844FuwyoMQkpEb3vaGNuIgY4HHQUe6vov4KOzrIa1FQR8bti99bQfHUROtTXWQ==",
+    "TraderCRM/1.0.18": {
+      "sha512": "1RxrGmN90F4VhTpUfGOcE4323QWkLjDqpn9Oj0V3c2vr86eNQ8GK2lMJMvqAu32DsQX+Wg3Xe1TBoPIXAQVC6Q==",
       "type": "package",
-      "path": "tradercrm/1.0.17",
+      "path": "tradercrm/1.0.18",
       "files": [
         ".nupkg.metadata",
         "lib/net45/.settings/Release/settings-1a5b880a.json",
@@ -1511,7 +1511,7 @@
         "lib/net45/.settings/Release/settings-9e9290da.json",
         "lib/net45/TraderCRM.dll",
         "lib/net45/project.json",
-        "tradercrm.1.0.17.nupkg.sha512",
+        "tradercrm.1.0.18.nupkg.sha512",
         "tradercrm.nuspec"
       ]
     },
@@ -2036,7 +2036,7 @@
     ".NETFramework,Version=v4.6.1": [
       "GetWorkflowDetailActivities >= 1.0.1 <= 1.0.1",
       "Reusable.Components >= 1.0.7 <= 1.0.7",
-      "TraderCRM >= 1.0.17 <= 1.0.17",
+      "TraderCRM >= 1.0.18 <= 1.0.18",
       "UiPath.Excel.Activities >= 2.8.6 <= 2.8.6",
       "UiPath.Mail.Activities >= 1.8.6 <= 1.8.6",
       "UiPath.System.Activities >= 20.4.0 <= 20.4.0",
@@ -2072,7 +2072,7 @@
           "TraderCRM": {
             "include": "Runtime",
             "target": "Package",
-            "version": "[1.0.17, 1.0.17]"
+            "version": "[1.0.18, 1.0.18]"
           },
           "UiPath.Excel.Activities": {
             "include": "Runtime",
