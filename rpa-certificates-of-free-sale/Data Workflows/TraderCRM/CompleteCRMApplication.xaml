@@ -127,12 +127,12 @@
                 <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
                 <av:Size x:Key="ShapeSize">60,75</av:Size>
                 <x:Double x:Key="Width">1130</x:Double>
-                <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,135.54</av:PointCollection>
+                <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,107.5 170,107.5 170,440 200,440</av:PointCollection>
                 <x:Double x:Key="Height">2123.54</x:Double>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <Flowchart.StartNode>
-              <x:Reference>__ReferenceID10</x:Reference>
+              <x:Reference>__ReferenceID5</x:Reference>
             </Flowchart.StartNode>
             <FlowStep x:Name="__ReferenceID6">
               <sap:WorkflowViewStateService.ViewState>
@@ -246,7 +246,7 @@
                               <av:PointCollection x:Key="ConnectorLocation">300,465.5 300,516.5</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <TryCatch DisplayName="Try Navigate to Interaction Item" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                          <TryCatch DisplayName="Try Navigate to Interaction Item" sap:VirtualizedContainerService.HintSize="459,606" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                             <TryCatch.Try>
                               <Sequence sap:VirtualizedContainerService.HintSize="421,379" sap2010:WorkflowViewState.IdRef="Sequence_5">
                                 <sap:WorkflowViewStateService.ViewState>
@@ -320,10 +320,7 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <FlowDecision.True>
-                                <FlowDecision x:Name="__ReferenceID16" DisplayName="Breakpoint 4?" sap:VirtualizedContainerService.HintSize="77,87" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
-                                  <FlowDecision.Condition>
-                                    <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="IN_dictConfig(&quot;boolSupervision&quot;) = true and IN_dictConfig(&quot;boolControlPoint4&quot;) = true" />
-                                  </FlowDecision.Condition>
+                                <FlowDecision x:Name="__ReferenceID16" Condition="[IN_dictConfig(&quot;boolSupervision&quot;) = true and IN_dictConfig(&quot;boolControlPoint4&quot;) = true]" DisplayName="Breakpoint 4?" sap:VirtualizedContainerService.HintSize="77,87" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>

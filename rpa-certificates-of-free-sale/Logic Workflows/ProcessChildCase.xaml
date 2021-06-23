@@ -110,7 +110,7 @@
           <Variable x:TypeArguments="x:Boolean" Name="boolSpanCompleted" />
           <Variable x:TypeArguments="x:Boolean" Name="boolEngCompleted" />
           <Variable x:TypeArguments="x:Boolean" Name="boolSpanishCertificate" />
-          <Variable x:TypeArguments="s:String[]" Name="arrProducts" />
+          <Variable x:TypeArguments="scg:List(x:String)" Name="listProducts" />
           <Variable x:TypeArguments="x:Int32" Name="intProductCounter" />
           <Variable x:TypeArguments="x:String" Name="strTemplatePath" />
           <Variable x:TypeArguments="x:Boolean" Name="boolDioxinCompleted" />
@@ -210,7 +210,7 @@
                       <av:PointCollection x:Key="ConnectorLocation">630,1885.5 630,1946.5</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <TryCatch DisplayName="Try EnterCertificateDetails" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_15">
+                  <TryCatch DisplayName="Try EnterCertificateDetails" sap:VirtualizedContainerService.HintSize="438,606" sap2010:WorkflowViewState.IdRef="TryCatch_15">
                     <TryCatch.Try>
                       <Sequence sap:VirtualizedContainerService.HintSize="391,379" sap2010:WorkflowViewState.IdRef="Sequence_50">
                         <sap:WorkflowViewStateService.ViewState>
@@ -220,15 +220,33 @@
                         </sap:WorkflowViewStateService.ViewState>
                         <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke EnterCertificateDetails" sap:VirtualizedContainerService.HintSize="349,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" UnSafe="False" WorkflowFileName="Data Workflows\Word\EnterCertificateDetails.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
-                            <InArgument x:TypeArguments="x:String" x:Key="IN_strCertificatePath">[strCertificatePath]</InArgument>
-                            <InArgument x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" x:Key="IN_dictConfig">[IN_dictConfig]</InArgument>
-                            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="IN_dictAttachmentFields">[dictAttachmentFields]</InArgument>
-                            <InArgument x:TypeArguments="x:Boolean" x:Key="IN_boolSpanishCertificate">[boolSpanishCertificate]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="IN_strReferenceNumber">[IN_strReferenceNumber]</InArgument>
-                            <InArgument x:TypeArguments="s:String[]" x:Key="IN_arrProducts">[arrProducts]</InArgument>
-                            <InArgument x:TypeArguments="x:Int32" x:Key="IN_intProductCounter">[intProductCounter]</InArgument>
-                            <InArgument x:TypeArguments="x:Boolean" x:Key="IN_boolDioxinInProgress">[boolDioxinInProgress]</InArgument>
-                            <OutArgument x:TypeArguments="x:Boolean" x:Key="OUT_boolDioxinCompleted">[boolDioxinCompleted]</OutArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="IN_strCertificatePath">
+                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strCertificatePath" />
+                            </InArgument>
+                            <InArgument x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" x:Key="IN_dictConfig">
+                              <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" ExpressionText="IN_dictConfig" />
+                            </InArgument>
+                            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="IN_dictAttachmentFields">
+                              <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:String)" ExpressionText="dictAttachmentFields" />
+                            </InArgument>
+                            <InArgument x:TypeArguments="x:Boolean" x:Key="IN_boolSpanishCertificate">
+                              <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="boolSpanishCertificate" />
+                            </InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="IN_strReferenceNumber">
+                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="IN_strReferenceNumber" />
+                            </InArgument>
+                            <InArgument x:TypeArguments="x:Int32" x:Key="IN_intProductCounter">
+                              <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intProductCounter" />
+                            </InArgument>
+                            <InArgument x:TypeArguments="x:Boolean" x:Key="IN_boolDioxinInProgress">
+                              <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="boolDioxinInProgress" />
+                            </InArgument>
+                            <OutArgument x:TypeArguments="x:Boolean" x:Key="OUT_boolDioxinCompleted">
+                              <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="boolDioxinCompleted" />
+                            </OutArgument>
+                            <InArgument x:TypeArguments="scg:List(x:String)" x:Key="IN_listProducts">
+                              <mva:VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="listProducts" />
+                            </InArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -301,7 +319,10 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <FlowDecision.True>
-                            <FlowDecision x:Name="__ReferenceID47" Condition="[intProductCounter &gt;= arrProducts.Length]" DisplayName="End of List?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_42">
+                            <FlowDecision x:Name="__ReferenceID47" DisplayName="End of List?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_42">
+                              <FlowDecision.Condition>
+                                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="intProductCounter &gt;= listProducts.Count" />
+                              </FlowDecision.Condition>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -558,7 +579,7 @@
                                               <av:PointCollection x:Key="ConnectorLocation">630,2653 630,2696.5</av:PointCollection>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <Sequence DisplayName="Certificate Format Check Logic" sap:VirtualizedContainerService.HintSize="755,689" sap2010:WorkflowViewState.IdRef="Sequence_43">
+                                          <Sequence DisplayName="Certificate Format Check Logic" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_43">
                                             <Sequence.Variables>
                                               <Variable x:TypeArguments="ui:Window" Name="appFileExplorer" />
                                             </Sequence.Variables>
@@ -1204,10 +1225,24 @@
                             </sap:WorkflowViewStateService.ViewState>
                             <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke UserDetailChecks" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="Logic Workflows\UserDetailChecks.xaml">
                               <ui:InvokeWorkflowFile.Arguments>
-                                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="IN_dictAttachmentFields">[dictAttachmentFields]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="IN_strApplicationFilePath">[IN_strCaseFilePath]</InArgument>
-                                <OutArgument x:TypeArguments="x:String" x:Key="OUT_strFlow">[OUT_strFlow]</OutArgument>
-                                <OutArgument x:TypeArguments="x:String" x:Key="OUT_strReasonForStoppingRobot">[OUT_strReasonForStoppingRobot]</OutArgument>
+                                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="IN_dictAttachmentFields">
+                                  <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:String)" ExpressionText="dictAttachmentFields" />
+                                </InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="IN_strApplicationFilePath">
+                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="IN_strCaseFilePath" />
+                                </InArgument>
+                                <OutArgument x:TypeArguments="x:String" x:Key="OUT_strFlow">
+                                  <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="OUT_strFlow" />
+                                </OutArgument>
+                                <OutArgument x:TypeArguments="x:String" x:Key="OUT_strReasonForStoppingRobot">
+                                  <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="OUT_strReasonForStoppingRobot" />
+                                </OutArgument>
+                                <InArgument x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" x:Key="IN_dictConfig">
+                                  <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" ExpressionText="IN_dictConfig" />
+                                </InArgument>
+                                <OutArgument x:TypeArguments="scg:List(x:String)" x:Key="OUT_listProducts">
+                                  <mva:VisualBasicReference x:TypeArguments="scg:List(x:String)" ExpressionText="listProducts" />
+                                </OutArgument>
                               </ui:InvokeWorkflowFile.Arguments>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1527,11 +1562,18 @@
                             </sap:WorkflowViewStateService.ViewState>
                             <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Validate application" sap:VirtualizedContainerService.HintSize="363,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Data Workflows\Word\ValidateApplicationForm.xaml">
                               <ui:InvokeWorkflowFile.Arguments>
-                                <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="OUT_dictAttachmentFields">[dictAttachmentFields]</OutArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="IN_strApplicationFilePath">[IN_strCaseFilePath]</InArgument>
-                                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="IN_dictFormFields">[IN_dictFormFields]</InArgument>
-                                <InArgument x:TypeArguments="x:Boolean" x:Key="IN_boolLoading">False</InArgument>
-                                <OutArgument x:TypeArguments="s:String[]" x:Key="OUT_arrProducts">[arrProducts]</OutArgument>
+                                <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="OUT_dictAttachmentFields">
+                                  <mva:VisualBasicReference x:TypeArguments="scg:Dictionary(x:String, x:String)" ExpressionText="dictAttachmentFields" />
+                                </OutArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="IN_strApplicationFilePath">
+                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="IN_strCaseFilePath" />
+                                </InArgument>
+                                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="IN_dictFormFields">
+                                  <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:String)" ExpressionText="IN_dictFormFields" />
+                                </InArgument>
+                                <InArgument x:TypeArguments="x:Boolean" x:Key="IN_boolLoading">
+                                  <Literal x:TypeArguments="x:Boolean" />
+                                </InArgument>
                               </ui:InvokeWorkflowFile.Arguments>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">

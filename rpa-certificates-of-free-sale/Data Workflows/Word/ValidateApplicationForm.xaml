@@ -4,7 +4,6 @@
     <x:Property Name="IN_strApplicationFilePath" Type="InArgument(x:String)" />
     <x:Property Name="IN_dictFormFields" Type="InArgument(scg:Dictionary(x:String, x:String))" />
     <x:Property Name="IN_boolLoading" Type="InArgument(x:Boolean)" />
-    <x:Property Name="OUT_arrProducts" Type="OutArgument(s:String[])" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
@@ -1396,10 +1395,7 @@
                             </TryCatch.Catches>
                           </TryCatch>
                           <FlowStep.Next>
-                            <FlowDecision x:Name="__ReferenceID53" DisplayName="Man&amp;FS" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_17">
-                              <FlowDecision.Condition>
-                                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="dictAttachmentFields(&quot;CertificateType&quot;).Equals(&quot;Non-Alcohol\MANUFACTURING and FREESALE CERT&quot;)" />
-                              </FlowDecision.Condition>
+                            <FlowDecision x:Name="__ReferenceID53" Condition="[dictAttachmentFields(&quot;CertificateType&quot;).Equals(&quot;Non-Alcohol\MANUFACTURING and FREESALE CERT&quot;)]" DisplayName="Man&amp;FS" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_17">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1429,7 +1425,7 @@
                                           <av:PointCollection x:Key="ConnectorLocation">298.895,938 298.895,998</av:PointCollection>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <TryCatch DisplayName="Try Part D of Form" sap:VirtualizedContainerService.HintSize="606,1914" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+                                      <TryCatch DisplayName="Try Part D of Form" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_4">
                                         <TryCatch.Try>
                                           <Sequence DisplayName="Part D of Form" sap:VirtualizedContainerService.HintSize="568,1687" sap2010:WorkflowViewState.IdRef="Sequence_11">
                                             <sap:WorkflowViewStateService.ViewState>
@@ -2036,7 +2032,7 @@
                                       <av:PointCollection x:Key="ConnectorLocation">298.895,678 298.895,748</av:PointCollection>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <TryCatch DisplayName="Try Part C of Form" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                                  <TryCatch DisplayName="Try Part C of Form" sap:VirtualizedContainerService.HintSize="564,1537" sap2010:WorkflowViewState.IdRef="TryCatch_3">
                                     <TryCatch.Try>
                                       <Sequence DisplayName="Part C of Form" sap:VirtualizedContainerService.HintSize="526,1310" sap2010:WorkflowViewState.IdRef="Sequence_10">
                                         <sap:WorkflowViewStateService.ViewState>
@@ -2083,14 +2079,31 @@
                                         <w:ReadCheckBox DisplayName="Read Sep Certificates CheckBox" sap:VirtualizedContainerService.HintSize="484,22" IN_docWord="[docWord]" IN_strCheckboxName="[IN_dictFormFields(&quot;ProductList&quot;)]" sap2010:WorkflowViewState.IdRef="ReadCheckBox_4" OUT_strOutput="[dictAttachmentFields(&quot;SeparateCerts&quot;)]" />
                                         <If Condition="[dictAttachmentFields(&quot;SeparateCerts&quot;).ToLower.Equals(&quot;true&quot;)]" DisplayName="If sep certs, create array" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_66">
                                           <If.Then>
-                                            <Assign DisplayName="Assign arrProducts" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_46">
-                                              <Assign.To>
-                                                <OutArgument x:TypeArguments="s:String[]">[OUT_arrProducts]</OutArgument>
-                                              </Assign.To>
-                                              <Assign.Value>
-                                                <InArgument x:TypeArguments="s:String[]">[dictAttachmentFields("ProductName").Split({vbLf}, StringSplitOptions.RemoveEmptyEntries)]</InArgument>
-                                              </Assign.Value>
-                                            </Assign>
+                                            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CommentOut_17">
+                                              <ui:CommentOut.Body>
+                                                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_53">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <Assign DisplayName="Assign arrProducts" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_46">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="s:String[]">[OUT_arrProducts]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="s:String[]">[dictAttachmentFields("ProductName").Split({vbLf}, StringSplitOptions.RemoveEmptyEntries)]</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                </Sequence>
+                                              </ui:CommentOut.Body>
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                            </ui:CommentOut>
                                           </If.Then>
                                         </If>
                                         <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="CommentOut_15">
