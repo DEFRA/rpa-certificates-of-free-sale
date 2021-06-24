@@ -159,7 +159,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <p:WordReplaceText DisplayName="Replace Text - Address" Found="[boolReplaced]" sap:VirtualizedContainerService.HintSize="434,137" sap2010:WorkflowViewState.IdRef="WordReplaceText_1" Replace="[strAddress]" Search="[IN_dictConfig(&quot;AddressLabel&quot;)]" />
-                      <p:WordReplaceText DisplayName="Replace Text - number of copies" Found="[boolReplaced]" sap:VirtualizedContainerService.HintSize="434,137" sap2010:WorkflowViewState.IdRef="WordReplaceText_2" Replace="[IN_dictAttachmentFields(&quot;NumCert&quot;)]" Search="[IN_dictConfig(&quot;CertificateCopies&quot;)]" />
+                      <p:WordReplaceText DisplayName="Replace Text - number of copies" Found="[boolReplaced]" sap:VirtualizedContainerService.HintSize="434,137" sap2010:WorkflowViewState.IdRef="WordReplaceText_2" Replace="[IN_dictAttachmentFields(&quot;NumCert&quot;)]" Search="[IN_dictConfig(&quot;NumberOfCopies&quot;)]" />
                     </Sequence>
                   </ActivityAction>
                 </p:WordApplicationScope.Body>
@@ -225,13 +225,13 @@
                   <av:PointCollection x:Key="ConnectorLocation">300,213.62 300,265.54</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence DisplayName="Copy file to Working Folder" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <Sequence DisplayName="Copy file to Working Folder" sap:VirtualizedContainerService.HintSize="478,619" sap2010:WorkflowViewState.IdRef="Sequence_3">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Assign DisplayName="Assign Address label filepath" sap:VirtualizedContainerService.HintSize="384,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+                <Assign DisplayName="Assign Address label filepath" sap:VirtualizedContainerService.HintSize="436,60" sap2010:WorkflowViewState.IdRef="Assign_1">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:String">[strAddressLabelPath]</OutArgument>
                   </Assign.To>
@@ -239,7 +239,26 @@
                     <InArgument x:TypeArguments="x:String">[IN_strWorkingFolderPath + IN_strReferenceNumber + " - " + (IN_intCertificateCounter + 1).ToString + ".doc"]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <ui:CopyFile ContinueOnError="{x:Null}" Destination="[strAddressLabelPath]" DisplayName="Copy File - to working folder" sap:VirtualizedContainerService.HintSize="384,157" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="False" Path="[IN_dictConfig(&quot;AddressLabelPath&quot;)]">
+                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,230" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                  <ui:CommentOut.Body>
+                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Assign DisplayName="Assign Address label filepath ( wrong name)" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[strAddressLabelPath]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[IN_strWorkingFolderPath + IN_strReferenceNumber + " - Address Label" + ".doc"]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </Sequence>
+                  </ui:CommentOut.Body>
+                </ui:CommentOut>
+                <ui:CopyFile ContinueOnError="{x:Null}" Destination="[strAddressLabelPath]" DisplayName="Copy File - to working folder" sap:VirtualizedContainerService.HintSize="436,157" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="True" Path="[IN_dictConfig(&quot;AddressLabelPath&quot;)]">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -256,7 +275,7 @@
                       <av:PointCollection x:Key="ConnectorLocation">300,316.54 300,367.5</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <If Condition="[IN_dictAttachmentFields(&quot;PostalCompAddress&quot;).Equals(&quot;&quot;)]" DisplayName="If - Postal Address" sap:VirtualizedContainerService.HintSize="569,208" sap2010:WorkflowViewState.IdRef="If_1">
+                  <If Condition="[IN_dictAttachmentFields(&quot;PostalCompAddress&quot;).Equals(&quot;&quot;)]" DisplayName="If - Postal Address" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_1">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>

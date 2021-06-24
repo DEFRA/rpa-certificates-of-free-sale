@@ -173,11 +173,7 @@
                   <Variable x:TypeArguments="moiw:Application" Name="appWord" />
                   <Variable x:TypeArguments="moiw:Document" Name="docWord" />
                   <Variable x:TypeArguments="x:String" Name="strHeader" />
-                  <Variable x:TypeArguments="scg:List(x:String)" Name="listProducts">
-                    <Variable.Default>
-                      <mva:VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="new List(of String)" />
-                    </Variable.Default>
-                  </Variable>
+                  <Variable x:TypeArguments="scg:List(x:String)" Default="[new List(of String)]" Name="listProducts" />
                 </Flowchart.Variables>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
