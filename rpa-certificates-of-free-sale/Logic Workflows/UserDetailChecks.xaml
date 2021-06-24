@@ -173,7 +173,11 @@
                   <Variable x:TypeArguments="moiw:Application" Name="appWord" />
                   <Variable x:TypeArguments="moiw:Document" Name="docWord" />
                   <Variable x:TypeArguments="x:String" Name="strHeader" />
-                  <Variable x:TypeArguments="scg:List(x:String)" Name="listProducts" />
+                  <Variable x:TypeArguments="scg:List(x:String)" Name="listProducts">
+                    <Variable.Default>
+                      <mva:VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="new List(of String)" />
+                    </Variable.Default>
+                  </Variable>
                 </Flowchart.Variables>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -261,10 +265,7 @@
                                     </sap:WorkflowViewStateService.ViewState>
                                   </w:CloseWord>
                                   <FlowStep.Next>
-                                    <FlowDecision x:Name="__ReferenceID10" DisplayName="Sep Products?" sap:VirtualizedContainerService.HintSize="80,87" sap2010:WorkflowViewState.IdRef="FlowDecision_5">
-                                      <FlowDecision.Condition>
-                                        <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="IN_dictAttachmentFields(&quot;SeparateCerts&quot;).ToLower.Equals(&quot;true&quot;)" />
-                                      </FlowDecision.Condition>
+                                    <FlowDecision x:Name="__ReferenceID10" Condition="[IN_dictAttachmentFields(&quot;SeparateCerts&quot;).ToLower.Equals(&quot;true&quot;)]" DisplayName="Sep Products?" sap:VirtualizedContainerService.HintSize="80,87" sap2010:WorkflowViewState.IdRef="FlowDecision_5">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -281,7 +282,7 @@
                                               <av:Size x:Key="ShapeSize">200,66</av:Size>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <Sequence DisplayName="User Separates Product List" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                                          <Sequence DisplayName="User Separates Product List" sap:VirtualizedContainerService.HintSize="526,1069" sap2010:WorkflowViewState.IdRef="Sequence_8">
                                             <Sequence.Variables>
                                               <Variable x:TypeArguments="x:String" Name="strJSONOutput" />
                                               <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="matches" />
@@ -291,7 +292,7 @@
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <ufa:FormActivity Dismissed="{x:Null}" FormFieldsInputData="{x:Null}" FormTitle="{x:Null}" SelectedButton="{x:Null}" TimeoutInSeconds="{x:Null}" WindowPositionLeft="{x:Null}" WindowPositionTop="{x:Null}" DisableMaximizeButton="False" DisableMinimizeButton="False" DisplayName="Create Form - Separate Products" FormFieldsOutputData="[strJSONOutput]" FormHeight="400" FormSchema="%[{&quot;label&quot;:&quot;List of Products from Application Form:&quot;,&quot;tableView&quot;:true,&quot;key&quot;:&quot;strProductList&quot;,&quot;type&quot;:&quot;textarea&quot;,&quot;rows&quot;:6,&quot;input&quot;:true},{&quot;label&quot;:&quot;Separate Products:&quot;,&quot;key&quot;:&quot;pleaseEnterProductsAsYouWouldLikeThemToAppearOnTheCertificate&quot;,&quot;type&quot;:&quot;editgrid&quot;,&quot;input&quot;:true,&quot;tableView&quot;:false,&quot;components&quot;:[{&quot;label&quot;:&quot;Please enter products as you would like them to appear on each certificate:&quot;,&quot;tableView&quot;:true,&quot;key&quot;:&quot;product&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true}]},{&quot;type&quot;:&quot;button&quot;,&quot;label&quot;:&quot;Submit&quot;,&quot;key&quot;:&quot;submit&quot;,&quot;disableOnInvalid&quot;:true,&quot;input&quot;:true,&quot;tableView&quot;:false}]" FormTheme="{}{&quot;Activities&quot;:[&quot;FORMS&quot;],&quot;Id&quot;:&quot;100120&quot;,&quot;Name&quot;:&quot;Default&quot;,&quot;BaseCss&quot;:&quot;../../assets/css/themes/uipath.bootstrap.min.css&quot;,&quot;ImageSrc&quot;:&quot;../../assets/themeicons/uipath.png&quot;,&quot;OverrideCssUrl&quot;:&quot;../../assets/css/themes/uipath.custom.css&quot;,&quot;UserStyleOverrides&quot;:&quot;&quot;,&quot;Properties&quot;:&quot;&quot;,&quot;IsCustomTheme&quot;:false,&quot;Version&quot;:1,&quot;ThemeVersion&quot;:1}" FormWidth="800" GenerateInputFields="True" sap:VirtualizedContainerService.HintSize="484,141" sap2010:WorkflowViewState.IdRef="FormActivity_2" IsReadOnly="False" MaxColumnsForSchemaGeneration="6" RunDoBlockFirst="False" RunInIsolatedMode="False">
+                                            <ufa:FormActivity Dismissed="{x:Null}" FormFieldsInputData="{x:Null}" FormTitle="{x:Null}" SelectedButton="{x:Null}" TimeoutInSeconds="{x:Null}" WindowPositionLeft="{x:Null}" WindowPositionTop="{x:Null}" DisableMaximizeButton="False" DisableMinimizeButton="False" DisplayName="Create Form - Separate Products" FormFieldsOutputData="[strJSONOutput]" FormHeight="400" FormSchema="%[{&quot;label&quot;:&quot;List of Products from Application Form:&quot;,&quot;tableView&quot;:true,&quot;key&quot;:&quot;strProductList&quot;,&quot;type&quot;:&quot;textarea&quot;,&quot;rows&quot;:6,&quot;input&quot;:true},{&quot;label&quot;:&quot;Please enter products as you would like them to appear on each certificate:&quot;,&quot;key&quot;:&quot;pleaseEnterProductsAsYouWouldLikeThemToAppearOnTheCertificate&quot;,&quot;type&quot;:&quot;editgrid&quot;,&quot;input&quot;:true,&quot;tableView&quot;:false,&quot;components&quot;:[{&quot;label&quot;:&quot;Products:&quot;,&quot;tableView&quot;:true,&quot;key&quot;:&quot;product&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true}]},{&quot;type&quot;:&quot;button&quot;,&quot;label&quot;:&quot;Submit&quot;,&quot;key&quot;:&quot;submit&quot;,&quot;disableOnInvalid&quot;:true,&quot;input&quot;:true,&quot;tableView&quot;:false}]" FormTheme="{}{&quot;Activities&quot;:[&quot;FORMS&quot;],&quot;Id&quot;:&quot;100120&quot;,&quot;Name&quot;:&quot;Default&quot;,&quot;BaseCss&quot;:&quot;../../assets/css/themes/uipath.bootstrap.min.css&quot;,&quot;ImageSrc&quot;:&quot;../../assets/themeicons/uipath.png&quot;,&quot;OverrideCssUrl&quot;:&quot;../../assets/css/themes/uipath.custom.css&quot;,&quot;UserStyleOverrides&quot;:&quot;&quot;,&quot;Properties&quot;:&quot;&quot;,&quot;IsCustomTheme&quot;:false,&quot;Version&quot;:1,&quot;ThemeVersion&quot;:1}" FormWidth="800" GenerateInputFields="True" sap:VirtualizedContainerService.HintSize="484,141" sap2010:WorkflowViewState.IdRef="FormActivity_2" IsReadOnly="False" MaxColumnsForSchemaGeneration="6" RunDoBlockFirst="False" RunInIsolatedMode="False">
                                               <ufa:FormActivity.Body>
                                                 <ActivityAction x:TypeArguments="scg:Dictionary(x:String, x:Object)" />
                                               </ufa:FormActivity.Body>
@@ -301,11 +302,10 @@
                                                 </ActivityAction>
                                               </ufa:FormActivity.DelayBody>
                                               <ufa:FormActivity.FormFieldsCollection>
-                                                <InArgument x:TypeArguments="x:String" x:Key="strProductList">
-                                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="IN_dictAttachmentFields(&quot;ProductName&quot;)" />
-                                                </InArgument>
+                                                <InArgument x:TypeArguments="x:String" x:Key="strProductList">[IN_dictAttachmentFields("ProductName")]</InArgument>
                                               </ufa:FormActivity.FormFieldsCollection>
                                             </ufa:FormActivity>
+                                            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="484,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[strJSONOutput]" />
                                             <ui:Matches DisplayName="Matches - get user input from form" sap:VirtualizedContainerService.HintSize="484,59" sap2010:WorkflowViewState.IdRef="Matches_1" Input="[strJSONOutput]" IsBuilderTabModified="False" Pattern="[IN_dictConfig(&quot;SeparateProducts&quot;)]" RegexOption="IgnoreCase, Compiled" Result="[matches]" />
                                             <If Condition="[matches.Count = 0]" DisplayName="If no matches" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_2">
                                               <If.Then>

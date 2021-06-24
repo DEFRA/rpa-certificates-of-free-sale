@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1240,741</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1794,830</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>PopulateQueue_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="44">
@@ -292,7 +292,7 @@
                                                   <InArgument x:TypeArguments="snm:MailMessage">[email]</InArgument>
                                                 </Assign.Value>
                                               </Assign>
-                                              <ui:SaveMail DisplayName="Save Mail Message" FilePath="[(OUT_strWorkingFolderPath + (system.Text.RegularExpressions.Regex.Replace(email.Subject, &quot;?|:|*|/|\\|\|&quot;, &quot;.&quot;)) + &quot;.eml&quot;)]" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="SaveMail_1" MailMessage="[email]" />
+                                              <ui:SaveMail DisplayName="Save Mail Message" FilePath="[(OUT_strWorkingFolderPath + (system.Text.RegularExpressions.Regex.Replace(email.Subject, &quot;\?|:|\*|\\|\/|\|&quot;, &quot;.&quot;)) + &quot;.eml&quot;)]" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="SaveMail_1" MailMessage="[email]" />
                                               <ui:SaveMailAttachments Attachments="{x:Null}" DisplayName="Save Attachments" FolderPath="[OUT_strWorkingFolderPath]" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="SaveMailAttachments_1" Message="[email]" />
                                               <ui:Break sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Break_2" />
                                             </Sequence>

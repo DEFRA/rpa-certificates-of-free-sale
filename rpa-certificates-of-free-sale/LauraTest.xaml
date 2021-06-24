@@ -62,7 +62,7 @@
       <Variable x:TypeArguments="moiw:Document" Name="docWord" />
       <Variable x:TypeArguments="sco:Collection(moiw:Application)" Name="arrAppWord" />
       <Variable x:TypeArguments="sco:Collection(moiw:Document)" Name="arrDocWord" />
-      <Variable x:TypeArguments="x:String" Name="strString" />
+      <Variable x:TypeArguments="x:String" Default="RE: subject\ line" Name="strString" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -72,13 +72,13 @@
     </sap:WorkflowViewStateService.ViewState>
     <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="674,51" sap2010:WorkflowViewState.IdRef="CommentOut_7">
       <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="346,894" sap2010:WorkflowViewState.IdRef="Sequence_10">
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="520,1027" sap2010:WorkflowViewState.IdRef="Sequence_10">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="LauraTest" sap:VirtualizedContainerService.HintSize="304,802" sap2010:WorkflowViewState.IdRef="Sequence_1">
+          <Sequence DisplayName="LauraTest" sap:VirtualizedContainerService.HintSize="478,802" sap2010:WorkflowViewState.IdRef="Sequence_1">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="strTime" />
               <Variable x:TypeArguments="x:String" Name="strProducts" />
@@ -255,6 +255,12 @@
         <Variable x:TypeArguments="x:String" Name="strConsignment" />
         <Variable x:TypeArguments="ui:Window" Name="appFileExplorer" />
         <Variable x:TypeArguments="ui:Browser" Name="browserCRM" />
+        <Variable x:TypeArguments="x:String" Default="working folder path\" Name="strWorkingFolder" />
+        <Variable x:TypeArguments="scg:List(x:String)" Name="listCount">
+          <Variable.Default>
+            <mva:VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="new List(of string)" />
+          </Variable.Default>
+        </Variable>
       </Flowchart.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -262,7 +268,7 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
           <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
           <av:Size x:Key="ShapeSize">60,75</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,107.5 160,107.5 160,167</av:PointCollection>
+          <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,289.02 250.016666666667,289.02 250.016666666667,319.02</av:PointCollection>
           <x:Double x:Key="Width">640</x:Double>
           <x:Double x:Key="Height">626.02</x:Double>
         </scg:Dictionary>
@@ -420,7 +426,7 @@
           </ui:BrowserScope>
         </Sequence>
       </FlowStep>
-      <FlowStep x:Name="__ReferenceID0">
+      <FlowStep>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <av:Point x:Key="ShapeLocation">60,167</av:Point>
@@ -602,6 +608,21 @@
             </ui:BrowserScope.Body>
           </ui:BrowserScope>
         </Sequence>
+      </FlowStep>
+      <FlowStep x:Name="__ReferenceID0">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">135.016666666667,319.02</av:Point>
+            <av:Size x:Key="ShapeSize">230,61</av:Size>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="230,61" sap2010:WorkflowViewState.IdRef="WriteLine_17" Text="[(strWorkingFolder + (system.Text.RegularExpressions.Regex.Replace(strString, &quot;\?|:|\*|\\|\/|\|&quot;, &quot;.&quot;)) + &quot;.eml&quot;)]">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </WriteLine>
       </FlowStep>
     </Flowchart>
   </Sequence>

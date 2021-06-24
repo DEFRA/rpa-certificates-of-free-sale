@@ -2,6 +2,9 @@
   <x:Members>
     <x:Property Name="IN_browserCRM" Type="InArgument(ui:Browser)" />
     <x:Property Name="IN_dictConfig" Type="InArgument(scg:Dictionary(x:String, ui:GenericValue))" />
+    <x:Property Name="IN_intCertificateCounter" Type="InArgument(x:Int32)" />
+    <x:Property Name="OUT_strFlow" Type="OutArgument(x:String)" />
+    <x:Property Name="OUT_strReasonForStoppingRobot" Type="OutArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
@@ -246,7 +249,7 @@
                               <av:PointCollection x:Key="ConnectorLocation">300,465.5 300,516.5</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <TryCatch DisplayName="Try Navigate to Interaction Item" sap:VirtualizedContainerService.HintSize="459,606" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                          <TryCatch DisplayName="Try Navigate to Interaction Item" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                             <TryCatch.Try>
                               <Sequence sap:VirtualizedContainerService.HintSize="421,379" sap2010:WorkflowViewState.IdRef="Sequence_5">
                                 <sap:WorkflowViewStateService.ViewState>
@@ -516,7 +519,7 @@
                                                               <av:PointCollection x:Key="ConnectorLocation">300,1476.54 300,1526.54</av:PointCollection>
                                                             </scg:Dictionary>
                                                           </sap:WorkflowViewStateService.ViewState>
-                                                          <TryCatch DisplayName="Try Change Status to Approved" sap:VirtualizedContainerService.HintSize="459,606" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+                                                          <TryCatch DisplayName="Try Change Status to Approved" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_5">
                                                             <TryCatch.Try>
                                                               <Sequence sap:VirtualizedContainerService.HintSize="421,379" sap2010:WorkflowViewState.IdRef="Sequence_11">
                                                                 <sap:WorkflowViewStateService.ViewState>
@@ -677,7 +680,7 @@
                                                                               <av:PointCollection x:Key="ConnectorLocation">300,1986.54 300,2036.54</av:PointCollection>
                                                                             </scg:Dictionary>
                                                                           </sap:WorkflowViewStateService.ViewState>
-                                                                          <TryCatch DisplayName="Try Enter Detail Tab Info" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_7">
+                                                                          <TryCatch DisplayName="Try Enter Detail Tab Info" sap:VirtualizedContainerService.HintSize="440,606" sap2010:WorkflowViewState.IdRef="TryCatch_7">
                                                                             <TryCatch.Try>
                                                                               <Sequence sap:VirtualizedContainerService.HintSize="402,379" sap2010:WorkflowViewState.IdRef="Sequence_13">
                                                                                 <sap:WorkflowViewStateService.ViewState>
@@ -687,9 +690,24 @@
                                                                                 </sap:WorkflowViewStateService.ViewState>
                                                                                 <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Enter Detail Tab Info" sap:VirtualizedContainerService.HintSize="360,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Data Workflows\TraderCRM\EnterDetailTabInfo.xaml">
                                                                                   <ui:InvokeWorkflowFile.Arguments>
-                                                                                    <InArgument x:TypeArguments="ui:Browser" x:Key="IN_browserCRM">[IN_browserCRM]</InArgument>
-                                                                                    <InArgument x:TypeArguments="x:String" x:Key="IN_strNoCopies">2</InArgument>
-                                                                                    <InArgument x:TypeArguments="x:String" x:Key="IN_strNoRequested">2</InArgument>
+                                                                                    <InArgument x:TypeArguments="ui:Browser" x:Key="IN_browserCRM">
+                                                                                      <mva:VisualBasicValue x:TypeArguments="ui:Browser" ExpressionText="IN_browserCRM" />
+                                                                                    </InArgument>
+                                                                                    <InArgument x:TypeArguments="x:String" x:Key="IN_strNoCopies">
+                                                                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="IN_intCertificateCounter.ToString" />
+                                                                                    </InArgument>
+                                                                                    <InArgument x:TypeArguments="x:String" x:Key="IN_strNoRequested">
+                                                                                      <Literal x:TypeArguments="x:String">1</Literal>
+                                                                                    </InArgument>
+                                                                                    <InArgument x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" x:Key="IN_dictConfig">
+                                                                                      <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" ExpressionText="IN_dictConfig" />
+                                                                                    </InArgument>
+                                                                                    <OutArgument x:TypeArguments="x:String" x:Key="OUT_strFlow">
+                                                                                      <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="OUT_strFlow" />
+                                                                                    </OutArgument>
+                                                                                    <OutArgument x:TypeArguments="x:String" x:Key="OUT_strReasonForStoppingRobot">
+                                                                                      <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="OUT_strReasonForStoppingRobot" />
+                                                                                    </OutArgument>
                                                                                   </ui:InvokeWorkflowFile.Arguments>
                                                                                   <sap:WorkflowViewStateService.ViewState>
                                                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">

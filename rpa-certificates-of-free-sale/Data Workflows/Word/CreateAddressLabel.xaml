@@ -256,7 +256,7 @@
                       <av:PointCollection x:Key="ConnectorLocation">300,316.54 300,367.5</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <If Condition="[IN_dictAttachmentFields(&quot;PostalAddress&quot;).Equals(&quot;&quot;)]" DisplayName="If - Postal Address" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_1">
+                  <If Condition="[IN_dictAttachmentFields(&quot;PostalCompAddress&quot;).Equals(&quot;&quot;)]" DisplayName="If - Postal Address" sap:VirtualizedContainerService.HintSize="569,208" sap2010:WorkflowViewState.IdRef="If_1">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -268,7 +268,7 @@
                           <OutArgument x:TypeArguments="x:String">[strAddress]</OutArgument>
                         </Assign.To>
                         <Assign.Value>
-                          <InArgument x:TypeArguments="x:String">[IN_dictAttachmentFields("Address")]</InArgument>
+                          <InArgument x:TypeArguments="x:String">[IN_dictAttachmentFields("OrganisationName") + Environment.NewLine + IN_dictAttachmentFields("CompanyAddress") + Environment.NewLine + IN_dictAttachmentFields("CompanyPostcode")]</InArgument>
                         </Assign.Value>
                       </Assign>
                     </If.Then>
@@ -278,7 +278,7 @@
                           <OutArgument x:TypeArguments="x:String">[strAddress]</OutArgument>
                         </Assign.To>
                         <Assign.Value>
-                          <InArgument x:TypeArguments="x:String">[IN_dictAttachmentFields("PostalAddress")]</InArgument>
+                          <InArgument x:TypeArguments="x:String">[IN_dictAttachmentFields("PostalCompName") + Environment.NewLine + IN_dictAttachmentFields("PostalPostalCompAddressAddress") + Environment.NewLine + IN_dictAttachmentFields("PostalCompPostcode")]</InArgument>
                         </Assign.Value>
                       </Assign>
                     </If.Else>
