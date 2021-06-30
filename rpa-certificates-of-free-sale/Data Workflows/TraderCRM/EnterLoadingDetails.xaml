@@ -12,7 +12,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1794,830</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1464,830</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>EnterLoadingDetails_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -167,7 +167,7 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Assign sap:VirtualizedContainerService.HintSize="562,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+                <Assign sap:VirtualizedContainerService.HintSize="701,60" sap2010:WorkflowViewState.IdRef="Assign_6">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:String">[strOrganisationName]</OutArgument>
                   </Assign.To>
@@ -175,9 +175,9 @@
                     <InArgument x:TypeArguments="x:String">[IN_dictAttachmentFields("OrganisationName")]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <ui:InterruptibleWhile Condition="[strOrganisationName.Trim.Equals(&quot;&quot;) = False and boolOrganisationExists = False]" DisplayName="While - Enter organisation name" sap:VirtualizedContainerService.HintSize="562,617" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+                <ui:InterruptibleWhile Condition="[strOrganisationName.Trim.Equals(&quot;&quot;) = False and boolOrganisationExists = False]" DisplayName="While - Enter organisation name" sap:VirtualizedContainerService.HintSize="701,1231" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
                   <ui:InterruptibleWhile.Body>
-                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,452" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="665,1066" sap2010:WorkflowViewState.IdRef="Sequence_8">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="s:String[]" Name="arrString" />
                       </Sequence.Variables>
@@ -186,21 +186,21 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="623,665" sap2010:WorkflowViewState.IdRef="TryCatch_3">
                         <TryCatch.Variables>
                           <Variable x:TypeArguments="x:Boolean" Name="strPostalPostCode" />
                         </TryCatch.Variables>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <TryCatch.Try>
-                          <tce:InputOrganisation sap:VirtualizedContainerService.HintSize="200,22" IN_browserCRM="[IN_browserCRM]" IN_intTimeOut="5000" IN_strOrganisation="[strOrganisationName]" IN_strPostcode="[IN_dictAttachmentFields(&quot;CompanyPostcode&quot;)]" sap2010:WorkflowViewState.IdRef="InputOrganisation_5" />
+                          <tce:InputOrganisation sap:VirtualizedContainerService.HintSize="200,22" IN_browserCRM="[IN_browserCRM]" IN_intTimeOut="5000" IN_strOrganisation="[strOrganisationName.Trim]" IN_strPostcode="[IN_dictAttachmentFields(&quot;CompanyPostcode&quot;)]" sap2010:WorkflowViewState.IdRef="InputOrganisation_5" />
                         </TryCatch.Try>
                         <TryCatch.Catches>
-                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,120" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="589,503" sap2010:WorkflowViewState.IdRef="Catch`1_3">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -211,10 +211,10 @@
                               <ActivityAction.Argument>
                                 <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                               </ActivityAction.Argument>
-                              <If Condition="[exception.Message.Contains(&quot;find the UI element&quot;) and (IN_dictAttachmentFields(&quot;PostalCompPostcode&quot;).equals(&quot;&quot;) = False)]" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_2">
+                              <If Condition="[exception.Message.Contains(&quot;find the UI element&quot;) and (IN_dictAttachmentFields(&quot;PostalCompPostcode&quot;).equals(&quot;&quot;) = False)]" sap:VirtualizedContainerService.HintSize="583,434" sap2010:WorkflowViewState.IdRef="If_2">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
@@ -227,7 +227,7 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                     <TryCatch.Try>
-                                      <tce:InputOrganisation sap:VirtualizedContainerService.HintSize="200,22" IN_browserCRM="[IN_browserCRM]" IN_intTimeOut="5000" IN_strOrganisation="[strOrganisationName]" IN_strPostcode="[IN_dictAttachmentFields(&quot;PostalCompPostcode&quot;)]" sap2010:WorkflowViewState.IdRef="InputOrganisation_6" />
+                                      <tce:InputOrganisation sap:VirtualizedContainerService.HintSize="200,22" IN_browserCRM="[IN_browserCRM]" IN_intTimeOut="5000" IN_strOrganisation="[strOrganisationName.Trim]" IN_strPostcode="[IN_dictAttachmentFields(&quot;PostalCompPostcode&quot;)]" sap2010:WorkflowViewState.IdRef="InputOrganisation_6" />
                                     </TryCatch.Try>
                                     <TryCatch.Catches>
                                       <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
@@ -251,8 +251,8 @@
                           </Catch>
                         </TryCatch.Catches>
                       </TryCatch>
-                      <tce:CheckOrganisationEntered IN_intTimeOut="{x:Null}" sap:VirtualizedContainerService.HintSize="484,22" IN_browserCRM="[IN_browserCRM]" sap2010:WorkflowViewState.IdRef="CheckOrganisationEntered_4" OUT_boolOrganisationExists="[boolOrganisationExists]" />
-                      <If Condition="[boolOrganisationExists]" DisplayName="If organisation entered" sap:VirtualizedContainerService.HintSize="484,207" sap2010:WorkflowViewState.IdRef="If_3">
+                      <tce:CheckOrganisationEntered IN_intTimeOut="{x:Null}" sap:VirtualizedContainerService.HintSize="623,22" IN_browserCRM="[IN_browserCRM]" sap2010:WorkflowViewState.IdRef="CheckOrganisationEntered_4" OUT_boolOrganisationExists="[boolOrganisationExists]" />
+                      <If Condition="[boolOrganisationExists]" DisplayName="If organisation entered" sap:VirtualizedContainerService.HintSize="623,207" sap2010:WorkflowViewState.IdRef="If_3">
                         <If.Else>
                           <Assign DisplayName="Assign - Remove last word" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_7">
                             <Assign.To>
@@ -364,7 +364,7 @@
                                               <av:PointCollection x:Key="ConnectorLocation">400,1483 400,1533</av:PointCollection>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <tce:InputOrderNumber sap:VirtualizedContainerService.HintSize="200,22" IN_browserCRM="[IN_browserCRM]" IN_strOrderNumber="[IN_dictAttachmentFields(&quot;Consignment&quot;)]" sap2010:WorkflowViewState.IdRef="InputOrderNumber_1">
+                                          <tce:InputOrderNumber sap:VirtualizedContainerService.HintSize="200,22" IN_browserCRM="[IN_browserCRM]" IN_strOrderNumber="[IN_dictAttachmentFields(&quot;Consignment&quot;).Trim]" sap2010:WorkflowViewState.IdRef="InputOrderNumber_1">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -874,7 +874,7 @@
                                   <av:PointCollection x:Key="ConnectorLocation">390,921 390,971</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <tce:InputContact sap:VirtualizedContainerService.HintSize="200,22" IN_browserCRM="[IN_browserCRM]" IN_strContactName="[IN_dictAttachmentFields(&quot;ContactName&quot;)]" sap2010:WorkflowViewState.IdRef="InputContact_1">
+                              <tce:InputContact sap:VirtualizedContainerService.HintSize="200,22" IN_browserCRM="[IN_browserCRM]" IN_strContactName="[IN_dictAttachmentFields(&quot;ContactName&quot;).Trim]" sap2010:WorkflowViewState.IdRef="InputContact_1">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
