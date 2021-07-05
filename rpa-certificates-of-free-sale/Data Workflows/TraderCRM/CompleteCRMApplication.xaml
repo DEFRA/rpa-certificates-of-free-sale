@@ -6,6 +6,7 @@
     <x:Property Name="OUT_strFlow" Type="OutArgument(x:String)" />
     <x:Property Name="OUT_strReasonForStoppingRobot" Type="OutArgument(x:String)" />
     <x:Property Name="IN_intCertsRequested" Type="InArgument(x:Int32)" />
+    <x:Property Name="IN_intCertCopies" Type="InArgument(x:Int32)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
@@ -696,7 +697,7 @@
                                                                                   <av:PointCollection x:Key="ConnectorLocation">300,2116.54 300,2166.54</av:PointCollection>
                                                                                 </scg:Dictionary>
                                                                               </sap:WorkflowViewStateService.ViewState>
-                                                                              <TryCatch DisplayName="Try Enter Detail Tab Info" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_7">
+                                                                              <TryCatch DisplayName="Try Enter Detail Tab Info" sap:VirtualizedContainerService.HintSize="440,606" sap2010:WorkflowViewState.IdRef="TryCatch_7">
                                                                                 <TryCatch.Try>
                                                                                   <Sequence sap:VirtualizedContainerService.HintSize="402,379" sap2010:WorkflowViewState.IdRef="Sequence_13">
                                                                                     <sap:WorkflowViewStateService.ViewState>
@@ -706,12 +707,24 @@
                                                                                     </sap:WorkflowViewStateService.ViewState>
                                                                                     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Enter Detail Tab Info" sap:VirtualizedContainerService.HintSize="360,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Data Workflows\TraderCRM\EnterDetailTabInfo.xaml">
                                                                                       <ui:InvokeWorkflowFile.Arguments>
-                                                                                        <InArgument x:TypeArguments="ui:Browser" x:Key="IN_browserCRM">[IN_browserCRM]</InArgument>
-                                                                                        <InArgument x:TypeArguments="x:String" x:Key="IN_strNoCopies">[IN_intCertificateCounter.ToString]</InArgument>
-                                                                                        <InArgument x:TypeArguments="x:String" x:Key="IN_strNoRequested">[IN_intCertsRequested.ToString]</InArgument>
-                                                                                        <InArgument x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" x:Key="IN_dictConfig">[IN_dictConfig]</InArgument>
-                                                                                        <OutArgument x:TypeArguments="x:String" x:Key="OUT_strFlow">[OUT_strFlow]</OutArgument>
-                                                                                        <OutArgument x:TypeArguments="x:String" x:Key="OUT_strReasonForStoppingRobot">[OUT_strReasonForStoppingRobot]</OutArgument>
+                                                                                        <InArgument x:TypeArguments="ui:Browser" x:Key="IN_browserCRM">
+                                                                                          <mva:VisualBasicValue x:TypeArguments="ui:Browser" ExpressionText="IN_browserCRM" />
+                                                                                        </InArgument>
+                                                                                        <InArgument x:TypeArguments="x:String" x:Key="IN_strNoCopies">
+                                                                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="IN_intCertCopies.ToString" />
+                                                                                        </InArgument>
+                                                                                        <InArgument x:TypeArguments="x:String" x:Key="IN_strNoRequested">
+                                                                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="IN_intCertsRequested.ToString" />
+                                                                                        </InArgument>
+                                                                                        <InArgument x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" x:Key="IN_dictConfig">
+                                                                                          <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" ExpressionText="IN_dictConfig" />
+                                                                                        </InArgument>
+                                                                                        <OutArgument x:TypeArguments="x:String" x:Key="OUT_strFlow">
+                                                                                          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="OUT_strFlow" />
+                                                                                        </OutArgument>
+                                                                                        <OutArgument x:TypeArguments="x:String" x:Key="OUT_strReasonForStoppingRobot">
+                                                                                          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="OUT_strReasonForStoppingRobot" />
+                                                                                        </OutArgument>
                                                                                       </ui:InvokeWorkflowFile.Arguments>
                                                                                       <sap:WorkflowViewStateService.ViewState>
                                                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
