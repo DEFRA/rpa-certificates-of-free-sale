@@ -10,7 +10,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1464,830</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1375,830</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>UserDetailChecks_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="24">
@@ -130,9 +130,9 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[IN_dictAttachmentFields is nothing]" sap:VirtualizedContainerService.HintSize="550,427" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[IN_dictAttachmentFields is nothing]" sap:VirtualizedContainerService.HintSize="550,554" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="405,279" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <Sequence sap:VirtualizedContainerService.HintSize="405,406" sap2010:WorkflowViewState.IdRef="Sequence_5">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -146,12 +146,21 @@
                       <InArgument x:TypeArguments="x:Boolean" x:Key="IN_boolLoading">False</InArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
+                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="363,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Logic Workflows\Start Up\Config Reader.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="x:String" x:Key="IN_strConfigPath" />
+                      <OutArgument x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" x:Key="OUT_dictConfig">
+                        <mva:VisualBasicReference x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" ExpressionText="IN_dictConfig" />
+                      </OutArgument>
+                      <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="OUT_dictFormFields" />
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
                   <Assign sap:VirtualizedContainerService.HintSize="363,60" sap2010:WorkflowViewState.IdRef="Assign_3">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[IN_strApplicationFilePath]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:String">\\GFD218DF\x953922$\Documents\COFS\NewCoFSApplicationForm\CoFS Application Test2 Live.docx</InArgument>
+                      <InArgument x:TypeArguments="x:String">\\GFD218DF\x953922$\Documents\COFS\NewCoFSApplicationForm\Test Product Separate.docx</InArgument>
                     </Assign.Value>
                   </Assign>
                 </Sequence>
@@ -278,7 +287,7 @@
                                               <av:Size x:Key="ShapeSize">200,66</av:Size>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <Sequence DisplayName="User Separates Product List" sap:VirtualizedContainerService.HintSize="526,1069" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                                          <Sequence DisplayName="User Separates Product List" sap:VirtualizedContainerService.HintSize="526,1169" sap2010:WorkflowViewState.IdRef="Sequence_8">
                                             <Sequence.Variables>
                                               <Variable x:TypeArguments="x:String" Name="strJSONOutput" />
                                               <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="matches" />
@@ -308,19 +317,30 @@
                                                 <Throw Exception="[new BusinessRuleException(&quot;Couldn't match any products from the User Input form&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
                                               </If.Then>
                                             </If>
-                                            <ui:ForEach x:TypeArguments="str:Match" CurrentIndex="{x:Null}" DisplayName="For Each match" sap:VirtualizedContainerService.HintSize="484,248" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[matches]">
+                                            <ui:ForEach x:TypeArguments="str:Match" CurrentIndex="{x:Null}" DisplayName="For Each match" sap:VirtualizedContainerService.HintSize="484,348" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[matches]">
                                               <ui:ForEach.Body>
                                                 <ActivityAction x:TypeArguments="str:Match">
                                                   <ActivityAction.Argument>
                                                     <DelegateInArgument x:TypeArguments="str:Match" Name="match" />
                                                   </ActivityAction.Argument>
-                                                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                                                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="304,214" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                                                    <Sequence.Variables>
+                                                      <Variable x:TypeArguments="x:String" Name="strMatch" />
+                                                    </Sequence.Variables>
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
-                                                    <AddToCollection x:TypeArguments="x:String" Collection="[listProducts]" DisplayName="Add To Collection" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_1" Item="[match.Groups(1).ToString]" />
+                                                    <Assign DisplayName="Assign - remove last  speech marks" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+                                                      <Assign.To>
+                                                        <OutArgument x:TypeArguments="x:String">[strMatch]</OutArgument>
+                                                      </Assign.To>
+                                                      <Assign.Value>
+                                                        <InArgument x:TypeArguments="x:String">[match.Groups(1).ToString.Remove(match.Groups(1).Length -1)]</InArgument>
+                                                      </Assign.Value>
+                                                    </Assign>
+                                                    <AddToCollection x:TypeArguments="x:String" Collection="[listProducts]" DisplayName="Add To Collection" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_1" Item="[strMatch]" />
                                                   </Sequence>
                                                 </ActivityAction>
                                               </ui:ForEach.Body>

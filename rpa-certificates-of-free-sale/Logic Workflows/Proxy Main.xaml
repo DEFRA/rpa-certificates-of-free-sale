@@ -561,10 +561,7 @@
                                                         <r:Log_Case___Preset DisplayName="Log Case - Sucess" sap:VirtualizedContainerService.HintSize="200,22" IN_dateCaseEndTime="[Now]" IN_dateCaseStartTime="[dateCaseStartTime]" IN_dateCaseTotalTime="[(Now - dateCaseStartTime).ToString]" IN_strCaseID="[strCaseID]" IN_strFailureMessage="[strReasonForStop]" IN_strFilePath="[strLogFilePath]" IN_strNotes="Loading process Successful" IN_strSuccessful="Success" IN_strUser="[Environment.UserName]" IN_strWorkpackageName="[dictConfig(&quot;WorkPackageName&quot;)]" sap2010:WorkflowViewState.IdRef="Log_Case___Preset_3" />
                                                       </Sequence>
                                                       <FlowStep.Next>
-                                                        <FlowDecision x:Name="__ReferenceID31" DisplayName="Stop?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_12">
-                                                          <FlowDecision.Condition>
-                                                            <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="OUT_strFlow = &quot;Stop&quot;" />
-                                                          </FlowDecision.Condition>
+                                                        <FlowDecision x:Name="__ReferenceID31" Condition="[OUT_strFlow = &quot;Stop&quot;]" DisplayName="Stop?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_12">
                                                           <sap:WorkflowViewStateService.ViewState>
                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -664,10 +661,7 @@
                                                                     </scg:Dictionary>
                                                                   </sap:WorkflowViewStateService.ViewState>
                                                                   <FlowDecision.True>
-                                                                    <FlowDecision x:Name="__ReferenceID29" DisplayName="CRM to Complete?" sap:VirtualizedContainerService.HintSize="106,87" sap2010:WorkflowViewState.IdRef="FlowDecision_10">
-                                                                      <FlowDecision.Condition>
-                                                                        <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="intChildCaseCounter &gt;= 1 and boolFailure = False" />
-                                                                      </FlowDecision.Condition>
+                                                                    <FlowDecision x:Name="__ReferenceID29" Condition="[intChildCaseCounter &gt;= 1 and boolFailure = False]" DisplayName="CRM to Complete?" sap:VirtualizedContainerService.HintSize="106,87" sap2010:WorkflowViewState.IdRef="FlowDecision_10">
                                                                       <sap:WorkflowViewStateService.ViewState>
                                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -717,24 +711,12 @@
                                                                                 </Assign>
                                                                                 <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Complete CRM Application" sap:VirtualizedContainerService.HintSize="379,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Data Workflows\TraderCRM\CompleteCRMApplication.xaml">
                                                                                   <ui:InvokeWorkflowFile.Arguments>
-                                                                                    <InArgument x:TypeArguments="ui:Browser" x:Key="IN_browserCRM">
-                                                                                      <mva:VisualBasicValue x:TypeArguments="ui:Browser" ExpressionText="browserCRM" />
-                                                                                    </InArgument>
-                                                                                    <InArgument x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" x:Key="IN_dictConfig">
-                                                                                      <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" ExpressionText="dictConfig" />
-                                                                                    </InArgument>
-                                                                                    <InArgument x:TypeArguments="x:Int32" x:Key="IN_intCertificateCounter">
-                                                                                      <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intCertificateCounter" />
-                                                                                    </InArgument>
-                                                                                    <OutArgument x:TypeArguments="x:String" x:Key="OUT_strFlow">
-                                                                                      <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="OUT_strFlow" />
-                                                                                    </OutArgument>
-                                                                                    <OutArgument x:TypeArguments="x:String" x:Key="OUT_strReasonForStoppingRobot">
-                                                                                      <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strReasonForStop" />
-                                                                                    </OutArgument>
-                                                                                    <InArgument x:TypeArguments="x:Int32" x:Key="IN_intCertsRequested">
-                                                                                      <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intCertsRequested" />
-                                                                                    </InArgument>
+                                                                                    <InArgument x:TypeArguments="ui:Browser" x:Key="IN_browserCRM">[browserCRM]</InArgument>
+                                                                                    <InArgument x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" x:Key="IN_dictConfig">[dictConfig]</InArgument>
+                                                                                    <InArgument x:TypeArguments="x:Int32" x:Key="IN_intCertificateCounter">[intCertificateCounter]</InArgument>
+                                                                                    <OutArgument x:TypeArguments="x:String" x:Key="OUT_strFlow">[OUT_strFlow]</OutArgument>
+                                                                                    <OutArgument x:TypeArguments="x:String" x:Key="OUT_strReasonForStoppingRobot">[strReasonForStop]</OutArgument>
+                                                                                    <InArgument x:TypeArguments="x:Int32" x:Key="IN_intCertsRequested">[intCertsRequested]</InArgument>
                                                                                   </ui:InvokeWorkflowFile.Arguments>
                                                                                 </ui:InvokeWorkflowFile>
                                                                                 <Assign DisplayName="Assign Child Case Counter" sap:VirtualizedContainerService.HintSize="379,60" sap2010:WorkflowViewState.IdRef="Assign_32">
@@ -1104,48 +1086,20 @@
                                                                             </Assign>
                                                                             <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Process Child Case" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Logic Workflows\ProcessChildCase.xaml">
                                                                               <ui:InvokeWorkflowFile.Arguments>
-                                                                                <InArgument x:TypeArguments="x:String" x:Key="IN_strCaseFilePath">
-                                                                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strCaseFilePath" />
-                                                                                </InArgument>
-                                                                                <InArgument x:TypeArguments="x:String" x:Key="IN_strRefFolder">
-                                                                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strRefFolderPath" />
-                                                                                </InArgument>
-                                                                                <InArgument x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" x:Key="IN_dictConfig">
-                                                                                  <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" ExpressionText="dictConfig" />
-                                                                                </InArgument>
-                                                                                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="IN_dictFormFields">
-                                                                                  <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:String)" ExpressionText="dictFormFields" />
-                                                                                </InArgument>
-                                                                                <OutArgument x:TypeArguments="x:String" x:Key="OUT_strReasonForStoppingRobot">
-                                                                                  <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strReasonForStop" />
-                                                                                </OutArgument>
-                                                                                <OutArgument x:TypeArguments="x:String" x:Key="OUT_strFlow">
-                                                                                  <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="OUT_strFlow" />
-                                                                                </OutArgument>
-                                                                                <InArgument x:TypeArguments="ui:Browser" x:Key="IN_browserCRM">
-                                                                                  <mva:VisualBasicValue x:TypeArguments="ui:Browser" ExpressionText="browserCRM" />
-                                                                                </InArgument>
-                                                                                <InArgument x:TypeArguments="sd:DataTable" x:Key="IN_dtCountries">
-                                                                                  <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dtCountries" />
-                                                                                </InArgument>
-                                                                                <InArgument x:TypeArguments="x:String" x:Key="IN_strReferenceNumber">
-                                                                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strReferenceNumber" />
-                                                                                </InArgument>
-                                                                                <InArgument x:TypeArguments="x:String" x:Key="IN_strWorkingFolderPath">
-                                                                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strWorkingFolderPath" />
-                                                                                </InArgument>
-                                                                                <InArgument x:TypeArguments="x:Int32" x:Key="IN_intCertificateCounter">
-                                                                                  <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intCertificateCounter" />
-                                                                                </InArgument>
-                                                                                <OutArgument x:TypeArguments="x:Int32" x:Key="OUT_intCertsRequested">
-                                                                                  <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="intCertsRequested" />
-                                                                                </OutArgument>
-                                                                                <OutArgument x:TypeArguments="x:Int32" x:Key="OUT_intCertificateCounter">
-                                                                                  <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="intCertificateCounter" />
-                                                                                </OutArgument>
-                                                                                <InArgument x:TypeArguments="x:Int32" x:Key="IN_intCertsRequested">
-                                                                                  <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intCertsRequested" />
-                                                                                </InArgument>
+                                                                                <InArgument x:TypeArguments="x:String" x:Key="IN_strCaseFilePath">[strCaseFilePath]</InArgument>
+                                                                                <InArgument x:TypeArguments="x:String" x:Key="IN_strRefFolder">[strRefFolderPath]</InArgument>
+                                                                                <InArgument x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" x:Key="IN_dictConfig">[dictConfig]</InArgument>
+                                                                                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="IN_dictFormFields">[dictFormFields]</InArgument>
+                                                                                <OutArgument x:TypeArguments="x:String" x:Key="OUT_strReasonForStoppingRobot">[strReasonForStop]</OutArgument>
+                                                                                <OutArgument x:TypeArguments="x:String" x:Key="OUT_strFlow">[OUT_strFlow]</OutArgument>
+                                                                                <InArgument x:TypeArguments="ui:Browser" x:Key="IN_browserCRM">[browserCRM]</InArgument>
+                                                                                <InArgument x:TypeArguments="sd:DataTable" x:Key="IN_dtCountries">[dtCountries]</InArgument>
+                                                                                <InArgument x:TypeArguments="x:String" x:Key="IN_strReferenceNumber">[strReferenceNumber]</InArgument>
+                                                                                <InArgument x:TypeArguments="x:String" x:Key="IN_strWorkingFolderPath">[strWorkingFolderPath]</InArgument>
+                                                                                <InArgument x:TypeArguments="x:Int32" x:Key="IN_intCertificateCounter">[intCertificateCounter]</InArgument>
+                                                                                <OutArgument x:TypeArguments="x:Int32" x:Key="OUT_intCertsRequested">[intCertsRequested]</OutArgument>
+                                                                                <OutArgument x:TypeArguments="x:Int32" x:Key="OUT_intCertificateCounter">[intCertificateCounter]</OutArgument>
+                                                                                <InArgument x:TypeArguments="x:Int32" x:Key="IN_intCertsRequested">[intCertsRequested]</InArgument>
                                                                               </ui:InvokeWorkflowFile.Arguments>
                                                                             </ui:InvokeWorkflowFile>
                                                                             <Assign DisplayName="Assign retry counter" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_15">
