@@ -68,11 +68,7 @@
       <Variable x:TypeArguments="x:String" Name="strYear" />
       <Variable x:TypeArguments="x:String" Name="strDate" />
       <Variable x:TypeArguments="s:DateTime" Name="dateReceived" />
-      <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="dictTest">
-        <Variable.Default>
-          <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:String)" ExpressionText="new Dictionary(Of String, String)" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Default="[new Dictionary(Of String, String)]" Name="dictTest" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -82,22 +78,20 @@
     </sap:WorkflowViewStateService.ViewState>
     <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_30">
       <Assign.To>
-        <OutArgument x:TypeArguments="x:String">[dictTest("Test1")]</OutArgument>
+        <OutArgument x:TypeArguments="x:String">[strDate]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">
-          <Literal x:TypeArguments="x:String" Value="" />
-        </InArgument>
+        <InArgument x:TypeArguments="x:String">6th July 2021</InArgument>
       </Assign.Value>
     </Assign>
     <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_29">
       <Assign.To>
-        <OutArgument x:TypeArguments="x:String">[dictTest("Test1")]</OutArgument>
+        <OutArgument x:TypeArguments="s:DateTime">[dateReceived]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[dictTest("Test1") + "string1"]</InArgument>
+        <InArgument x:TypeArguments="s:DateTime">[Date.Parse(strDate)]</InArgument>
       </Assign.Value>
     </Assign>
-    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="WriteLine_29" Text="[dictTest(&quot;Test1&quot;)]" />
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="WriteLine_29" Text="[dateReceived.ToString]" />
   </Sequence>
 </Activity>

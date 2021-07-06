@@ -101,11 +101,11 @@
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">200,264.5</av:Point>
-          <av:Size x:Key="ShapeSize">200,52</av:Size>
+          <av:Size x:Key="ShapeSize">200,51</av:Size>
           <av:PointCollection x:Key="ConnectorLocation">300,315.5 300,345.5 299.895,345.5 299.895,377.58</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Flowchart DisplayName="Main Logic" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="Flowchart_4">
+      <Flowchart DisplayName="Main Logic" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Flowchart_4">
         <Flowchart.Variables>
           <Variable x:TypeArguments="x:Int32" Name="intRetryCounter" />
           <Variable x:TypeArguments="s:Exception" Name="exceptionCurrent" />
@@ -428,42 +428,18 @@
                                                 </sap:WorkflowViewStateService.ViewState>
                                                 <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke FindCertificateTemplate" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Logic Workflows\FindCertificateTemplate.xaml">
                                                   <ui:InvokeWorkflowFile.Arguments>
-                                                    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="IN_dictAttachmentFields">
-                                                      <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:String)" ExpressionText="dictAttachmentFields" />
-                                                    </InArgument>
-                                                    <InArgument x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" x:Key="IN_dictConfig">
-                                                      <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" ExpressionText="IN_dictConfig" />
-                                                    </InArgument>
-                                                    <InArgument x:TypeArguments="x:String" x:Key="IN_strWorkingFolderPath">
-                                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="IN_strWorkingFolderPath" />
-                                                    </InArgument>
-                                                    <InArgument x:TypeArguments="x:String" x:Key="IN_strReferenceNumber">
-                                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="IN_strReferenceNumber" />
-                                                    </InArgument>
-                                                    <OutArgument x:TypeArguments="x:String" x:Key="OUT_strCertificatePath">
-                                                      <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strCertificatePath" />
-                                                    </OutArgument>
-                                                    <InArgument x:TypeArguments="x:Int32" x:Key="IN_intCertificateCounter">
-                                                      <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intCertificateCounter" />
-                                                    </InArgument>
-                                                    <OutArgument x:TypeArguments="x:Boolean" x:Key="OUT_boolSpanCompleted">
-                                                      <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="boolSpanCompleted" />
-                                                    </OutArgument>
-                                                    <OutArgument x:TypeArguments="x:Boolean" x:Key="OUT_boolEngCompleted">
-                                                      <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="boolEngCompleted" />
-                                                    </OutArgument>
-                                                    <InArgument x:TypeArguments="x:Boolean" x:Key="IN_boolEngCompleted">
-                                                      <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="boolEngCompleted" />
-                                                    </InArgument>
-                                                    <InArgument x:TypeArguments="x:Boolean" x:Key="IN_boolSpanCompleted">
-                                                      <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="boolSpanCompleted" />
-                                                    </InArgument>
-                                                    <OutArgument x:TypeArguments="x:Boolean" x:Key="OUT_boolSpanishCertificate">
-                                                      <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="boolSpanishCertificate" />
-                                                    </OutArgument>
-                                                    <OutArgument x:TypeArguments="x:String" x:Key="OUT_strTemplatePath">
-                                                      <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strTemplatePath" />
-                                                    </OutArgument>
+                                                    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="IN_dictAttachmentFields">[dictAttachmentFields]</InArgument>
+                                                    <InArgument x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" x:Key="IN_dictConfig">[IN_dictConfig]</InArgument>
+                                                    <InArgument x:TypeArguments="x:String" x:Key="IN_strWorkingFolderPath">[IN_strWorkingFolderPath]</InArgument>
+                                                    <InArgument x:TypeArguments="x:String" x:Key="IN_strReferenceNumber">[IN_strReferenceNumber]</InArgument>
+                                                    <OutArgument x:TypeArguments="x:String" x:Key="OUT_strCertificatePath">[strCertificatePath]</OutArgument>
+                                                    <InArgument x:TypeArguments="x:Int32" x:Key="IN_intCertificateCounter">[intCertificateCounter]</InArgument>
+                                                    <OutArgument x:TypeArguments="x:Boolean" x:Key="OUT_boolSpanCompleted">[boolSpanCompleted]</OutArgument>
+                                                    <OutArgument x:TypeArguments="x:Boolean" x:Key="OUT_boolEngCompleted">[boolEngCompleted]</OutArgument>
+                                                    <InArgument x:TypeArguments="x:Boolean" x:Key="IN_boolEngCompleted">[boolEngCompleted]</InArgument>
+                                                    <InArgument x:TypeArguments="x:Boolean" x:Key="IN_boolSpanCompleted">[boolSpanCompleted]</InArgument>
+                                                    <OutArgument x:TypeArguments="x:Boolean" x:Key="OUT_boolSpanishCertificate">[boolSpanishCertificate]</OutArgument>
+                                                    <OutArgument x:TypeArguments="x:String" x:Key="OUT_strTemplatePath">[strTemplatePath]</OutArgument>
                                                   </ui:InvokeWorkflowFile.Arguments>
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1912,8 +1888,8 @@
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">199.895,377.58</av:Point>
-              <av:Size x:Key="ShapeSize">200,68</av:Size>
-              <av:PointCollection x:Key="ConnectorLocation">299.895,445.58 299.895,475.58 300,475.58 300,515.5</av:PointCollection>
+              <av:Size x:Key="ShapeSize">200,66</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">299.895,443.58 299.895,473.58 300,473.58 300,515.5</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Sequence DisplayName="Set OUT Args" sap:VirtualizedContainerService.HintSize="304,252" sap2010:WorkflowViewState.IdRef="Sequence_57">
@@ -1940,7 +1916,7 @@
                 <OutArgument x:TypeArguments="x:Int32">[OUT_intCertCopies]</OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="x:Int32">[IN_intCertCopies + Integer.Parse(dictAttachmentFields("NumCert"))]</InArgument>
+                <InArgument x:TypeArguments="x:Int32">[IN_intCertCopies + (Integer.Parse(dictAttachmentFields("NumCert")) * (intCertificateCounter -1))]</InArgument>
               </Assign.Value>
             </Assign>
           </Sequence>
@@ -1949,10 +1925,10 @@
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">200,515.5</av:Point>
-                  <av:Size x:Key="ShapeSize">200,68</av:Size>
+                  <av:Size x:Key="ShapeSize">200,66</av:Size>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence DisplayName="Log End" sap:VirtualizedContainerService.HintSize="200,68" sap2010:WorkflowViewState.IdRef="Sequence_52">
+              <Sequence DisplayName="Log End" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_52">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1970,11 +1946,11 @@
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">200,127.5</av:Point>
-          <av:Size x:Key="ShapeSize">200,68</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">300,195.5 300,264.5</av:PointCollection>
+          <av:Size x:Key="ShapeSize">200,66</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">300,193.5 300,264.5</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Log Start" sap:VirtualizedContainerService.HintSize="200,68" sap2010:WorkflowViewState.IdRef="Sequence_29">
+      <Sequence DisplayName="Log Start" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_29">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
