@@ -225,7 +225,7 @@
                   <av:PointCollection x:Key="ConnectorLocation">300,213.62 300,265.54</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence DisplayName="Copy file to Working Folder" sap:VirtualizedContainerService.HintSize="426,440" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <Sequence DisplayName="Copy file to Working Folder" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_3">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -264,7 +264,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:CommentOut>
-                <ui:CopyFile ContinueOnError="{x:Null}" Destination="[strAddressLabelPath]" DisplayName="Copy File - to working folder" sap:VirtualizedContainerService.HintSize="384,157" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="True" Path="[IN_dictConfig(&quot;AddressLabelPath&quot;)]">
+                <ui:CopyFile ContinueOnError="{x:Null}" Destination="[strAddressLabelPath]" DisplayName="Copy File - to working folder" sap:VirtualizedContainerService.HintSize="384,157" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="False" Path="[IN_dictConfig(&quot;AddressLabelPath&quot;)]">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -281,7 +281,7 @@
                       <av:PointCollection x:Key="ConnectorLocation">300,316.54 300,367.5</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <If Condition="[IN_dictAttachmentFields(&quot;PostalCompAddress&quot;).Equals(&quot;&quot;)]" DisplayName="If - Postal Address" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_1">
+                  <If Condition="[IN_dictAttachmentFields(&quot;PostalCompAddress&quot;).Equals(&quot;&quot;)]" DisplayName="If - Postal Address" sap:VirtualizedContainerService.HintSize="569,208" sap2010:WorkflowViewState.IdRef="If_1">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -303,7 +303,7 @@
                           <OutArgument x:TypeArguments="x:String">[strAddress]</OutArgument>
                         </Assign.To>
                         <Assign.Value>
-                          <InArgument x:TypeArguments="x:String">[IN_dictAttachmentFields("PostalCompName") + Environment.NewLine + IN_dictAttachmentFields("PostalPostalCompAddressAddress") + Environment.NewLine + IN_dictAttachmentFields("PostalCompPostcode")]</InArgument>
+                          <InArgument x:TypeArguments="x:String">[IN_dictAttachmentFields("PostalCompName") + Environment.NewLine + IN_dictAttachmentFields("PostalCompAddress") + Environment.NewLine + IN_dictAttachmentFields("PostalCompPostcode")]</InArgument>
                         </Assign.Value>
                       </Assign>
                     </If.Else>
