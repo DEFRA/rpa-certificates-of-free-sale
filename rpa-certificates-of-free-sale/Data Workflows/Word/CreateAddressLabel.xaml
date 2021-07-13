@@ -5,6 +5,7 @@
     <x:Property Name="IN_strReferenceNumber" Type="InArgument(x:String)" />
     <x:Property Name="IN_dictAttachmentFields" Type="InArgument(scg:Dictionary(x:String, x:String))" />
     <x:Property Name="IN_intCertificateCounter" Type="InArgument(x:Int32)" />
+    <x:Property Name="IN_strAddressLabel" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
@@ -75,9 +76,9 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID8</x:Reference>
+      <x:Reference>__ReferenceID7</x:Reference>
     </Flowchart.StartNode>
-    <FlowStep x:Name="__ReferenceID6">
+    <FlowStep x:Name="__ReferenceID5">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">200,397</av:Point>
@@ -93,7 +94,7 @@
         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;Ending Workflow - &quot; + strWorkflowName]" />
       </Sequence>
     </FlowStep>
-    <FlowStep x:Name="__ReferenceID8">
+    <FlowStep x:Name="__ReferenceID7">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">200,127.5</av:Point>
@@ -111,7 +112,7 @@
         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Starting Workflow - &quot;+strWorkflowName]" />
       </Sequence>
       <FlowStep.Next>
-        <FlowStep x:Name="__ReferenceID7">
+        <FlowStep x:Name="__ReferenceID6">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">200,253.5</av:Point>
@@ -136,7 +137,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <Flowchart.StartNode>
-              <x:Reference>__ReferenceID5</x:Reference>
+              <x:Reference>__ReferenceID4</x:Reference>
             </Flowchart.StartNode>
             <FlowStep x:Name="__ReferenceID0">
               <sap:WorkflowViewStateService.ViewState>
@@ -158,7 +159,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <p:WordReplaceText DisplayName="Replace Text - Address" Found="[boolReplaced]" sap:VirtualizedContainerService.HintSize="434,137" sap2010:WorkflowViewState.IdRef="WordReplaceText_1" Replace="[strAddress]" Search="[IN_dictConfig(&quot;AddressLabel&quot;)]" />
+                      <p:WordReplaceText DisplayName="Replace Text - Address" Found="[boolReplaced]" sap:VirtualizedContainerService.HintSize="434,137" sap2010:WorkflowViewState.IdRef="WordReplaceText_1" Replace="[IN_strAddressLabel]" Search="[IN_dictConfig(&quot;AddressLabel&quot;)]" />
                       <p:WordReplaceText DisplayName="Replace Text - number of copies" Found="[boolReplaced]" sap:VirtualizedContainerService.HintSize="434,137" sap2010:WorkflowViewState.IdRef="WordReplaceText_2" Replace="[IN_dictAttachmentFields(&quot;NumCert&quot;)]" Search="[IN_dictConfig(&quot;NumberOfCopies&quot;)]" />
                     </Sequence>
                   </ActivityAction>
@@ -170,7 +171,7 @@
                 </sap:WorkflowViewStateService.ViewState>
               </p:WordApplicationScope>
               <FlowStep.Next>
-                <FlowDecision x:Name="__ReferenceID2" Condition="[boolReplaced]" DisplayName="Address In?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+                <FlowDecision x:Name="__ReferenceID1" Condition="[boolReplaced]" DisplayName="Address In?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -181,7 +182,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <FlowDecision.True>
-                    <FlowStep x:Name="__ReferenceID4">
+                    <FlowStep x:Name="__ReferenceID3">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <av:Point x:Key="ShapeLocation">15,486.02</av:Point>
@@ -198,7 +199,7 @@
                     </FlowStep>
                   </FlowDecision.True>
                   <FlowDecision.False>
-                    <FlowStep x:Name="__ReferenceID3">
+                    <FlowStep x:Name="__ReferenceID2">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <av:Point x:Key="ShapeLocation">425,501</av:Point>
@@ -217,12 +218,12 @@
                 </FlowDecision>
               </FlowStep.Next>
             </FlowStep>
-            <FlowStep x:Name="__ReferenceID5">
+            <FlowStep x:Name="__ReferenceID4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">200,147.62</av:Point>
                   <av:Size x:Key="ShapeSize">200,66</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">300,213.62 300,265.54</av:PointCollection>
+                  <av:PointCollection x:Key="ConnectorLocation">300,213.62 300,367.5</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <Sequence DisplayName="Copy file to Working Folder" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_3">
@@ -273,58 +274,54 @@
                 </ui:CopyFile>
               </Sequence>
               <FlowStep.Next>
-                <FlowStep x:Name="__ReferenceID1">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <av:Point x:Key="ShapeLocation">200,265.54</av:Point>
-                      <av:Size x:Key="ShapeSize">200,51</av:Size>
-                      <av:PointCollection x:Key="ConnectorLocation">300,316.54 300,367.5</av:PointCollection>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <If Condition="[IN_dictAttachmentFields(&quot;PostalCompAddress&quot;).Equals(&quot;&quot;)]" DisplayName="If - Postal Address" sap:VirtualizedContainerService.HintSize="569,208" sap2010:WorkflowViewState.IdRef="If_1">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <If.Then>
-                      <Assign DisplayName="Assign - Address" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_2">
-                        <Assign.To>
-                          <OutArgument x:TypeArguments="x:String">[strAddress]</OutArgument>
-                        </Assign.To>
-                        <Assign.Value>
-                          <InArgument x:TypeArguments="x:String">[IN_dictAttachmentFields("OrganisationName") + Environment.NewLine + IN_dictAttachmentFields("CompanyAddress") + Environment.NewLine + IN_dictAttachmentFields("CompanyPostcode")]</InArgument>
-                        </Assign.Value>
-                      </Assign>
-                    </If.Then>
-                    <If.Else>
-                      <Assign DisplayName="Assign - Postal Address" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_3">
-                        <Assign.To>
-                          <OutArgument x:TypeArguments="x:String">[strAddress]</OutArgument>
-                        </Assign.To>
-                        <Assign.Value>
-                          <InArgument x:TypeArguments="x:String">[IN_dictAttachmentFields("PostalCompName") + Environment.NewLine + IN_dictAttachmentFields("PostalCompAddress") + Environment.NewLine + IN_dictAttachmentFields("PostalCompPostcode")]</InArgument>
-                        </Assign.Value>
-                      </Assign>
-                    </If.Else>
-                  </If>
-                  <FlowStep.Next>
-                    <x:Reference>__ReferenceID0</x:Reference>
-                  </FlowStep.Next>
-                </FlowStep>
+                <x:Reference>__ReferenceID0</x:Reference>
               </FlowStep.Next>
+            </FlowStep>
+            <FlowStep>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <av:Point x:Key="ShapeLocation">380,254.5</av:Point>
+                  <av:Size x:Key="ShapeSize">200,51</av:Size>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If Condition="[IN_dictAttachmentFields(&quot;PostalCompAddress&quot;).Equals(&quot;&quot;)]" DisplayName="If - Postal Address" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_1">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <If.Then>
+                  <Assign DisplayName="Assign - Address" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[strAddress]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[IN_dictAttachmentFields("OrganisationName") + Environment.NewLine + IN_dictAttachmentFields("CompanyAddress") + Environment.NewLine + IN_dictAttachmentFields("CompanyPostcode")]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </If.Then>
+                <If.Else>
+                  <Assign DisplayName="Assign - Postal Address" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[strAddress]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[IN_dictAttachmentFields("PostalCompName") + Environment.NewLine + IN_dictAttachmentFields("PostalCompAddress") + Environment.NewLine + IN_dictAttachmentFields("PostalCompPostcode")]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </If.Else>
+              </If>
             </FlowStep>
             <x:Reference>__ReferenceID1</x:Reference>
             <x:Reference>__ReferenceID2</x:Reference>
             <x:Reference>__ReferenceID3</x:Reference>
-            <x:Reference>__ReferenceID4</x:Reference>
           </Flowchart>
           <FlowStep.Next>
-            <x:Reference>__ReferenceID6</x:Reference>
+            <x:Reference>__ReferenceID5</x:Reference>
           </FlowStep.Next>
         </FlowStep>
       </FlowStep.Next>
     </FlowStep>
-    <x:Reference>__ReferenceID7</x:Reference>
+    <x:Reference>__ReferenceID6</x:Reference>
   </Flowchart>
 </Activity>

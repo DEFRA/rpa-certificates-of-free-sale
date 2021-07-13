@@ -10,7 +10,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1240,701</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1794,830</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>UserDetailChecks_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="24">
@@ -285,7 +285,7 @@
                                               <av:Size x:Key="ShapeSize">200,66</av:Size>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <Sequence DisplayName="User Separates Product List" sap:VirtualizedContainerService.HintSize="526,1169" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                                          <Sequence DisplayName="User Separates Product List" sap:VirtualizedContainerService.HintSize="526,1068" sap2010:WorkflowViewState.IdRef="Sequence_8">
                                             <Sequence.Variables>
                                               <Variable x:TypeArguments="x:String" Name="strJSONOutput" />
                                               <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="matches" />
@@ -308,7 +308,6 @@
                                                 <InArgument x:TypeArguments="x:String" x:Key="strProductList">[IN_dictAttachmentFields("ProductName")]</InArgument>
                                               </ufa:FormActivity.FormFieldsCollection>
                                             </ufa:FormActivity>
-                                            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="484,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[strJSONOutput]" />
                                             <ui:Matches DisplayName="Matches - get user input from form" sap:VirtualizedContainerService.HintSize="484,59" sap2010:WorkflowViewState.IdRef="Matches_1" Input="[strJSONOutput]" IsBuilderTabModified="False" Pattern="[IN_dictConfig(&quot;SeparateProducts&quot;)]" RegexOption="IgnoreCase, Compiled" Result="[matches]" />
                                             <If Condition="[matches.Count = 0]" DisplayName="If no matches" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_2">
                                               <If.Then>
