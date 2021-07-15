@@ -6,6 +6,7 @@
     <x:Property Name="IN_boolLoading" Type="InArgument(x:Boolean)" />
     <x:Property Name="IN_intCertsRequested" Type="InArgument(x:Int32)" />
     <x:Property Name="OUT_intCertsRequested" Type="OutArgument(x:Int32)" />
+    <x:Property Name="OUT_boolMultiCerts" Type="OutArgument(x:Boolean)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
@@ -81,9 +82,9 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID60</x:Reference>
+      <x:Reference>__ReferenceID102</x:Reference>
     </Flowchart.StartNode>
-    <FlowStep x:Name="__ReferenceID56">
+    <FlowStep x:Name="__ReferenceID98">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">200,537</av:Point>
@@ -99,7 +100,7 @@
         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;Ending Workflow - &quot; + strWorkflowName]" />
       </Sequence>
     </FlowStep>
-    <FlowStep x:Name="__ReferenceID60">
+    <FlowStep x:Name="__ReferenceID102">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">200,127.5</av:Point>
@@ -117,7 +118,7 @@
         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Starting Workflow - &quot;+strWorkflowName]" />
       </Sequence>
       <FlowStep.Next>
-        <FlowStep x:Name="__ReferenceID59">
+        <FlowStep x:Name="__ReferenceID101">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">200,235.58</av:Point>
@@ -163,7 +164,7 @@
             </If>
           </Sequence>
           <FlowStep.Next>
-            <FlowStep x:Name="__ReferenceID57">
+            <FlowStep x:Name="__ReferenceID99">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">200,343.5</av:Point>
@@ -187,7 +188,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <Flowchart.StartNode>
-                  <x:Reference>__ReferenceID55</x:Reference>
+                  <x:Reference>__ReferenceID97</x:Reference>
                 </Flowchart.StartNode>
                 <FlowStep x:Name="__ReferenceID53">
                   <sap:WorkflowViewStateService.ViewState>
@@ -478,6 +479,9 @@
                           <TryCatch DisplayName="Try Part B of Form" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                             <TryCatch.Try>
                               <Flowchart DisplayName="Part B of Form" sap:VirtualizedContainerService.HintSize="884,919" sap2010:WorkflowViewState.IdRef="Flowchart_3">
+                                <Flowchart.Variables>
+                                  <Variable x:TypeArguments="x:Boolean" Name="boolCertSelected" />
+                                </Flowchart.Variables>
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1221,7 +1225,7 @@
                                                       <av:Size x:Key="ShapeSize">200,66</av:Size>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
-                                                  <Sequence DisplayName="Assign Dioxin Dictionary Variables" sap:VirtualizedContainerService.HintSize="304,252" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                                                  <Sequence DisplayName="Assign Dioxin Dictionary Variables" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_25">
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1358,6 +1362,14 @@
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
+                                                <Assign DisplayName="Assign boolCertSelected" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_52">
+                                                  <Assign.To>
+                                                    <OutArgument x:TypeArguments="x:Boolean">[boolCertSelected]</OutArgument>
+                                                  </Assign.To>
+                                                  <Assign.Value>
+                                                    <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                                  </Assign.Value>
+                                                </Assign>
                                                 <Assign DisplayName="Assign Certificate Type" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_12">
                                                   <Assign.To>
                                                     <OutArgument x:TypeArguments="x:String">[dictAttachmentFields("CertificateType")]</OutArgument>
@@ -1908,7 +1920,7 @@
                                                           <av:PointCollection x:Key="ConnectorLocation">298.895,1438 298.895,1503</av:PointCollection>
                                                         </scg:Dictionary>
                                                       </sap:WorkflowViewStateService.ViewState>
-                                                      <TryCatch DisplayName="Try Part F of Form" sap:VirtualizedContainerService.HintSize="564,1457" sap2010:WorkflowViewState.IdRef="TryCatch_6">
+                                                      <TryCatch DisplayName="Try Part F of Form" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_6">
                                                         <TryCatch.Try>
                                                           <Sequence DisplayName="Part F of Form" sap:VirtualizedContainerService.HintSize="526,1230" sap2010:WorkflowViewState.IdRef="Sequence_13">
                                                             <sap:WorkflowViewStateService.ViewState>
@@ -2434,7 +2446,7 @@
                 <x:Reference>__ReferenceID52</x:Reference>
                 <x:Reference>__ReferenceID44</x:Reference>
                 <x:Reference>__ReferenceID43</x:Reference>
-                <FlowStep x:Name="__ReferenceID55">
+                <FlowStep x:Name="__ReferenceID97">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:Point x:Key="ShapeLocation">200,107</av:Point>
@@ -2536,15 +2548,1304 @@
                         </InArgument>
                       </Assign.Value>
                     </Assign>
+                    <Assign DisplayName="Assign - Consumption" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_97">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[dictAttachmentFields("Consignment")]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">
+                          <Literal x:TypeArguments="x:String" Value="" />
+                        </InArgument>
+                      </Assign.Value>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Assign>
                   </Sequence>
                   <FlowStep.Next>
                     <x:Reference>__ReferenceID53</x:Reference>
                   </FlowStep.Next>
                 </FlowStep>
                 <x:Reference>__ReferenceID54</x:Reference>
+                <FlowStep>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <av:Point x:Key="ShapeLocation">430,354.5</av:Point>
+                      <av:Size x:Key="ShapeSize">200,51</av:Size>
+                      <av:PointCollection x:Key="ConnectorLocation">308.895,449.5 308.895,479.5 304.536666666667,479.5 304.536666666667,496.5</av:PointCollection>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <TryCatch DisplayName="Try Part B of Form - New" sap:VirtualizedContainerService.HintSize="922,1256" sap2010:WorkflowViewState.IdRef="TryCatch_8">
+                    <TryCatch.Try>
+                      <Flowchart DisplayName="Part B of Form" sap:VirtualizedContainerService.HintSize="894,1029" sap2010:WorkflowViewState.IdRef="Flowchart_10">
+                        <Flowchart.Variables>
+                          <Variable x:TypeArguments="x:Boolean" Name="boolCertSelected" />
+                        </Flowchart.Variables>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <av:Point x:Key="ShapeLocation">290,2.5</av:Point>
+                            <av:Size x:Key="ShapeSize">60,75</av:Size>
+                            <av:PointCollection x:Key="ConnectorLocation">320,77.5 320,107.5 319.895,107.5 319.895,110</av:PointCollection>
+                            <x:Double x:Key="Height">993</x:Double>
+                            <x:Double x:Key="Width">860</x:Double>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Flowchart.StartNode>
+                          <x:Reference>__ReferenceID96</x:Reference>
+                        </Flowchart.StartNode>
+                        <FlowDecision x:Name="__ReferenceID88" Condition="[dictAttachmentFields(&quot;CertificateType&quot;) is Nothing]" DisplayName="No Certificate?" sap:VirtualizedContainerService.HintSize="84,87" sap2010:WorkflowViewState.IdRef="FlowDecision_30">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <av:Point x:Key="ShapeLocation">278,441.5</av:Point>
+                              <av:Size x:Key="ShapeSize">84,87</av:Size>
+                              <av:PointCollection x:Key="TrueConnector">278,485 260,485 260,554 320,554 320,584</av:PointCollection>
+                              <av:PointCollection x:Key="FalseConnector">362,485 482,485</av:PointCollection>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <FlowDecision.True>
+                            <FlowStep x:Name="__ReferenceID71">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <av:Point x:Key="ShapeLocation">220,584</av:Point>
+                                  <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                  <av:PointCollection x:Key="ConnectorLocation">320,635 320,686</av:PointCollection>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Flowchart DisplayName="Animal Consumption (Alcohol)" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Flowchart_9">
+                                <Flowchart.Variables>
+                                  <Variable x:TypeArguments="x:String" Name="strFreeSaleAnimalOut" />
+                                  <Variable x:TypeArguments="x:String" Name="strManFSAnimalOut" />
+                                  <Variable x:TypeArguments="x:String" Name="strNonMammalianOut" />
+                                  <Variable x:TypeArguments="x:String" Name="strNonAnimalOut" />
+                                  <Variable x:TypeArguments="x:String" Name="strDioxinFreeOut" />
+                                </Flowchart.Variables>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+                                    <av:Size x:Key="ShapeSize">60,75</av:Size>
+                                    <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,127.5</av:PointCollection>
+                                    <x:Double x:Key="Width">740</x:Double>
+                                    <x:Double x:Key="Height">1147.5</x:Double>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <Flowchart.StartNode>
+                                  <x:Reference>__ReferenceID69</x:Reference>
+                                </Flowchart.StartNode>
+                                <FlowStep x:Name="__ReferenceID55">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <av:Point x:Key="ShapeLocation">200,985.5</av:Point>
+                                      <av:Size x:Key="ShapeSize">200,22</av:Size>
+                                      <av:PointCollection x:Key="ConnectorLocation">300,1007.5 300,1060.5</av:PointCollection>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <w:ReadTextFormField DisplayName="Read Dioxin Free" sap:VirtualizedContainerService.HintSize="200,22" IN_docWord="[docWord]" IN_strFieldName="[IN_dictFormFields(&quot;DioxinFree&quot;)]" sap2010:WorkflowViewState.IdRef="ReadTextFormField_69" OUT_strOutput="[strDioxinFreeOut]">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </w:ReadTextFormField>
+                                  <FlowStep.Next>
+                                    <FlowDecision x:Name="__ReferenceID68" Condition="[strDioxinFreeOut is Nothing or strDioxinFreeOut.Equals(&quot;&quot;) or strDioxinFreeOut.Equals(&quot;0&quot;)]" DisplayName="Not Populated?" sap:VirtualizedContainerService.HintSize="88,87" sap2010:WorkflowViewState.IdRef="FlowDecision_24">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          <av:Point x:Key="ShapeLocation">256,1060.5</av:Point>
+                                          <av:Size x:Key="ShapeSize">88,87</av:Size>
+                                          <av:PointCollection x:Key="TrueConnector">266,894 250,894 250,965.5 310,965.5 310,995.5</av:PointCollection>
+                                          <av:PointCollection x:Key="FalseConnector">344,1104 474,1104</av:PointCollection>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <FlowDecision.False>
+                                        <FlowStep x:Name="__ReferenceID67">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <av:Point x:Key="ShapeLocation">474,1070</av:Point>
+                                              <av:Size x:Key="ShapeSize">200,66</av:Size>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <Sequence DisplayName="Assign Dictionary Variables" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_62">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <If Condition="[boolCertSelected = True]" DisplayName="If cert already selected" sap:VirtualizedContainerService.HintSize="611,500" sap2010:WorkflowViewState.IdRef="If_76">
+                                              <If.Then>
+                                                <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_87">
+                                                  <Assign.To>
+                                                    <OutArgument x:TypeArguments="x:Boolean">[OUT_boolMultiCerts]</OutArgument>
+                                                  </Assign.To>
+                                                  <Assign.Value>
+                                                    <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                                  </Assign.Value>
+                                                </Assign>
+                                              </If.Then>
+                                              <If.Else>
+                                                <Sequence sap:VirtualizedContainerService.HintSize="304,352" sap2010:WorkflowViewState.IdRef="Sequence_72">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <Assign DisplayName="Assign boolCertSelected" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_88">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:Boolean">[boolCertSelected]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                  <Assign DisplayName="Assign Certificate Type" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_65">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:String">[dictAttachmentFields("CertificateType")]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:String">DIOXIN FREE STATUS</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                  <Assign DisplayName="Assign Number of Certificates" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_66">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:String">[dictAttachmentFields("NumCert")]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:String">[strDioxinFreeOut]</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                </Sequence>
+                                              </If.Else>
+                                            </If>
+                                          </Sequence>
+                                        </FlowStep>
+                                      </FlowDecision.False>
+                                    </FlowDecision>
+                                  </FlowStep.Next>
+                                </FlowStep>
+                                <FlowStep x:Name="__ReferenceID56">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <av:Point x:Key="ShapeLocation">200,773.5</av:Point>
+                                      <av:Size x:Key="ShapeSize">200,22</av:Size>
+                                      <av:PointCollection x:Key="ConnectorLocation">300,795.5 300,840.5</av:PointCollection>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <w:ReadTextFormField DisplayName="Read Non-Animal" sap:VirtualizedContainerService.HintSize="200,22" IN_docWord="[docWord]" IN_strFieldName="[IN_dictFormFields(&quot;NonAnimal&quot;)]" sap2010:WorkflowViewState.IdRef="ReadTextFormField_68" OUT_strOutput="[strNonAnimalOut]">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </w:ReadTextFormField>
+                                  <FlowStep.Next>
+                                    <FlowDecision x:Name="__ReferenceID65" Condition="[strNonAnimalOut is Nothing or strNonAnimalOut.Equals(&quot;&quot;) or strNonAnimalOut.Equals(&quot;0&quot;)]" DisplayName="Not Populated?" sap:VirtualizedContainerService.HintSize="88,87" sap2010:WorkflowViewState.IdRef="FlowDecision_25" True="{x:Reference __ReferenceID55}">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          <av:Point x:Key="ShapeLocation">256,840.5</av:Point>
+                                          <av:Size x:Key="ShapeSize">88,87</av:Size>
+                                          <av:PointCollection x:Key="TrueConnector">256,884 240,884 240,955.5 300,955.5 300,985.5</av:PointCollection>
+                                          <av:PointCollection x:Key="FalseConnector">344,884 474,884</av:PointCollection>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <FlowDecision.False>
+                                        <FlowStep x:Name="__ReferenceID66">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <av:Point x:Key="ShapeLocation">474,850</av:Point>
+                                              <av:Size x:Key="ShapeSize">200,66</av:Size>
+                                              <av:PointCollection x:Key="ConnectorLocation">574,916 574,996.5 400,996.5</av:PointCollection>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <Sequence DisplayName="Assign Dictionary Variables" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_63">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <If Condition="[boolCertSelected = True]" DisplayName="If cert already selected" sap:VirtualizedContainerService.HintSize="611,500" sap2010:WorkflowViewState.IdRef="If_77">
+                                              <If.Then>
+                                                <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_89">
+                                                  <Assign.To>
+                                                    <OutArgument x:TypeArguments="x:Boolean">[OUT_boolMultiCerts]</OutArgument>
+                                                  </Assign.To>
+                                                  <Assign.Value>
+                                                    <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                                  </Assign.Value>
+                                                </Assign>
+                                              </If.Then>
+                                              <If.Else>
+                                                <Sequence sap:VirtualizedContainerService.HintSize="304,352" sap2010:WorkflowViewState.IdRef="Sequence_73">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <Assign DisplayName="Assign boolCertSelected" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_90">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:Boolean">[boolCertSelected]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                  <Assign DisplayName="Assign Certificate Type" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_67">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:String">[dictAttachmentFields("CertificateType")]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:String">NON-ANIMAL</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                  <Assign DisplayName="Assign Number of Certificates" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_68">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:String">[dictAttachmentFields("NumCert")]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:String">[strNonAnimalOut]</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                </Sequence>
+                                              </If.Else>
+                                            </If>
+                                          </Sequence>
+                                          <FlowStep.Next>
+                                            <x:Reference>__ReferenceID55</x:Reference>
+                                          </FlowStep.Next>
+                                        </FlowStep>
+                                      </FlowDecision.False>
+                                    </FlowDecision>
+                                  </FlowStep.Next>
+                                </FlowStep>
+                                <FlowStep x:Name="__ReferenceID57">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <av:Point x:Key="ShapeLocation">200,551.5</av:Point>
+                                      <av:Size x:Key="ShapeSize">200,22</av:Size>
+                                      <av:PointCollection x:Key="ConnectorLocation">300,573.5 300,620.5</av:PointCollection>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <w:ReadTextFormField DisplayName="Read Non-Mammalian" sap:VirtualizedContainerService.HintSize="200,22" IN_docWord="[docWord]" IN_strFieldName="[IN_dictFormFields(&quot;NonMammalian&quot;)]" sap2010:WorkflowViewState.IdRef="ReadTextFormField_67" OUT_strOutput="[strNonMammalianOut]">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </w:ReadTextFormField>
+                                  <FlowStep.Next>
+                                    <FlowDecision x:Name="__ReferenceID64" Condition="[strNonMammalianOut is Nothing or strNonMammalianOut.Equals(&quot;&quot;) or strNonMammalianOut.Equals(&quot;0&quot;)]" DisplayName="Not Populated?" sap:VirtualizedContainerService.HintSize="88,87" sap2010:WorkflowViewState.IdRef="FlowDecision_26" True="{x:Reference __ReferenceID56}">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          <av:Point x:Key="ShapeLocation">256,620.5</av:Point>
+                                          <av:Size x:Key="ShapeSize">88,87</av:Size>
+                                          <av:PointCollection x:Key="TrueConnector">256,664 240,664 240,743.5 300,743.5 300,773.5</av:PointCollection>
+                                          <av:PointCollection x:Key="FalseConnector">344,664 474,664</av:PointCollection>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <FlowDecision.False>
+                                        <FlowStep x:Name="__ReferenceID63">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <av:Point x:Key="ShapeLocation">474,630</av:Point>
+                                              <av:Size x:Key="ShapeSize">200,66</av:Size>
+                                              <av:PointCollection x:Key="ConnectorLocation">574,696 574,784.5 400,784.5</av:PointCollection>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <Sequence DisplayName="Assign Dictionary Variables" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_64">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <If Condition="[boolCertSelected = True]" DisplayName="If cert already selected" sap:VirtualizedContainerService.HintSize="611,500" sap2010:WorkflowViewState.IdRef="If_78">
+                                              <If.Then>
+                                                <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_91">
+                                                  <Assign.To>
+                                                    <OutArgument x:TypeArguments="x:Boolean">[OUT_boolMultiCerts]</OutArgument>
+                                                  </Assign.To>
+                                                  <Assign.Value>
+                                                    <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                                  </Assign.Value>
+                                                </Assign>
+                                              </If.Then>
+                                              <If.Else>
+                                                <Sequence sap:VirtualizedContainerService.HintSize="304,352" sap2010:WorkflowViewState.IdRef="Sequence_74">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <Assign DisplayName="Assign boolCertSelected" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_92">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:Boolean">[boolCertSelected]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                  <Assign DisplayName="Assign Certificate Type" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_69">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:String">[dictAttachmentFields("CertificateType")]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:String">NON-MAMMALIAN</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                  <Assign DisplayName="Assign Number of Certificates" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_70">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:String">[dictAttachmentFields("NumCert")]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:String">[strNonMammalianOut]</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                </Sequence>
+                                              </If.Else>
+                                            </If>
+                                          </Sequence>
+                                          <FlowStep.Next>
+                                            <x:Reference>__ReferenceID56</x:Reference>
+                                          </FlowStep.Next>
+                                        </FlowStep>
+                                      </FlowDecision.False>
+                                    </FlowDecision>
+                                  </FlowStep.Next>
+                                </FlowStep>
+                                <FlowStep x:Name="__ReferenceID58">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <av:Point x:Key="ShapeLocation">200,339.5</av:Point>
+                                      <av:Size x:Key="ShapeSize">200,22</av:Size>
+                                      <av:PointCollection x:Key="ConnectorLocation">300,361.5 300,410.5</av:PointCollection>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <w:ReadTextFormField DisplayName="Read Manufacture&amp;FreeSale Animal" sap:VirtualizedContainerService.HintSize="200,22" IN_docWord="[docWord]" IN_strFieldName="[IN_dictFormFields(&quot;ManFreeAnimal&quot;)]" sap2010:WorkflowViewState.IdRef="ReadTextFormField_66" OUT_strOutput="[strManFSAnimalOut]">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </w:ReadTextFormField>
+                                  <FlowStep.Next>
+                                    <FlowDecision x:Name="__ReferenceID61" Condition="[strManFSAnimalOut is Nothing or strManFSAnimalOut.Equals(&quot;&quot;) or strManFSAnimalOut.Equals(&quot;0&quot;)]" DisplayName="Not Populated?" sap:VirtualizedContainerService.HintSize="88,87" sap2010:WorkflowViewState.IdRef="FlowDecision_27" True="{x:Reference __ReferenceID57}">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          <av:Point x:Key="ShapeLocation">256,410.5</av:Point>
+                                          <av:Size x:Key="ShapeSize">88,87</av:Size>
+                                          <av:PointCollection x:Key="TrueConnector">256,454 240,454 240,521.5 300,521.5 300,551.5</av:PointCollection>
+                                          <av:PointCollection x:Key="FalseConnector">344,454 474,454</av:PointCollection>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <FlowDecision.False>
+                                        <FlowStep x:Name="__ReferenceID62">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <av:Point x:Key="ShapeLocation">474,420</av:Point>
+                                              <av:Size x:Key="ShapeSize">200,66</av:Size>
+                                              <av:PointCollection x:Key="ConnectorLocation">574,486 574,562.5 400,562.5</av:PointCollection>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <Sequence DisplayName="Assign Dictionary Variables" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_65">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <If Condition="[boolCertSelected = True]" DisplayName="If cert already selected" sap:VirtualizedContainerService.HintSize="611,500" sap2010:WorkflowViewState.IdRef="If_79">
+                                              <If.Then>
+                                                <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_93">
+                                                  <Assign.To>
+                                                    <OutArgument x:TypeArguments="x:Boolean">[OUT_boolMultiCerts]</OutArgument>
+                                                  </Assign.To>
+                                                  <Assign.Value>
+                                                    <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                                  </Assign.Value>
+                                                </Assign>
+                                              </If.Then>
+                                              <If.Else>
+                                                <Sequence sap:VirtualizedContainerService.HintSize="304,352" sap2010:WorkflowViewState.IdRef="Sequence_75">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <Assign DisplayName="Assign boolCertSelected" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_94">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:Boolean">[boolCertSelected]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                  <Assign DisplayName="Assign Certificate Type" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_71">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:String">[dictAttachmentFields("CertificateType")]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:String">ANIMAL MANUFACTURING AND FREESALE</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                  <Assign DisplayName="Assign Number of Certificates" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_72">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:String">[dictAttachmentFields("NumCert")]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:String">[strManFSAnimalOut]</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                </Sequence>
+                                              </If.Else>
+                                            </If>
+                                          </Sequence>
+                                          <FlowStep.Next>
+                                            <x:Reference>__ReferenceID57</x:Reference>
+                                          </FlowStep.Next>
+                                        </FlowStep>
+                                      </FlowDecision.False>
+                                    </FlowDecision>
+                                  </FlowStep.Next>
+                                </FlowStep>
+                                <FlowStep x:Name="__ReferenceID69">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <av:Point x:Key="ShapeLocation">200,127.5</av:Point>
+                                      <av:Size x:Key="ShapeSize">200,22</av:Size>
+                                      <av:PointCollection x:Key="ConnectorLocation">300,149.5 300,199.5</av:PointCollection>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <w:ReadTextFormField DisplayName="Read Free Sale Animal" sap:VirtualizedContainerService.HintSize="200,22" IN_docWord="[docWord]" IN_strFieldName="[IN_dictFormFields(&quot;FreeSaleAnimal&quot;)]" sap2010:WorkflowViewState.IdRef="ReadTextFormField_65" OUT_strOutput="[strFreeSaleAnimalOut]">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </w:ReadTextFormField>
+                                  <FlowStep.Next>
+                                    <FlowDecision x:Name="__ReferenceID59" Condition="[strFreeSaleAnimalOut is Nothing or strFreeSaleAnimalOut.Equals(&quot;&quot;) or strFreeSaleAnimalOut.Equals(&quot;0&quot;)]" DisplayName="Not Populated?" sap:VirtualizedContainerService.HintSize="88,87" sap2010:WorkflowViewState.IdRef="FlowDecision_28" True="{x:Reference __ReferenceID58}">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          <av:Point x:Key="ShapeLocation">256,199.5</av:Point>
+                                          <av:Size x:Key="ShapeSize">88,87</av:Size>
+                                          <av:PointCollection x:Key="TrueConnector">256,243 240,243 240,309.5 300,309.5 300,339.5</av:PointCollection>
+                                          <av:PointCollection x:Key="FalseConnector">344,243 474,243</av:PointCollection>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <FlowDecision.False>
+                                        <FlowStep x:Name="__ReferenceID60">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <av:Point x:Key="ShapeLocation">474,209</av:Point>
+                                              <av:Size x:Key="ShapeSize">200,66</av:Size>
+                                              <av:PointCollection x:Key="ConnectorLocation">574,275 574,350.5 400,350.5</av:PointCollection>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <Sequence DisplayName="Assign Dictionary Variables" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_66">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <If Condition="[boolCertSelected = True]" DisplayName="If cert already selected" sap:VirtualizedContainerService.HintSize="611,500" sap2010:WorkflowViewState.IdRef="If_80">
+                                              <If.Then>
+                                                <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_95">
+                                                  <Assign.To>
+                                                    <OutArgument x:TypeArguments="x:Boolean">[OUT_boolMultiCerts]</OutArgument>
+                                                  </Assign.To>
+                                                  <Assign.Value>
+                                                    <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                                  </Assign.Value>
+                                                </Assign>
+                                              </If.Then>
+                                              <If.Else>
+                                                <Sequence sap:VirtualizedContainerService.HintSize="304,352" sap2010:WorkflowViewState.IdRef="Sequence_76">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <Assign DisplayName="Assign boolCertSelected" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_96">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:Boolean">[boolCertSelected]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                  <Assign DisplayName="Assign Certificate Type" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_73">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:String">[dictAttachmentFields("CertificateType")]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:String">ANIMAL FREESALE</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                  <Assign DisplayName="Assign Number of Certificates" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_74">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:String">[dictAttachmentFields("NumCert")]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:String">[strFreeSaleAnimalOut]</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                </Sequence>
+                                              </If.Else>
+                                            </If>
+                                          </Sequence>
+                                          <FlowStep.Next>
+                                            <x:Reference>__ReferenceID58</x:Reference>
+                                          </FlowStep.Next>
+                                        </FlowStep>
+                                      </FlowDecision.False>
+                                    </FlowDecision>
+                                  </FlowStep.Next>
+                                </FlowStep>
+                                <x:Reference>__ReferenceID59</x:Reference>
+                                <x:Reference>__ReferenceID60</x:Reference>
+                                <x:Reference>__ReferenceID61</x:Reference>
+                                <x:Reference>__ReferenceID62</x:Reference>
+                                <x:Reference>__ReferenceID63</x:Reference>
+                                <x:Reference>__ReferenceID64</x:Reference>
+                                <x:Reference>__ReferenceID65</x:Reference>
+                                <x:Reference>__ReferenceID66</x:Reference>
+                                <x:Reference>__ReferenceID67</x:Reference>
+                                <x:Reference>__ReferenceID68</x:Reference>
+                              </Flowchart>
+                              <FlowStep.Next>
+                                <FlowDecision x:Name="__ReferenceID90" Condition="[dictAttachmentFields(&quot;CertificateType&quot;) is Nothing]" DisplayName="No Certificate?" sap:VirtualizedContainerService.HintSize="84,87" sap2010:WorkflowViewState.IdRef="FlowDecision_29">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <av:Point x:Key="ShapeLocation">278,686</av:Point>
+                                      <av:Size x:Key="ShapeSize">84,87</av:Size>
+                                      <av:PointCollection x:Key="TrueConnector">278,729.5 208,729.5</av:PointCollection>
+                                      <av:PointCollection x:Key="FalseConnector">362,729.5 445.641666666667,729.5 445.641666666667,796</av:PointCollection>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <FlowDecision.True>
+                                    <FlowStep x:Name="__ReferenceID91">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <av:Point x:Key="ShapeLocation">8,718.5</av:Point>
+                                          <av:Size x:Key="ShapeSize">200,22</av:Size>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <Throw Exception="[new BusinessRuleException(&quot;Couldn't determine certificate type from application form&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_66">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </Throw>
+                                    </FlowStep>
+                                  </FlowDecision.True>
+                                  <FlowDecision.False>
+                                    <FlowDecision x:Name="__ReferenceID95" DisplayName="C2?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_32">
+                                      <FlowDecision.Condition>
+                                        <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="dictAttachmentFields(&quot;Consignment&quot;).Equals(&quot;&quot;)" />
+                                      </FlowDecision.Condition>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          <av:Point x:Key="ShapeLocation">410.641666666667,796</av:Point>
+                                          <av:Size x:Key="ShapeSize">70,87</av:Size>
+                                          <av:PointCollection x:Key="TrueConnector">410.641666666667,839.5 340,839.5 340,910</av:PointCollection>
+                                          <av:PointCollection x:Key="FalseConnector">480.641666666667,839.5 640,839.5 640,907</av:PointCollection>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <FlowDecision.True>
+                                        <FlowStep x:Name="__ReferenceID93">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <av:Point x:Key="ShapeLocation">209,910</av:Point>
+                                              <av:Size x:Key="ShapeSize">262,60</av:Size>
+                                              <av:PointCollection x:Key="ConnectorLocation">471,940 540,940</av:PointCollection>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <Assign DisplayName="Assign - Animal Consumption" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_75">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:String">[dictAttachmentFields("Consignment")]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:String">C2</InArgument>
+                                            </Assign.Value>
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                          </Assign>
+                                          <FlowStep.Next>
+                                            <FlowStep x:Name="__ReferenceID70">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <av:Point x:Key="ShapeLocation">540,907</av:Point>
+                                                  <av:Size x:Key="ShapeSize">200,66</av:Size>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <Sequence DisplayName="Certs Requested" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_67">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <If Condition="[dictAttachmentFields(&quot;Dioxin&quot;).ToLower.Equals(&quot;true&quot;)]" DisplayName="If - assign certs requested" sap:VirtualizedContainerService.HintSize="569,208" sap2010:WorkflowViewState.IdRef="If_70">
+                                                  <If.Then>
+                                                    <Assign DisplayName="Assign +2" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_76">
+                                                      <Assign.To>
+                                                        <OutArgument x:TypeArguments="x:Int32">[OUT_intCertsRequested]</OutArgument>
+                                                      </Assign.To>
+                                                      <Assign.Value>
+                                                        <InArgument x:TypeArguments="x:Int32">[IN_intCertsRequested + 2]</InArgument>
+                                                      </Assign.Value>
+                                                    </Assign>
+                                                  </If.Then>
+                                                  <If.Else>
+                                                    <Assign DisplayName="Assign + 1" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_77">
+                                                      <Assign.To>
+                                                        <OutArgument x:TypeArguments="x:Int32">[OUT_intCertsRequested]</OutArgument>
+                                                      </Assign.To>
+                                                      <Assign.Value>
+                                                        <InArgument x:TypeArguments="x:Int32">[IN_intCertsRequested + 1]</InArgument>
+                                                      </Assign.Value>
+                                                    </Assign>
+                                                  </If.Else>
+                                                </If>
+                                              </Sequence>
+                                            </FlowStep>
+                                          </FlowStep.Next>
+                                        </FlowStep>
+                                      </FlowDecision.True>
+                                      <FlowDecision.False>
+                                        <x:Reference>__ReferenceID70</x:Reference>
+                                      </FlowDecision.False>
+                                    </FlowDecision>
+                                  </FlowDecision.False>
+                                </FlowDecision>
+                              </FlowStep.Next>
+                            </FlowStep>
+                          </FlowDecision.True>
+                          <FlowDecision.False>
+                            <FlowStep x:Name="__ReferenceID92">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <av:Point x:Key="ShapeLocation">482,455</av:Point>
+                                  <av:Size x:Key="ShapeSize">262,60</av:Size>
+                                  <av:PointCollection x:Key="ConnectorLocation">613,515 613,609.5 420,609.5</av:PointCollection>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Assign DisplayName="Assign - Human Consumption" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_78">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:String">[dictAttachmentFields("Consignment")]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:String">C1</InArgument>
+                                </Assign.Value>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </Assign>
+                              <FlowStep.Next>
+                                <x:Reference>__ReferenceID71</x:Reference>
+                              </FlowStep.Next>
+                            </FlowStep>
+                          </FlowDecision.False>
+                        </FlowDecision>
+                        <FlowStep x:Name="__ReferenceID94">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <av:Point x:Key="ShapeLocation">220,214.5</av:Point>
+                              <av:Size x:Key="ShapeSize">200,51</av:Size>
+                              <av:PointCollection x:Key="ConnectorLocation">320,265.5 320,343.54</av:PointCollection>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Flowchart DisplayName="Human Consumption (Non alcohol)" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Flowchart_7">
+                            <Flowchart.Variables>
+                              <Variable x:TypeArguments="x:String" Name="strFSSOut" />
+                              <Variable x:TypeArguments="x:String" Name="strManFSOut" />
+                              <Variable x:TypeArguments="x:String" Name="strDecOriginOut" />
+                            </Flowchart.Variables>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+                                <av:Size x:Key="ShapeSize">60,75</av:Size>
+                                <x:Double x:Key="Height">960</x:Double>
+                                <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,127.5</av:PointCollection>
+                                <x:Double x:Key="Width">1014.641666666667</x:Double>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Flowchart.StartNode>
+                              <x:Reference>__ReferenceID81</x:Reference>
+                            </Flowchart.StartNode>
+                            <FlowStep x:Name="__ReferenceID72">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <av:Point x:Key="ShapeLocation">340.641666666667,624.5</av:Point>
+                                  <av:Size x:Key="ShapeSize">200,22</av:Size>
+                                  <av:PointCollection x:Key="ConnectorLocation">440.641666666667,646.5 440.641666666667,696.5</av:PointCollection>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <w:ReadTextFormField DisplayName="Read Declaration Of Origin" sap:VirtualizedContainerService.HintSize="200,22" IN_docWord="[docWord]" IN_strFieldName="[IN_dictFormFields(&quot;DecOrigin&quot;)]" sap2010:WorkflowViewState.IdRef="ReadTextFormField_62" OUT_strOutput="[strDecOriginOut]">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </w:ReadTextFormField>
+                              <FlowStep.Next>
+                                <FlowDecision x:Name="__ReferenceID79" Condition="[strDecOriginOut is Nothing or strDecOriginOut.Equals(&quot;&quot;) or strDecOriginOut.Equals(&quot;0&quot;)]" DisplayName="Not Populated?" sap:VirtualizedContainerService.HintSize="88,87" sap2010:WorkflowViewState.IdRef="FlowDecision_19">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <av:Point x:Key="ShapeLocation">396.641666666667,696.5</av:Point>
+                                      <av:Size x:Key="ShapeSize">88,87</av:Size>
+                                      <av:PointCollection x:Key="TrueConnector">266,574.5 250.641666666667,574.5 250.641666666667,754.5 310.641666666667,754.5 310.641666666667,784.5</av:PointCollection>
+                                      <av:PointCollection x:Key="FalseConnector">484.641666666667,740 505.5,740 505.5,806.5 445.5,806.5 445.5,836.5</av:PointCollection>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <FlowDecision.False>
+                                    <FlowDecision x:Name="__ReferenceID80" Condition="[dictAttachmentFields(&quot;CertificateType&quot;).Equals(&quot;Non-Alcohol\FREESALE CERT&quot;) or dictAttachmentFields(&quot;CertificateType&quot;).Equals(&quot;Non-Alcohol\MANUFACTURING and FREESALE CERT&quot;)]" DisplayName="Not Just Dioxin?" sap:VirtualizedContainerService.HintSize="90,87" sap2010:WorkflowViewState.IdRef="FlowDecision_18">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          <av:Point x:Key="ShapeLocation">400.5,836.5</av:Point>
+                                          <av:Size x:Key="ShapeSize">90,87</av:Size>
+                                          <av:PointCollection x:Key="TrueConnector">400.5,880 320,880</av:PointCollection>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <FlowDecision.True>
+                                        <FlowStep x:Name="__ReferenceID78">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <av:Point x:Key="ShapeLocation">120,847</av:Point>
+                                              <av:Size x:Key="ShapeSize">200,66</av:Size>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <Sequence DisplayName="Assign Dioxin Dictionary Variables" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_57">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <Assign DisplayName="Assign Dioxin to True" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_54">
+                                              <Assign.To>
+                                                <OutArgument x:TypeArguments="x:String">[dictAttachmentFields("Dioxin")]</OutArgument>
+                                              </Assign.To>
+                                              <Assign.Value>
+                                                <InArgument x:TypeArguments="x:String">True</InArgument>
+                                              </Assign.Value>
+                                            </Assign>
+                                            <Assign DisplayName="Assign Dioxin to True" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_55">
+                                              <Assign.To>
+                                                <OutArgument x:TypeArguments="x:String">[dictAttachmentFields("DioxinNumber")]</OutArgument>
+                                              </Assign.To>
+                                              <Assign.Value>
+                                                <InArgument x:TypeArguments="x:String">[strDecOriginOut]</InArgument>
+                                              </Assign.Value>
+                                            </Assign>
+                                          </Sequence>
+                                        </FlowStep>
+                                      </FlowDecision.True>
+                                    </FlowDecision>
+                                  </FlowDecision.False>
+                                </FlowDecision>
+                              </FlowStep.Next>
+                            </FlowStep>
+                            <FlowStep x:Name="__ReferenceID73">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <av:Point x:Key="ShapeLocation">200,349</av:Point>
+                                  <av:Size x:Key="ShapeSize">200,22</av:Size>
+                                  <av:PointCollection x:Key="ConnectorLocation">300,371 300,421</av:PointCollection>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <w:ReadTextFormField DisplayName="Read Manufacture &amp; Free Sale" sap:VirtualizedContainerService.HintSize="200,22" IN_docWord="[docWord]" IN_strFieldName="[IN_dictFormFields(&quot;ManFreeSale&quot;)]" sap2010:WorkflowViewState.IdRef="ReadTextFormField_61" OUT_strOutput="[strManFSOut]">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </w:ReadTextFormField>
+                              <FlowStep.Next>
+                                <FlowDecision x:Name="__ReferenceID75" Condition="[strManFSOut is Nothing or strManFSOut.Equals(&quot;&quot;) or strManFSOut.Equals(&quot;0&quot;)]" DisplayName="Not Populated?" sap:VirtualizedContainerService.HintSize="88,87" sap2010:WorkflowViewState.IdRef="FlowDecision_20" True="{x:Reference __ReferenceID72}">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <av:Point x:Key="ShapeLocation">256,421</av:Point>
+                                      <av:Size x:Key="ShapeSize">88,87</av:Size>
+                                      <av:PointCollection x:Key="TrueConnector">256,464.5 230.641666666667,464.5 230.641666666667,594.5 440.641666666667,594.5 440.641666666667,624.5</av:PointCollection>
+                                      <av:PointCollection x:Key="FalseConnector">344,464.5 474,464.5</av:PointCollection>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <FlowDecision.False>
+                                    <FlowStep x:Name="__ReferenceID77">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <av:Point x:Key="ShapeLocation">474,431.5</av:Point>
+                                          <av:Size x:Key="ShapeSize">200,66</av:Size>
+                                          <av:PointCollection x:Key="ConnectorLocation">674,464.5 704,464.5 704,594.5 440.641666666667,594.5 440.641666666667,624.5</av:PointCollection>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <Sequence DisplayName="Assign Dictionary Variables" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_58">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <If Condition="[boolCertSelected = True]" DisplayName="If cert already selected" sap:VirtualizedContainerService.HintSize="611,500" sap2010:WorkflowViewState.IdRef="If_72">
+                                          <If.Then>
+                                            <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_79">
+                                              <Assign.To>
+                                                <OutArgument x:TypeArguments="x:Boolean">[OUT_boolMultiCerts]</OutArgument>
+                                              </Assign.To>
+                                              <Assign.Value>
+                                                <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                              </Assign.Value>
+                                            </Assign>
+                                          </If.Then>
+                                          <If.Else>
+                                            <Sequence sap:VirtualizedContainerService.HintSize="304,352" sap2010:WorkflowViewState.IdRef="Sequence_68">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <Assign DisplayName="Assign boolCertSelected" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_80">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="x:Boolean">[boolCertSelected]</OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                                </Assign.Value>
+                                              </Assign>
+                                              <Assign DisplayName="Assign Certificate Type" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_56">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="x:String">[dictAttachmentFields("CertificateType")]</OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="x:String">Non-Alcohol\MANUFACTURING and FREESALE CERT</InArgument>
+                                                </Assign.Value>
+                                              </Assign>
+                                              <Assign DisplayName="Assign Number of Certificates" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_57">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="x:String">[dictAttachmentFields("NumCert")]</OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="x:String">[strManFSOut]</InArgument>
+                                                </Assign.Value>
+                                              </Assign>
+                                            </Sequence>
+                                          </If.Else>
+                                        </If>
+                                      </Sequence>
+                                      <FlowStep.Next>
+                                        <x:Reference>__ReferenceID72</x:Reference>
+                                      </FlowStep.Next>
+                                    </FlowStep>
+                                  </FlowDecision.False>
+                                </FlowDecision>
+                              </FlowStep.Next>
+                            </FlowStep>
+                            <FlowStep x:Name="__ReferenceID81">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <av:Point x:Key="ShapeLocation">200,127.5</av:Point>
+                                  <av:Size x:Key="ShapeSize">200,22</av:Size>
+                                  <av:PointCollection x:Key="ConnectorLocation">300,149.5 300,200.5</av:PointCollection>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <w:ReadTextFormField DisplayName="Read Free Sale Standard" sap:VirtualizedContainerService.HintSize="200,22" IN_docWord="[docWord]" IN_strFieldName="[IN_dictFormFields(&quot;FreeSaleStandard&quot;)]" sap2010:WorkflowViewState.IdRef="ReadTextFormField_60" OUT_strOutput="[strFSSOut]">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </w:ReadTextFormField>
+                              <FlowStep.Next>
+                                <FlowDecision x:Name="__ReferenceID74" Condition="[strFSSOut is Nothing or strFSSOut.Equals(&quot;&quot;) or strFSSOut.Equals(&quot;0&quot;)]" DisplayName="Not Populated?" sap:VirtualizedContainerService.HintSize="88,87" sap2010:WorkflowViewState.IdRef="FlowDecision_21" True="{x:Reference __ReferenceID73}">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <av:Point x:Key="ShapeLocation">256,200.5</av:Point>
+                                      <av:Size x:Key="ShapeSize">88,87</av:Size>
+                                      <av:PointCollection x:Key="TrueConnector">256,244 240,244 240,319 300,319 300,349</av:PointCollection>
+                                      <av:PointCollection x:Key="FalseConnector">344,244 474,244</av:PointCollection>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <FlowDecision.False>
+                                    <FlowStep x:Name="__ReferenceID76">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <av:Point x:Key="ShapeLocation">474,211</av:Point>
+                                          <av:Size x:Key="ShapeSize">200,66</av:Size>
+                                          <av:PointCollection x:Key="ConnectorLocation">674,244 704,244 704,360 400,360</av:PointCollection>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <Sequence DisplayName="Assign Dictionary Variables" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_59">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <If Condition="[boolCertSelected = True]" DisplayName="If cert already selected" sap:VirtualizedContainerService.HintSize="611,500" sap2010:WorkflowViewState.IdRef="If_73">
+                                          <If.Then>
+                                            <Assign DisplayName="Assign multi certs" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_81">
+                                              <Assign.To>
+                                                <OutArgument x:TypeArguments="x:Boolean">[OUT_boolMultiCerts]</OutArgument>
+                                              </Assign.To>
+                                              <Assign.Value>
+                                                <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                              </Assign.Value>
+                                            </Assign>
+                                          </If.Then>
+                                          <If.Else>
+                                            <Sequence sap:VirtualizedContainerService.HintSize="304,352" sap2010:WorkflowViewState.IdRef="Sequence_69">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <Assign DisplayName="Assign boolCertSelected" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_82">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="x:Boolean">[boolCertSelected]</OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                                </Assign.Value>
+                                              </Assign>
+                                              <Assign DisplayName="Assign Certificate Type" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_59">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="x:String">[dictAttachmentFields("CertificateType")]</OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="x:String">Non-Alcohol\FREESALE CERT</InArgument>
+                                                </Assign.Value>
+                                              </Assign>
+                                              <Assign DisplayName="Assign Number of Certificates" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_60">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="x:String">[dictAttachmentFields("NumCert")]</OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="x:String">[strFSSOut]</InArgument>
+                                                </Assign.Value>
+                                              </Assign>
+                                            </Sequence>
+                                          </If.Else>
+                                        </If>
+                                      </Sequence>
+                                      <FlowStep.Next>
+                                        <x:Reference>__ReferenceID73</x:Reference>
+                                      </FlowStep.Next>
+                                    </FlowStep>
+                                  </FlowDecision.False>
+                                </FlowDecision>
+                              </FlowStep.Next>
+                            </FlowStep>
+                            <x:Reference>__ReferenceID74</x:Reference>
+                            <x:Reference>__ReferenceID75</x:Reference>
+                            <x:Reference>__ReferenceID76</x:Reference>
+                            <x:Reference>__ReferenceID77</x:Reference>
+                            <x:Reference>__ReferenceID78</x:Reference>
+                            <x:Reference>__ReferenceID79</x:Reference>
+                            <x:Reference>__ReferenceID80</x:Reference>
+                          </Flowchart>
+                          <FlowStep.Next>
+                            <FlowStep x:Name="__ReferenceID89">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <av:Point x:Key="ShapeLocation">220,343.54</av:Point>
+                                  <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                  <av:PointCollection x:Key="ConnectorLocation">320,394.54 320,441.5</av:PointCollection>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Flowchart DisplayName="Human Consumption (Alcohol)" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Flowchart_8">
+                                <Flowchart.Variables>
+                                  <Variable x:TypeArguments="x:String" Name="strHumanConOut" />
+                                  <Variable x:TypeArguments="x:String" Name="strFreeSaleAlcOut" />
+                                </Flowchart.Variables>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+                                    <av:Size x:Key="ShapeSize">60,75</av:Size>
+                                    <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,127.5</av:PointCollection>
+                                    <x:Double x:Key="Width">684</x:Double>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <Flowchart.StartNode>
+                                  <x:Reference>__ReferenceID87</x:Reference>
+                                </Flowchart.StartNode>
+                                <FlowStep x:Name="__ReferenceID82">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <av:Point x:Key="ShapeLocation">200,349</av:Point>
+                                      <av:Size x:Key="ShapeSize">200,22</av:Size>
+                                      <av:PointCollection x:Key="ConnectorLocation">300,371 300,430.5</av:PointCollection>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <w:ReadTextFormField DisplayName="Read Free Sale Alcohol" sap:VirtualizedContainerService.HintSize="200,22" IN_docWord="[docWord]" IN_strFieldName="[IN_dictFormFields(&quot;FreeSaleAlcohol&quot;)]" sap2010:WorkflowViewState.IdRef="ReadTextFormField_64" OUT_strOutput="[strFreeSaleAlcOut]">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </w:ReadTextFormField>
+                                  <FlowStep.Next>
+                                    <FlowDecision x:Name="__ReferenceID85" Condition="[strFreeSaleAlcOut is Nothing or strFreeSaleAlcOut.Equals(&quot;&quot;) or strFreeSaleAlcOut.Equals(&quot;0&quot;)]" DisplayName="Not Populated?" sap:VirtualizedContainerService.HintSize="88,87" sap2010:WorkflowViewState.IdRef="FlowDecision_22">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          <av:Point x:Key="ShapeLocation">256,430.5</av:Point>
+                                          <av:Size x:Key="ShapeSize">88,87</av:Size>
+                                          <av:PointCollection x:Key="TrueConnector">266,254 250,254 250,329 310,329 310,359</av:PointCollection>
+                                          <av:PointCollection x:Key="FalseConnector">344,474 474,474</av:PointCollection>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <FlowDecision.False>
+                                        <FlowStep x:Name="__ReferenceID86">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <av:Point x:Key="ShapeLocation">474,441</av:Point>
+                                              <av:Size x:Key="ShapeSize">200,66</av:Size>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <Sequence DisplayName="Assign Dictionary Variables" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_60">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <If Condition="[boolCertSelected = True]" DisplayName="If cert already selected" sap:VirtualizedContainerService.HintSize="611,500" sap2010:WorkflowViewState.IdRef="If_75">
+                                              <If.Then>
+                                                <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_85">
+                                                  <Assign.To>
+                                                    <OutArgument x:TypeArguments="x:Boolean">[OUT_boolMultiCerts]</OutArgument>
+                                                  </Assign.To>
+                                                  <Assign.Value>
+                                                    <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                                  </Assign.Value>
+                                                </Assign>
+                                              </If.Then>
+                                              <If.Else>
+                                                <Sequence sap:VirtualizedContainerService.HintSize="304,352" sap2010:WorkflowViewState.IdRef="Sequence_71">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <Assign DisplayName="Assign boolCertSelected" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_86">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:Boolean">[boolCertSelected]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                  <Assign DisplayName="Assign Certificate Type" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_61">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:String">[dictAttachmentFields("CertificateType")]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:String">Alcohol\ALCOHOL FREESALE</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                  <Assign DisplayName="Assign Number of Certificates" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_62">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:String">[dictAttachmentFields("NumCert")]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:String">[strFreeSaleAlcOut]</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                </Sequence>
+                                              </If.Else>
+                                            </If>
+                                          </Sequence>
+                                        </FlowStep>
+                                      </FlowDecision.False>
+                                    </FlowDecision>
+                                  </FlowStep.Next>
+                                </FlowStep>
+                                <FlowStep x:Name="__ReferenceID87">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <av:Point x:Key="ShapeLocation">200,127.5</av:Point>
+                                      <av:Size x:Key="ShapeSize">200,22</av:Size>
+                                      <av:PointCollection x:Key="ConnectorLocation">300,149.5 300,200.5</av:PointCollection>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <w:ReadTextFormField DisplayName="Read Human Consumption" sap:VirtualizedContainerService.HintSize="200,22" IN_docWord="[docWord]" IN_strFieldName="[IN_dictFormFields(&quot;HumanConsumption&quot;)]" sap2010:WorkflowViewState.IdRef="ReadTextFormField_63" OUT_strOutput="[strHumanConOut]">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </w:ReadTextFormField>
+                                  <FlowStep.Next>
+                                    <FlowDecision x:Name="__ReferenceID84" Condition="[strHumanConOut is Nothing or strHumanConOut.Equals(&quot;&quot;) or strHumanConOut.Equals(&quot;0&quot;)]" DisplayName="Not Populated?" sap:VirtualizedContainerService.HintSize="88,87" sap2010:WorkflowViewState.IdRef="FlowDecision_23" True="{x:Reference __ReferenceID82}">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          <av:Point x:Key="ShapeLocation">256,200.5</av:Point>
+                                          <av:Size x:Key="ShapeSize">88,87</av:Size>
+                                          <av:PointCollection x:Key="TrueConnector">256,244 240,244 240,319 300,319 300,349</av:PointCollection>
+                                          <av:PointCollection x:Key="FalseConnector">344,244 474,244</av:PointCollection>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <FlowDecision.False>
+                                        <FlowStep x:Name="__ReferenceID83">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <av:Point x:Key="ShapeLocation">474,211</av:Point>
+                                              <av:Size x:Key="ShapeSize">200,66</av:Size>
+                                              <av:PointCollection x:Key="ConnectorLocation">574,277 574,360 400,360</av:PointCollection>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <Sequence DisplayName="Assign Dictionary Variables" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_61">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <If Condition="[boolCertSelected = True]" DisplayName="If cert already selected" sap:VirtualizedContainerService.HintSize="611,500" sap2010:WorkflowViewState.IdRef="If_74">
+                                              <If.Then>
+                                                <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_83">
+                                                  <Assign.To>
+                                                    <OutArgument x:TypeArguments="x:Boolean">[OUT_boolMultiCerts]</OutArgument>
+                                                  </Assign.To>
+                                                  <Assign.Value>
+                                                    <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                                  </Assign.Value>
+                                                </Assign>
+                                              </If.Then>
+                                              <If.Else>
+                                                <Sequence sap:VirtualizedContainerService.HintSize="304,352" sap2010:WorkflowViewState.IdRef="Sequence_70">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <Assign DisplayName="Assign boolCertSelected" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_84">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:Boolean">[boolCertSelected]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                  <Assign DisplayName="Assign Certificate Type" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_63">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:String">[dictAttachmentFields("CertificateType")]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:String">Alcohol\ALCOHOL HUMAN CONSUMPTION</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                  <Assign DisplayName="Assign Number of Certificates" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_64">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:String">[dictAttachmentFields("NumCert")]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:String">[strHumanConOut]</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                </Sequence>
+                                              </If.Else>
+                                            </If>
+                                          </Sequence>
+                                          <FlowStep.Next>
+                                            <x:Reference>__ReferenceID82</x:Reference>
+                                          </FlowStep.Next>
+                                        </FlowStep>
+                                      </FlowDecision.False>
+                                    </FlowDecision>
+                                  </FlowStep.Next>
+                                </FlowStep>
+                                <x:Reference>__ReferenceID83</x:Reference>
+                                <x:Reference>__ReferenceID84</x:Reference>
+                                <x:Reference>__ReferenceID85</x:Reference>
+                                <x:Reference>__ReferenceID86</x:Reference>
+                              </Flowchart>
+                              <FlowStep.Next>
+                                <x:Reference>__ReferenceID88</x:Reference>
+                              </FlowStep.Next>
+                            </FlowStep>
+                          </FlowStep.Next>
+                        </FlowStep>
+                        <x:Reference>__ReferenceID89</x:Reference>
+                        <x:Reference>__ReferenceID71</x:Reference>
+                        <x:Reference>__ReferenceID90</x:Reference>
+                        <x:Reference>__ReferenceID91</x:Reference>
+                        <x:Reference>__ReferenceID92</x:Reference>
+                        <x:Reference>__ReferenceID93</x:Reference>
+                        <FlowStep x:Name="__ReferenceID96">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <av:Point x:Key="ShapeLocation">188.895,110</av:Point>
+                              <av:Size x:Key="ShapeSize">262,60</av:Size>
+                              <av:PointCollection x:Key="ConnectorLocation">319.895,170 319.895,200 320,200 320,214.5</av:PointCollection>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Assign DisplayName="Initialise certificate type to nothing" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_53">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[dictAttachmentFields("CertificateType")]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">[Nothing]</InArgument>
+                            </Assign.Value>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </Assign>
+                          <FlowStep.Next>
+                            <x:Reference>__ReferenceID94</x:Reference>
+                          </FlowStep.Next>
+                        </FlowStep>
+                        <x:Reference>__ReferenceID70</x:Reference>
+                        <x:Reference>__ReferenceID95</x:Reference>
+                      </Flowchart>
+                    </TryCatch.Try>
+                    <TryCatch.Catches>
+                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="888,21" sap2010:WorkflowViewState.IdRef="Catch`1_8">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ActivityAction x:TypeArguments="s:Exception">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                          </ActivityAction.Argument>
+                          <If Condition="[exception.Message.Contains(&quot;thrown by the target of an invocation&quot;)]" DisplayName="If thrown by word activities" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_71">
+                            <If.Then>
+                              <Throw Exception="[new BusinessRuleException(&quot;Couldn't read Part B of application form.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_67" />
+                            </If.Then>
+                            <If.Else>
+                              <Rethrow sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Rethrow_8" />
+                            </If.Else>
+                          </If>
+                        </ActivityAction>
+                      </Catch>
+                    </TryCatch.Catches>
+                  </TryCatch>
+                </FlowStep>
               </Flowchart>
               <FlowStep.Next>
-                <FlowStep x:Name="__ReferenceID58">
+                <FlowStep x:Name="__ReferenceID100">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:Point x:Key="ShapeLocation">200,439.08</av:Point>
@@ -2568,7 +3869,7 @@
                     </Assign>
                   </Sequence>
                   <FlowStep.Next>
-                    <x:Reference>__ReferenceID56</x:Reference>
+                    <x:Reference>__ReferenceID98</x:Reference>
                   </FlowStep.Next>
                 </FlowStep>
               </FlowStep.Next>
@@ -2577,8 +3878,8 @@
         </FlowStep>
       </FlowStep.Next>
     </FlowStep>
-    <x:Reference>__ReferenceID57</x:Reference>
-    <x:Reference>__ReferenceID58</x:Reference>
-    <x:Reference>__ReferenceID59</x:Reference>
+    <x:Reference>__ReferenceID99</x:Reference>
+    <x:Reference>__ReferenceID100</x:Reference>
+    <x:Reference>__ReferenceID101</x:Reference>
   </Flowchart>
 </Activity>

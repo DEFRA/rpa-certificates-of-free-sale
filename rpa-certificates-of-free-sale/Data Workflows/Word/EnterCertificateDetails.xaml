@@ -16,7 +16,7 @@
   <sap:VirtualizedContainerService.HintSize>1794,830</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>EnterCertificateDetails_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="42">
+    <scg:List x:TypeArguments="x:String" Capacity="22">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -237,7 +237,7 @@
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="ui:WordDocument" Name="WordDocumentScope" />
                         </ActivityAction.Argument>
-                        <Flowchart DisplayName="Flowchart - Logic for replacing text in certificate" sap:VirtualizedContainerService.HintSize="904,1932" sap2010:WorkflowViewState.IdRef="Flowchart_3">
+                        <Flowchart DisplayName="Flowchart - Logic for replacing text in certificate" sap:VirtualizedContainerService.HintSize="924,1932" sap2010:WorkflowViewState.IdRef="Flowchart_3">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -246,7 +246,7 @@
                               <av:Size x:Key="ShapeSize">60,75</av:Size>
                               <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,127.5</av:PointCollection>
                               <x:Double x:Key="Height">1895.5</x:Double>
-                              <x:Double x:Key="Width">870</x:Double>
+                              <x:Double x:Key="Width">890</x:Double>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <Flowchart.StartNode>
@@ -315,7 +315,7 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                     <FlowDecision.True>
-                                      <FlowStep x:Name="__ReferenceID26">
+                                      <FlowStep x:Name="__ReferenceID25">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <av:Point x:Key="ShapeLocation">20,717</av:Point>
@@ -323,7 +323,7 @@
                                             <av:PointCollection x:Key="ConnectorLocation">120,783 120,813 301.641666666667,813 301.641666666667,836.5</av:PointCollection>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <Sequence DisplayName="Replace Consignee" sap:VirtualizedContainerService.HintSize="997,569" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                                        <Sequence DisplayName="Replace Consignee" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_8">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -482,7 +482,7 @@
                                                                     <av:PointCollection x:Key="ConnectorLocation">770,1362.58 770,1414.5</av:PointCollection>
                                                                   </scg:Dictionary>
                                                                 </sap:WorkflowViewStateService.ViewState>
-                                                                <Sequence DisplayName="Enter Additional Header - Spanish or English" sap:VirtualizedContainerService.HintSize="1468,1145" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                                                                <Sequence DisplayName="Enter Additional Header - Spanish or English" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_4">
                                                                   <Sequence.Variables>
                                                                     <Variable x:TypeArguments="x:String" Name="strSpanishHeader" />
                                                                   </Sequence.Variables>
@@ -710,7 +710,7 @@
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 <av:Point x:Key="ShapeLocation">265,127.5</av:Point>
                                 <av:Size x:Key="ShapeSize">72,87</av:Size>
-                                <av:PointCollection x:Key="FalseConnector">337,171 460,171 460,187</av:PointCollection>
+                                <av:PointCollection x:Key="FalseConnector">337,171 520,171 520,197</av:PointCollection>
                                 <av:PointCollection x:Key="TrueConnector">265,171 239.641666666667,171 239.641666666667,278.5 299.641666666667,278.5 299.641666666667,308.5</av:PointCollection>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
@@ -728,26 +728,137 @@
                               </FlowDecision>
                             </FlowDecision.True>
                             <FlowDecision.False>
-                              <FlowStep x:Name="__ReferenceID25">
+                              <FlowStep x:Name="__ReferenceID26">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <av:Point x:Key="ShapeLocation">360,187</av:Point>
+                                    <av:Point x:Key="ShapeLocation">420,197</av:Point>
                                     <av:Size x:Key="ShapeSize">200,66</av:Size>
-                                    <av:PointCollection x:Key="ConnectorLocation">460,253 460,283 299.641666666667,283 299.641666666667,308.5</av:PointCollection>
+                                    <av:PointCollection x:Key="ConnectorLocation">520,263 520,278.5 299.641666666667,278.5 299.641666666667,308.5</av:PointCollection>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <Sequence DisplayName="Replace Product" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                                <Sequence DisplayName="Replace Product" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                                  <Sequence.Variables>
+                                    <Variable x:TypeArguments="x:String" Name="strProduct" />
+                                    <Variable x:TypeArguments="scg:List(x:String)" Name="listProductSubStrings" />
+                                  </Sequence.Variables>
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <If Condition="[IN_dictAttachmentFields(&quot;SeparateCerts&quot;).ToLower.Equals(&quot;true&quot;)]" DisplayName="If sep certs" sap:VirtualizedContainerService.HintSize="913,285" sap2010:WorkflowViewState.IdRef="If_5">
+                                  <If Condition="[IN_dictAttachmentFields(&quot;SeparateCerts&quot;).ToLower.Equals(&quot;true&quot;)]" DisplayName="If sep certs" sap:VirtualizedContainerService.HintSize="1033,208" sap2010:WorkflowViewState.IdRef="If_9">
                                     <If.Then>
-                                      <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Product (sep certs)" sap:VirtualizedContainerService.HintSize="434,137" sap2010:WorkflowViewState.IdRef="WordReplaceText_17" Replace="[IN_listProducts(IN_intProductCounter)]" Search="[IN_dictConfig(&quot;Product&quot;)]" />
+                                      <Assign DisplayName="Assign sep product" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_13">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:String">[strProduct]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:String">[IN_listProducts(IN_intProductCounter)]</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
                                     </If.Then>
                                     <If.Else>
-                                      <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Product (list)" sap:VirtualizedContainerService.HintSize="434,137" sap2010:WorkflowViewState.IdRef="WordReplaceText_18" Replace="[IN_dictAttachmentFields(&quot;ProductName&quot;)]" Search="[IN_dictConfig(&quot;Product&quot;)]" />
+                                      <Assign DisplayName="Assign productlist" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_14">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:String">[strProduct]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:String">[IN_dictAttachmentFields("ProductName")]</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                    </If.Else>
+                                  </If>
+                                  <If Condition="[strProduct.Count &gt; 255]" DisplayName="If char count is over limit" sap:VirtualizedContainerService.HintSize="1033,1747" sap2010:WorkflowViewState.IdRef="If_10">
+                                    <If.Then>
+                                      <Sequence sap:VirtualizedContainerService.HintSize="554,1599" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <Assign DisplayName="Assign - replace new lines" sap:VirtualizedContainerService.HintSize="512,60" sap2010:WorkflowViewState.IdRef="Assign_15">
+                                          <Assign.To>
+                                            <OutArgument x:TypeArguments="x:String">[strProduct]</OutArgument>
+                                          </Assign.To>
+                                          <Assign.Value>
+                                            <InArgument x:TypeArguments="x:String">[Regex.Replace(strProduct, "\n", "\n")]</InArgument>
+                                          </Assign.Value>
+                                        </Assign>
+                                        <ui:InterruptibleWhile DisplayName="While char count is over the limit" sap:VirtualizedContainerService.HintSize="512,479" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+                                          <ui:InterruptibleWhile.Body>
+                                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="304,314" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                                              <Sequence.Variables>
+                                                <Variable x:TypeArguments="x:Int32" Name="intSplitString" />
+                                              </Sequence.Variables>
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <Assign DisplayName="Assign - substring" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_16">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="x:Int32">[intSplitString]</OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="x:Int32">[(strProduct.Substring(0, 240).LastIndexOf(" ") + 1)]</InArgument>
+                                                </Assign.Value>
+                                              </Assign>
+                                              <AddToCollection x:TypeArguments="x:String" Collection="[listProductSubStrings]" DisplayName="Add To Collection" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_1" Item="[strProduct.Substring(0, intSplitString)]" />
+                                              <Assign DisplayName="Assign - remove substring " sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_17">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="x:String">[strProduct]</OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="x:String">[strProduct.Replace(strProduct.Substring(0, intSplitString), "")]</InArgument>
+                                                </Assign.Value>
+                                              </Assign>
+                                            </Sequence>
+                                          </ui:InterruptibleWhile.Body>
+                                          <ui:InterruptibleWhile.Condition>
+                                            <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="strProduct.Count &gt; 240" />
+                                          </ui:InterruptibleWhile.Condition>
+                                        </ui:InterruptibleWhile>
+                                        <If Condition="[strProduct.Count &gt; 0]" DisplayName="If - add remainder of string to list" sap:VirtualizedContainerService.HintSize="512,208" sap2010:WorkflowViewState.IdRef="If_11">
+                                          <If.Then>
+                                            <AddToCollection x:TypeArguments="x:String" Collection="[listProductSubStrings]" DisplayName="Add To Collection" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_2" Item="[strProduct]" />
+                                          </If.Then>
+                                        </If>
+                                        <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each - replace placeholder with substring" sap:VirtualizedContainerService.HintSize="512,463" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[listProductSubStrings]">
+                                          <ui:ForEach.Body>
+                                            <ActivityAction x:TypeArguments="x:String">
+                                              <ActivityAction.Argument>
+                                                <DelegateInArgument x:TypeArguments="x:String" Name="item" />
+                                              </ActivityAction.Argument>
+                                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476,329" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <Assign DisplayName="Assign - put new lines back in" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_18">
+                                                  <Assign.To>
+                                                    <OutArgument x:TypeArguments="x:String">[item]</OutArgument>
+                                                  </Assign.To>
+                                                  <Assign.Value>
+                                                    <InArgument x:TypeArguments="x:String">[item.Replace("\n", Environment.NewLine)]</InArgument>
+                                                  </Assign.Value>
+                                                </Assign>
+                                                <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Text - product details substrings" sap:VirtualizedContainerService.HintSize="434,137" sap2010:WorkflowViewState.IdRef="WordReplaceText_22" Replace="[item + IN_dictConfig(&quot;Product&quot;)]" Search="[IN_dictConfig(&quot;Product&quot;)]" />
+                                              </Sequence>
+                                            </ActivityAction>
+                                          </ui:ForEach.Body>
+                                        </ui:ForEach>
+                                        <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Text - remove last placeholder" sap:VirtualizedContainerService.HintSize="512,137" sap2010:WorkflowViewState.IdRef="WordReplaceText_23" Search="[IN_dictConfig(&quot;Product&quot;)]">
+                                          <p:WordReplaceText.Replace>
+                                            <InArgument x:TypeArguments="x:String">
+                                              <Literal x:TypeArguments="x:String" Value="" />
+                                            </InArgument>
+                                          </p:WordReplaceText.Replace>
+                                        </p:WordReplaceText>
+                                      </Sequence>
+                                    </If.Then>
+                                    <If.Else>
+                                      <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Product (within char limit)" sap:VirtualizedContainerService.HintSize="434,137" sap2010:WorkflowViewState.IdRef="WordReplaceText_21" Replace="[strProduct]" Search="[IN_dictConfig(&quot;Product&quot;)]" />
                                     </If.Else>
                                   </If>
                                 </Sequence>
@@ -769,6 +880,29 @@
                           <x:Reference>__ReferenceID22</x:Reference>
                           <x:Reference>__ReferenceID23</x:Reference>
                           <x:Reference>__ReferenceID24</x:Reference>
+                          <FlowStep>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <av:Point x:Key="ShapeLocation">690,107</av:Point>
+                                <av:Size x:Key="ShapeSize">200,66</av:Size>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Sequence DisplayName="Replace Product (old)" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <If Condition="[IN_dictAttachmentFields(&quot;SeparateCerts&quot;).ToLower.Equals(&quot;true&quot;)]" DisplayName="If sep certs" sap:VirtualizedContainerService.HintSize="913,285" sap2010:WorkflowViewState.IdRef="If_5">
+                                <If.Then>
+                                  <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Product (sep certs)" sap:VirtualizedContainerService.HintSize="434,137" sap2010:WorkflowViewState.IdRef="WordReplaceText_17" Replace="[IN_listProducts(IN_intProductCounter)]" Search="[IN_dictConfig(&quot;Product&quot;)]" />
+                                </If.Then>
+                                <If.Else>
+                                  <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Product (list)" sap:VirtualizedContainerService.HintSize="434,137" sap2010:WorkflowViewState.IdRef="WordReplaceText_18" Replace="[IN_dictAttachmentFields(&quot;ProductName&quot;)]" Search="[IN_dictConfig(&quot;Product&quot;)]" />
+                                </If.Else>
+                              </If>
+                            </Sequence>
+                          </FlowStep>
                           <x:Reference>__ReferenceID25</x:Reference>
                           <x:Reference>__ReferenceID26</x:Reference>
                         </Flowchart>
