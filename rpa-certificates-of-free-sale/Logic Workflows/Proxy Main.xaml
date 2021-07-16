@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1794,830</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1240,741</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Proxy_Main_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="23">
@@ -179,7 +179,7 @@
                           <av:PointCollection x:Key="ConnectorLocation">520,415.02 520,476.5</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <TryCatch DisplayName="Try Config Reader" sap:VirtualizedContainerService.HintSize="438,606" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                      <TryCatch DisplayName="Try Config Reader" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_1">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -195,7 +195,7 @@
                             <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Config Reader" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Logic Workflows\Start Up\Config Reader.xaml">
                               <ui:InvokeWorkflowFile.Arguments>
                                 <InArgument x:TypeArguments="x:String" x:Key="IN_strConfigPath">
-                                  <Literal x:TypeArguments="x:String">Documents\LiveConfig.xlsx</Literal>
+                                  <Literal x:TypeArguments="x:String">Documents\config.xlsx</Literal>
                                 </InArgument>
                                 <OutArgument x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" x:Key="OUT_dictConfig">
                                   <mva:VisualBasicReference x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" ExpressionText="dictConfig" />
@@ -870,7 +870,7 @@
                                                                                           <av:PointCollection x:Key="ConnectorLocation">877,2299 990,2299 990,1867.08</av:PointCollection>
                                                                                         </scg:Dictionary>
                                                                                       </sap:WorkflowViewStateService.ViewState>
-                                                                                      <Sequence DisplayName="Mark Case as Failed" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                                                                                      <Sequence DisplayName="Mark Case as Failed" sap:VirtualizedContainerService.HintSize="613,1030" sap2010:WorkflowViewState.IdRef="Sequence_11">
                                                                                         <Sequence.Variables>
                                                                                           <Variable x:TypeArguments="x:String" Name="strExceptionType" />
                                                                                         </Sequence.Variables>
@@ -888,7 +888,7 @@
                                                                                                 </scg:Dictionary>
                                                                                               </sap:WorkflowViewStateService.ViewState>
                                                                                               <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="384,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Moving file to exceptions folder&quot;]" />
-                                                                                              <ui:MoveFile ContinueOnError="True" Destination="[Environment.GetEnvironmentVariable(&quot;USERPROFILE&quot;) + dictConfig(&quot;RobotExceptionFolder&quot;)]" DisplayName="Move File to exceptions folder" sap:VirtualizedContainerService.HintSize="384,157" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="False" Path="[strCaseFilePath]" />
+                                                                                              <ui:MoveFile ContinueOnError="{x:Null}" Destination="[Environment.GetEnvironmentVariable(&quot;USERPROFILE&quot;) + dictConfig(&quot;RobotExceptionFolder&quot;)]" DisplayName="Move File to exceptions folder" sap:VirtualizedContainerService.HintSize="384,157" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="False" Path="[strCaseFilePath]" />
                                                                                             </Sequence>
                                                                                           </If.Else>
                                                                                         </If>
@@ -1000,7 +1000,7 @@
                                                                                           <av:PointCollection x:Key="ConnectorLocation">310,920 420,920</av:PointCollection>
                                                                                         </scg:Dictionary>
                                                                                       </sap:WorkflowViewStateService.ViewState>
-                                                                                      <Sequence DisplayName="Reset Variables &amp; Browser" sap:VirtualizedContainerService.HintSize="376,551" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                                                                      <Sequence DisplayName="Reset Variables &amp; Browser" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_14">
                                                                                         <sap:WorkflowViewStateService.ViewState>
                                                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
