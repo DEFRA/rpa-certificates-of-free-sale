@@ -231,7 +231,7 @@
                       <av:PointCollection x:Key="ConnectorLocation">300,178.5 300,228.5</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <p:WordApplicationScope DisplayName="Word Application Scope - fill out certificate" FilePath="[IN_strCertificatePath]" sap:VirtualizedContainerService.HintSize="938,2041" sap2010:WorkflowViewState.IdRef="WordApplicationScope_1">
+                  <p:WordApplicationScope DisplayName="Word Application Scope - fill out certificate" FilePath="[IN_strCertificatePath]" sap:VirtualizedContainerService.HintSize="958,2041" sap2010:WorkflowViewState.IdRef="WordApplicationScope_1">
                     <p:WordApplicationScope.Body>
                       <ActivityAction x:TypeArguments="ui:WordDocument">
                         <ActivityAction.Argument>
@@ -323,15 +323,15 @@
                                             <av:PointCollection x:Key="ConnectorLocation">120,783 120,813 301.641666666667,813 301.641666666667,836.5</av:PointCollection>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <Sequence DisplayName="Replace Consignee" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                                        <Sequence DisplayName="Replace Consignee" sap:VirtualizedContainerService.HintSize="1039,770" sap2010:WorkflowViewState.IdRef="Sequence_8">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <If Condition="[IN_dictAttachmentFields(&quot;CertificateType&quot;).Equals(&quot;Non-Alcohol\MANUFACTURING and FREESALE CERT&quot;)]" DisplayName="If man fs, put consignee on to one line" sap:VirtualizedContainerService.HintSize="955,477" sap2010:WorkflowViewState.IdRef="If_8">
+                                          <If Condition="[IN_dictAttachmentFields(&quot;CertificateType&quot;).Equals(&quot;Non-Alcohol\MANUFACTURING and FREESALE CERT&quot;)]" DisplayName="If man fs, put consignee on to one line" sap:VirtualizedContainerService.HintSize="997,678" sap2010:WorkflowViewState.IdRef="If_8">
                                             <If.Then>
-                                              <Sequence sap:VirtualizedContainerService.HintSize="476,329" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                                              <Sequence sap:VirtualizedContainerService.HintSize="476,530" sap2010:WorkflowViewState.IdRef="Sequence_9">
                                                 <Sequence.Variables>
                                                   <Variable x:TypeArguments="x:String" Name="strConsigneeOneLine" />
                                                 </Sequence.Variables>
@@ -340,19 +340,36 @@
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
+                                                <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="434,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="Consignee on one line" />
                                                 <Assign DisplayName="Assign to one line" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_12">
                                                   <Assign.To>
                                                     <OutArgument x:TypeArguments="x:String">[strConsigneeOneLine]</OutArgument>
                                                   </Assign.To>
                                                   <Assign.Value>
-                                                    <InArgument x:TypeArguments="x:String">[(System.Text.RegularExpressions.Regex.Replace(IN_dictAttachmentFields("ConsigneeName"), "\n", ", ")).TrimStart({","c})]</InArgument>
+                                                    <InArgument x:TypeArguments="x:String">[(System.Text.RegularExpressions.Regex.Replace(IN_dictAttachmentFields("ConsigneeName"), "\n",", ")).TrimStart({","c})]</InArgument>
+                                                  </Assign.Value>
+                                                </Assign>
+                                                <Assign DisplayName="Assign to one line" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_19">
+                                                  <Assign.To>
+                                                    <OutArgument x:TypeArguments="x:String">[strConsigneeOneLine]</OutArgument>
+                                                  </Assign.To>
+                                                  <Assign.Value>
+                                                    <InArgument x:TypeArguments="x:String">[strConsigneeOneLine.Replace(vbCrLf, ", ").Replace(Environment.NewLine, ", ").Replace("\r", ", ").TrimStart({","c})]</InArgument>
                                                   </Assign.Value>
                                                 </Assign>
                                                 <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Consignee without line breaks" sap:VirtualizedContainerService.HintSize="434,137" sap2010:WorkflowViewState.IdRef="WordReplaceText_19" Replace="[strConsigneeOneLine]" Search="[IN_dictConfig(&quot;Consignee&quot;)]" />
                                               </Sequence>
                                             </If.Then>
                                             <If.Else>
-                                              <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Consignee" sap:VirtualizedContainerService.HintSize="434,137" sap2010:WorkflowViewState.IdRef="WordReplaceText_20" Replace="[IN_dictAttachmentFields(&quot;ConsigneeName&quot;)]" Search="[IN_dictConfig(&quot;Consignee&quot;)]" />
+                                              <Sequence sap:VirtualizedContainerService.HintSize="476,330" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="434,61" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="Consignee as is" />
+                                                <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Consignee" sap:VirtualizedContainerService.HintSize="434,137" sap2010:WorkflowViewState.IdRef="WordReplaceText_20" Replace="[IN_dictAttachmentFields(&quot;ConsigneeName&quot;)]" Search="[IN_dictConfig(&quot;Consignee&quot;)]" />
+                                              </Sequence>
                                             </If.Else>
                                           </If>
                                         </Sequence>
@@ -739,7 +756,7 @@
                                 <Sequence DisplayName="Replace Product" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_10">
                                   <Sequence.Variables>
                                     <Variable x:TypeArguments="x:String" Name="strProduct" />
-                                    <Variable x:TypeArguments="scg:List(x:String)" Name="listProductSubStrings" />
+                                    <Variable x:TypeArguments="scg:List(x:String)" Default="[new List(of string)]" Name="listProductSubStrings" />
                                   </Sequence.Variables>
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -784,7 +801,7 @@
                                             <InArgument x:TypeArguments="x:String">[Regex.Replace(strProduct, "\n", "\n")]</InArgument>
                                           </Assign.Value>
                                         </Assign>
-                                        <ui:InterruptibleWhile DisplayName="While char count is over the limit" sap:VirtualizedContainerService.HintSize="512,479" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+                                        <ui:InterruptibleWhile Condition="[strProduct.Count &gt; 240]" DisplayName="While char count is over the limit" sap:VirtualizedContainerService.HintSize="512,479" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
                                           <ui:InterruptibleWhile.Body>
                                             <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="304,314" sap2010:WorkflowViewState.IdRef="Sequence_11">
                                               <Sequence.Variables>
@@ -814,9 +831,6 @@
                                               </Assign>
                                             </Sequence>
                                           </ui:InterruptibleWhile.Body>
-                                          <ui:InterruptibleWhile.Condition>
-                                            <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="strProduct.Count &gt; 240" />
-                                          </ui:InterruptibleWhile.Condition>
                                         </ui:InterruptibleWhile>
                                         <If Condition="[strProduct.Count &gt; 0]" DisplayName="If - add remainder of string to list" sap:VirtualizedContainerService.HintSize="512,208" sap2010:WorkflowViewState.IdRef="If_11">
                                           <If.Then>

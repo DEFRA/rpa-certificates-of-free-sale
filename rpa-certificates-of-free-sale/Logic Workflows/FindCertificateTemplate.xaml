@@ -151,7 +151,7 @@
                   <av:PointCollection x:Key="ConnectorLocation">300,404.5 300,434.5 299,434.5 299,440</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Flowchart DisplayName="Main Logic" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Flowchart_2">
+              <Flowchart DisplayName="Main Logic" sap:VirtualizedContainerService.HintSize="1281,1924" sap2010:WorkflowViewState.IdRef="Flowchart_2">
                 <Flowchart.Variables>
                   <Variable x:TypeArguments="x:String" Name="strCertificateTemplateFilePath" />
                   <Variable x:TypeArguments="x:Boolean" Name="boolTemplateExists" />
@@ -279,13 +279,13 @@
                                               <av:Size x:Key="ShapeSize">200,66</av:Size>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <Sequence DisplayName="Copy template to working folder" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                                          <Sequence DisplayName="Copy template to working folder" sap:VirtualizedContainerService.HintSize="695,1219" sap2010:WorkflowViewState.IdRef="Sequence_3">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="569,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                                            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="653,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
                                               <ui:CommentOut.Body>
                                                 <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="611,299" sap2010:WorkflowViewState.IdRef="Sequence_7">
                                                   <sap:WorkflowViewStateService.ViewState>
@@ -329,7 +329,7 @@
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
                                             </ui:CommentOut>
-                                            <If Condition="[IN_intCertificateCounter = 0]" sap:VirtualizedContainerService.HintSize="569,208" sap2010:WorkflowViewState.IdRef="If_6">
+                                            <If Condition="[IN_intCertificateCounter = 0]" sap:VirtualizedContainerService.HintSize="653,208" sap2010:WorkflowViewState.IdRef="If_6">
                                               <If.Then>
                                                 <Assign DisplayName="Assign OUT_strCertificatePath" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_21">
                                                   <Assign.To>
@@ -351,14 +351,14 @@
                                                 </Assign>
                                               </If.Else>
                                             </If>
-                                            <ui:CopyFile ContinueOnError="{x:Null}" Destination="[OUT_strCertificatePath]" DisplayName="Copy Template" sap:VirtualizedContainerService.HintSize="569,157" sap2010:WorkflowViewState.IdRef="CopyFile_4" Overwrite="False" Path="[strCertificateTemplateFilePath + &quot;.doc&quot;]">
+                                            <ui:CopyFile ContinueOnError="{x:Null}" Destination="[OUT_strCertificatePath]" DisplayName="Copy Template" sap:VirtualizedContainerService.HintSize="653,157" sap2010:WorkflowViewState.IdRef="CopyFile_4" Overwrite="False" Path="[strCertificateTemplateFilePath + &quot;.doc&quot;]">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
                                             </ui:CopyFile>
-                                            <Assign DisplayName="Assign OUT_strTemplatePath" sap:VirtualizedContainerService.HintSize="569,60" sap2010:WorkflowViewState.IdRef="Assign_25">
+                                            <Assign DisplayName="Assign OUT_strTemplatePath" sap:VirtualizedContainerService.HintSize="653,60" sap2010:WorkflowViewState.IdRef="Assign_25">
                                               <Assign.To>
                                                 <OutArgument x:TypeArguments="x:String">[OUT_strTemplatePath]</OutArgument>
                                               </Assign.To>
@@ -366,7 +366,7 @@
                                                 <InArgument x:TypeArguments="x:String">[strCertificateTemplateFilePath + ".doc"]</InArgument>
                                               </Assign.Value>
                                             </Assign>
-                                            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="569,230" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+                                            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="653,51" sap2010:WorkflowViewState.IdRef="CommentOut_3">
                                               <ui:CommentOut.Body>
                                                 <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_11">
                                                   <sap:WorkflowViewStateService.ViewState>
@@ -384,27 +384,63 @@
                                                   </Assign>
                                                 </Sequence>
                                               </ui:CommentOut.Body>
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
                                             </ui:CommentOut>
-                                            <If Condition="[strCertificateTemplateFilePath.ToLower.Contains(&quot;spanish&quot;)]" DisplayName="If - mark language as completed" sap:VirtualizedContainerService.HintSize="569,208" sap2010:WorkflowViewState.IdRef="If_5">
+                                            <If Condition="[strCertificateTemplateFilePath.ToLower.Contains(&quot;spanish&quot;)]" DisplayName="If - mark language as completed" sap:VirtualizedContainerService.HintSize="653,400" sap2010:WorkflowViewState.IdRef="If_8">
                                               <If.Then>
-                                                <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_18">
-                                                  <Assign.To>
-                                                    <OutArgument x:TypeArguments="x:Boolean">[OUT_boolSpanCompleted]</OutArgument>
-                                                  </Assign.To>
-                                                  <Assign.Value>
-                                                    <InArgument x:TypeArguments="x:Boolean">True</InArgument>
-                                                  </Assign.Value>
-                                                </Assign>
+                                                <Sequence sap:VirtualizedContainerService.HintSize="304,252" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_35">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:Boolean">[OUT_boolEngCompleted]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:Boolean">[IN_boolEngCompleted]</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                  <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_33">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:Boolean">[OUT_boolSpanCompleted]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                </Sequence>
                                               </If.Then>
                                               <If.Else>
-                                                <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_19">
-                                                  <Assign.To>
-                                                    <OutArgument x:TypeArguments="x:Boolean">[OUT_boolEngCompleted]</OutArgument>
-                                                  </Assign.To>
-                                                  <Assign.Value>
-                                                    <InArgument x:TypeArguments="x:Boolean">True</InArgument>
-                                                  </Assign.Value>
-                                                </Assign>
+                                                <Sequence sap:VirtualizedContainerService.HintSize="304,252" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_36">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:Boolean">[OUT_boolSpanCompleted]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:Boolean">[IN_boolSpanCompleted]</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                  <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_34">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:Boolean">[OUT_boolEngCompleted]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                </Sequence>
                                               </If.Else>
                                             </If>
                                           </Sequence>
