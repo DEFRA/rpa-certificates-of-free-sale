@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="LauraTest" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1794,2936" sap2010:WorkflowViewState.IdRef="LauraTest_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:moiw="clr-namespace:Microsoft.Office.Interop.Word;assembly=Microsoft.Office.Interop.Word" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="LauraTest" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1240,986" sap2010:WorkflowViewState.IdRef="LauraTest_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:moiw="clr-namespace:Microsoft.Office.Interop.Word;assembly=Microsoft.Office.Interop.Word" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="25">
       <x:String>System.Activities</x:String>
@@ -57,13 +57,9 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="817,2831" sap2010:WorkflowViewState.IdRef="Sequence_15">
+  <Sequence sap:VirtualizedContainerService.HintSize="594,881" sap2010:WorkflowViewState.IdRef="Sequence_15">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="strTestString">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">Taste of The Wild Sierra Mountain Canine Formula with Lamb in Gravy 390g</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="Taste of The Wild Sierra Mountain Canine Formula with Lamb in Gravy 390g" Name="strTestString" />
       <Variable x:TypeArguments="x:Int32" Name="intSplitString" />
       <Variable x:TypeArguments="scg:List(x:String)" Default="[new List(of String)]" Name="listProductDetails" />
     </Sequence.Variables>
@@ -72,7 +68,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="775,51" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="552,51" sap2010:WorkflowViewState.IdRef="CommentOut_2">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="346,158" sap2010:WorkflowViewState.IdRef="Sequence_17">
           <sap:WorkflowViewStateService.ViewState>
@@ -164,191 +160,229 @@ SAUDI ARABIA
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="775,61" sap2010:WorkflowViewState.IdRef="WriteLine_32" Text="[strTestString.Count.ToString]" />
-    <If Condition="[strTestString.Count &gt; 255]" sap:VirtualizedContainerService.HintSize="775,2547" sap2010:WorkflowViewState.IdRef="If_1">
-      <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="630,2399" sap2010:WorkflowViewState.IdRef="Sequence_22">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="552,51" sap2010:WorkflowViewState.IdRef="CommentOut_6">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="817,2638" sap2010:WorkflowViewState.IdRef="Sequence_27">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign sap:VirtualizedContainerService.HintSize="588,60" sap2010:WorkflowViewState.IdRef="Assign_38">
-            <Assign.To>
-              <OutArgument x:TypeArguments="x:String">[strTestString]</OutArgument>
-            </Assign.To>
-            <Assign.Value>
-              <InArgument x:TypeArguments="x:String">[Regex.Replace(strTestString, "\n", "\n")]</InArgument>
-            </Assign.Value>
-          </Assign>
-          <ui:InterruptibleWhile DisplayName="While" sap:VirtualizedContainerService.HintSize="588,479" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
-            <ui:InterruptibleWhile.Body>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="304,314" sap2010:WorkflowViewState.IdRef="Sequence_19">
+          <If Condition="[strTestString.Count &gt; 255]" sap:VirtualizedContainerService.HintSize="775,2546" sap2010:WorkflowViewState.IdRef="If_1">
+            <If.Then>
+              <Sequence sap:VirtualizedContainerService.HintSize="630,2399" sap2010:WorkflowViewState.IdRef="Sequence_22">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_35">
-                  <Assign.To>
-                    <OutArgument x:TypeArguments="x:Int32">[intSplitString]</OutArgument>
-                  </Assign.To>
-                  <Assign.Value>
-                    <InArgument x:TypeArguments="x:Int32">[(strTestString.Substring(0, 235).LastIndexOf(" ") + 1)]</InArgument>
-                  </Assign.Value>
-                </Assign>
-                <AddToCollection x:TypeArguments="x:String" Collection="[listProductDetails]" DisplayName="Add To Collection" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_1" Item="[strTestString.Substring(0, intSplitString)]" />
-                <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_36">
+                <Assign sap:VirtualizedContainerService.HintSize="588,60" sap2010:WorkflowViewState.IdRef="Assign_38">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:String">[strTestString]</OutArgument>
                   </Assign.To>
                   <Assign.Value>
-                    <InArgument x:TypeArguments="x:String">[strTestString.Replace(strTestString.Substring(0, intSplitString), "")]</InArgument>
+                    <InArgument x:TypeArguments="x:String">[Regex.Replace(strTestString, "\n", "\n")]</InArgument>
                   </Assign.Value>
                 </Assign>
-              </Sequence>
-            </ui:InterruptibleWhile.Body>
-            <ui:InterruptibleWhile.Condition>
-              <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="strTestString.Count &gt; 235" />
-            </ui:InterruptibleWhile.Condition>
-          </ui:InterruptibleWhile>
-          <If Condition="[strTestString.Count &gt; 0]" sap:VirtualizedContainerService.HintSize="588,208" sap2010:WorkflowViewState.IdRef="If_2">
-            <If.Then>
-              <AddToCollection x:TypeArguments="x:String" Collection="[listProductDetails]" DisplayName="Add To Collection" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_2" Item="[strTestString]" />
-            </If.Then>
-          </If>
-          <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="588,287" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[listProductDetails]">
-            <ui:ForEach.Body>
-              <ActivityAction x:TypeArguments="x:Object">
-                <ActivityAction.Argument>
-                  <DelegateInArgument x:TypeArguments="x:Object" Name="item" />
-                </ActivityAction.Argument>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="272,153" sap2010:WorkflowViewState.IdRef="Sequence_20">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="230,61" sap2010:WorkflowViewState.IdRef="WriteLine_35" Text="[item.ToString]" />
-                </Sequence>
-              </ActivityAction>
-            </ui:ForEach.Body>
-          </ui:ForEach>
-          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="588,51" sap2010:WorkflowViewState.IdRef="CommentOut_3">
-            <ui:CommentOut.Body>
-              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="314,346" sap2010:WorkflowViewState.IdRef="Sequence_21">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-                <Sequence sap:VirtualizedContainerService.HintSize="272,254" sap2010:WorkflowViewState.IdRef="Sequence_18">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="230,61" sap2010:WorkflowViewState.IdRef="WriteLine_33" Text="[strTestString.Substring(0, intSplitString)]" />
-                  <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="230,61" sap2010:WorkflowViewState.IdRef="WriteLine_34" Text="[strTestString.Substring(intSplitString, (strTestString.Length-intSplitString))]" />
-                </Sequence>
-              </Sequence>
-            </ui:CommentOut.Body>
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-          </ui:CommentOut>
-          <p:WordApplicationScope DisplayName="Word Application Scope" FilePath="\\GFD218DF\x953922$\Documents\COFS\Testing\Placeholder Test doc.docx" sap:VirtualizedContainerService.HintSize="588,1022" sap2010:WorkflowViewState.IdRef="WordApplicationScope_1">
-            <p:WordApplicationScope.Body>
-              <ActivityAction x:TypeArguments="ui:WordDocument">
-                <ActivityAction.Argument>
-                  <DelegateInArgument x:TypeArguments="ui:WordDocument" Name="WordDocumentScope" />
-                </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="554,913" sap2010:WorkflowViewState.IdRef="Sequence_24">
-                  <Sequence.Variables>
-                    <Variable x:TypeArguments="x:String" Name="strLastWords" />
-                  </Sequence.Variables>
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="512,51" sap2010:WorkflowViewState.IdRef="CommentOut_4">
-                    <ui:CommentOut.Body>
-                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="476,229" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                <ui:InterruptibleWhile Condition="[strTestString.Count &gt; 235]" DisplayName="While" sap:VirtualizedContainerService.HintSize="588,479" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+                  <ui:InterruptibleWhile.Body>
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="304,314" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_35">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Int32">[intSplitString]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Int32">[(strTestString.Substring(0, 235).LastIndexOf(" ") + 1)]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <AddToCollection x:TypeArguments="x:String" Collection="[listProductDetails]" DisplayName="Add To Collection" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_1" Item="[strTestString.Substring(0, intSplitString)]" />
+                      <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_36">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[strTestString]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[strTestString.Replace(strTestString.Substring(0, intSplitString), "")]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </Sequence>
+                  </ui:InterruptibleWhile.Body>
+                </ui:InterruptibleWhile>
+                <If Condition="[strTestString.Count &gt; 0]" sap:VirtualizedContainerService.HintSize="588,208" sap2010:WorkflowViewState.IdRef="If_2">
+                  <If.Then>
+                    <AddToCollection x:TypeArguments="x:String" Collection="[listProductDetails]" DisplayName="Add To Collection" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_2" Item="[strTestString]" />
+                  </If.Then>
+                </If>
+                <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="588,287" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[listProductDetails]">
+                  <ui:ForEach.Body>
+                    <ActivityAction x:TypeArguments="x:Object">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="x:Object" Name="item" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="272,153" sap2010:WorkflowViewState.IdRef="Sequence_20">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Text" sap:VirtualizedContainerService.HintSize="434,137" sap2010:WorkflowViewState.IdRef="WordReplaceText_1" Replace="[listProductDetails(0) + &quot; ProductPlaceholder&quot;]" Search="ProductPlaceholder" />
+                        <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="230,61" sap2010:WorkflowViewState.IdRef="WriteLine_35" Text="[item.ToString]" />
                       </Sequence>
-                    </ui:CommentOut.Body>
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                  </ui:CommentOut>
-                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="512,51" sap2010:WorkflowViewState.IdRef="CommentOut_5">
-                    <ui:CommentOut.Body>
-                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                    </ActivityAction>
+                  </ui:ForEach.Body>
+                </ui:ForEach>
+                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="588,51" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+                  <ui:CommentOut.Body>
+                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="314,346" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Sequence sap:VirtualizedContainerService.HintSize="272,254" sap2010:WorkflowViewState.IdRef="Sequence_18">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <RemoveFromCollection x:TypeArguments="x:String" Collection="[listProductDetails]" DisplayName="Remove From Collection" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="RemoveFromCollection`1_1" Item="[listProductDetails(0)]" />
+                        <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="230,61" sap2010:WorkflowViewState.IdRef="WriteLine_33" Text="[strTestString.Substring(0, intSplitString)]" />
+                        <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="230,61" sap2010:WorkflowViewState.IdRef="WriteLine_34" Text="[strTestString.Substring(intSplitString, (strTestString.Length-intSplitString))]" />
                       </Sequence>
-                    </ui:CommentOut.Body>
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                  </ui:CommentOut>
-                  <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="512,462" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[listProductDetails]">
-                    <ui:ForEach.Body>
-                      <ActivityAction x:TypeArguments="x:String">
-                        <ActivityAction.Argument>
-                          <DelegateInArgument x:TypeArguments="x:String" Name="item" />
-                        </ActivityAction.Argument>
-                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476,329" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                    </Sequence>
+                  </ui:CommentOut.Body>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:CommentOut>
+                <p:WordApplicationScope DisplayName="Word Application Scope" FilePath="\\GFD218DF\x953922$\Documents\COFS\Testing\Placeholder Test doc.docx" sap:VirtualizedContainerService.HintSize="588,1022" sap2010:WorkflowViewState.IdRef="WordApplicationScope_1">
+                  <p:WordApplicationScope.Body>
+                    <ActivityAction x:TypeArguments="ui:WordDocument">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="ui:WordDocument" Name="WordDocumentScope" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="554,913" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="x:String" Name="strLastWords" />
+                        </Sequence.Variables>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="512,51" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+                          <ui:CommentOut.Body>
+                            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="476,229" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Text" sap:VirtualizedContainerService.HintSize="434,137" sap2010:WorkflowViewState.IdRef="WordReplaceText_1" Replace="[listProductDetails(0) + &quot; ProductPlaceholder&quot;]" Search="ProductPlaceholder" />
+                            </Sequence>
+                          </ui:CommentOut.Body>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Assign sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_39">
-                            <Assign.To>
-                              <OutArgument x:TypeArguments="x:String">[item]</OutArgument>
-                            </Assign.To>
-                            <Assign.Value>
-                              <InArgument x:TypeArguments="x:String">[item.Replace("\n", Environment.NewLine)]</InArgument>
-                            </Assign.Value>
-                          </Assign>
-                          <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Text" sap:VirtualizedContainerService.HintSize="434,137" sap2010:WorkflowViewState.IdRef="WordReplaceText_2" Replace="[item + &quot;ProductPlaceholder&quot;]" Search="ProductPlaceholder" />
-                        </Sequence>
-                      </ActivityAction>
-                    </ui:ForEach.Body>
-                  </ui:ForEach>
-                  <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Text" sap:VirtualizedContainerService.HintSize="512,137" sap2010:WorkflowViewState.IdRef="WordReplaceText_3" Search="ProductPlaceholder">
-                    <p:WordReplaceText.Replace>
-                      <InArgument x:TypeArguments="x:String">
-                        <Literal x:TypeArguments="x:String" Value="" />
-                      </InArgument>
-                    </p:WordReplaceText.Replace>
-                  </p:WordReplaceText>
-                </Sequence>
-              </ActivityAction>
-            </p:WordApplicationScope.Body>
-          </p:WordApplicationScope>
+                        </ui:CommentOut>
+                        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="512,51" sap2010:WorkflowViewState.IdRef="CommentOut_5">
+                          <ui:CommentOut.Body>
+                            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <RemoveFromCollection x:TypeArguments="x:String" Collection="[listProductDetails]" DisplayName="Remove From Collection" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="RemoveFromCollection`1_1" Item="[listProductDetails(0)]" />
+                            </Sequence>
+                          </ui:CommentOut.Body>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:CommentOut>
+                        <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="512,462" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[listProductDetails]">
+                          <ui:ForEach.Body>
+                            <ActivityAction x:TypeArguments="x:String">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="x:String" Name="item" />
+                              </ActivityAction.Argument>
+                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476,329" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <Assign sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_39">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:String">[item]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:String">[item.Replace("\n", Environment.NewLine)]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                                <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Text" sap:VirtualizedContainerService.HintSize="434,137" sap2010:WorkflowViewState.IdRef="WordReplaceText_2" Replace="[item + &quot;ProductPlaceholder&quot;]" Search="ProductPlaceholder" />
+                              </Sequence>
+                            </ActivityAction>
+                          </ui:ForEach.Body>
+                        </ui:ForEach>
+                        <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Text" sap:VirtualizedContainerService.HintSize="512,137" sap2010:WorkflowViewState.IdRef="WordReplaceText_3" Search="ProductPlaceholder">
+                          <p:WordReplaceText.Replace>
+                            <InArgument x:TypeArguments="x:String">
+                              <Literal x:TypeArguments="x:String" Value="" />
+                            </InArgument>
+                          </p:WordReplaceText.Replace>
+                        </p:WordReplaceText>
+                      </Sequence>
+                    </ActivityAction>
+                  </p:WordApplicationScope.Body>
+                </p:WordApplicationScope>
+              </Sequence>
+            </If.Then>
+          </If>
         </Sequence>
-      </If.Then>
-    </If>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <Sequence sap:VirtualizedContainerService.HintSize="552,607" sap2010:WorkflowViewState.IdRef="Sequence_29">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <p:WordApplicationScope DisplayName="Word Application Scope" FilePath="\\GFD218DF\x953922$\Documents\COFS\Testing\Placeholder Test doc.docx" sap:VirtualizedContainerService.HintSize="510,515" sap2010:WorkflowViewState.IdRef="WordApplicationScope_2">
+        <p:WordApplicationScope.Body>
+          <ActivityAction x:TypeArguments="ui:WordDocument">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ui:WordDocument" Name="WordDocumentScope" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="476,406" sap2010:WorkflowViewState.IdRef="Sequence_28">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Text" sap:VirtualizedContainerService.HintSize="434,137" sap2010:WorkflowViewState.IdRef="WordReplaceText_4" Replace="Products &#xD;&#xA;have &#xD;&#xA;been&#xD;&#xA;replaced" Search="ProductsHere" />
+              <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Text" sap:VirtualizedContainerService.HintSize="434,137" sap2010:WorkflowViewState.IdRef="WordReplaceText_5" Replace="[&quot;Details have been replaced&quot; + Environment.NewLine]" Search="AdditionalDetails" />
+            </Sequence>
+          </ActivityAction>
+        </p:WordApplicationScope.Body>
+      </p:WordApplicationScope>
+    </Sequence>
   </Sequence>
 </Activity>

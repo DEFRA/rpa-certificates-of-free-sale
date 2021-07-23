@@ -13,7 +13,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1794,830</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1240,741</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>EnterCertificateDetails_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="22">
@@ -323,7 +323,7 @@
                                             <av:PointCollection x:Key="ConnectorLocation">120,783 120,813 301.641666666667,813 301.641666666667,836.5</av:PointCollection>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <Sequence DisplayName="Replace Consignee" sap:VirtualizedContainerService.HintSize="1039,770" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                                        <Sequence DisplayName="Replace Consignee" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_8">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -508,18 +508,18 @@
                                                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                     </scg:Dictionary>
                                                                   </sap:WorkflowViewStateService.ViewState>
-                                                                  <If Condition="[IN_boolSpanishCertificate = True]" DisplayName="If spanish certificate" sap:VirtualizedContainerService.HintSize="1426,1053" sap2010:WorkflowViewState.IdRef="If_4">
+                                                                  <If Condition="[IN_boolSpanishCertificate = True]" DisplayName="If spanish certificate" sap:VirtualizedContainerService.HintSize="955,468" sap2010:WorkflowViewState.IdRef="If_4">
                                                                     <If.Then>
-                                                                      <Sequence sap:VirtualizedContainerService.HintSize="947,905" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                                                                      <Sequence sap:VirtualizedContainerService.HintSize="476,320" sap2010:WorkflowViewState.IdRef="Sequence_5">
                                                                         <sap:WorkflowViewStateService.ViewState>
                                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                           </scg:Dictionary>
                                                                         </sap:WorkflowViewStateService.ViewState>
-                                                                        <Flowchart DisplayName="Assign Spanish Additional Header" sap:VirtualizedContainerService.HintSize="905,636" sap2010:WorkflowViewState.IdRef="Flowchart_4">
+                                                                        <Flowchart DisplayName="Assign Spanish Additional Header" sap:VirtualizedContainerService.HintSize="434,51" sap2010:WorkflowViewState.IdRef="Flowchart_4">
                                                                           <sap:WorkflowViewStateService.ViewState>
                                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                                                               <av:Point x:Key="ShapeLocation">410,2.5</av:Point>
                                                                               <av:Size x:Key="ShapeSize">60,75</av:Size>
                                                                               <av:PointCollection x:Key="ConnectorLocation">440,77.5 440,126.5</av:PointCollection>
@@ -654,11 +654,11 @@
                                                                           <x:Reference>__ReferenceID7</x:Reference>
                                                                           <x:Reference>__ReferenceID8</x:Reference>
                                                                         </Flowchart>
-                                                                        <p:WordReplaceText Found="{x:Null}" DisplayName="Replace AdditionalHeader - In Spanish" sap:VirtualizedContainerService.HintSize="905,137" sap2010:WorkflowViewState.IdRef="WordReplaceText_13" Replace="[strSpanishHeader]" Search="[IN_dictConfig(&quot;AdditionalHeader&quot;)]" />
+                                                                        <p:WordReplaceText Found="{x:Null}" DisplayName="Replace AdditionalHeader - In Spanish" sap:VirtualizedContainerService.HintSize="434,137" sap2010:WorkflowViewState.IdRef="WordReplaceText_13" Replace="[Environment.NewLine + strSpanishHeader]" Search="[IN_dictConfig(&quot;AdditionalHeader&quot;)]" />
                                                                       </Sequence>
                                                                     </If.Then>
                                                                     <If.Else>
-                                                                      <p:WordReplaceText Found="{x:Null}" DisplayName="Replace AdditionalHeader" sap:VirtualizedContainerService.HintSize="434,137" sap2010:WorkflowViewState.IdRef="WordReplaceText_14" Replace="[IN_dictAttachmentFields(&quot;AdditionalHeader&quot;)]" Search="[IN_dictConfig(&quot;AdditionalHeader&quot;)]" />
+                                                                      <p:WordReplaceText Found="{x:Null}" DisplayName="Replace AdditionalHeader" sap:VirtualizedContainerService.HintSize="434,137" sap2010:WorkflowViewState.IdRef="WordReplaceText_14" Replace="[Environment.NewLine + IN_dictAttachmentFields(&quot;AdditionalHeader&quot;)]" Search="[IN_dictConfig(&quot;AdditionalHeader&quot;)]" />
                                                                     </If.Else>
                                                                   </If>
                                                                 </Sequence>
@@ -671,7 +671,7 @@
                                                                         <av:PointCollection x:Key="ConnectorLocation">770,1465.5 770,1507 295.641666666667,1507 295.641666666667,1526.5</av:PointCollection>
                                                                       </scg:Dictionary>
                                                                     </sap:WorkflowViewStateService.ViewState>
-                                                                    <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Additional Details" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="WordReplaceText_12" Replace="[IN_dictAttachmentFields(&quot;AdditionalDetails&quot;)]" Search="[IN_dictConfig(&quot;AdditionalDescription&quot;)]" />
+                                                                    <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Additional Details" sap:VirtualizedContainerService.HintSize="434,137" sap2010:WorkflowViewState.IdRef="WordReplaceText_12" Replace="[Environment.NewLine + IN_dictAttachmentFields(&quot;AdditionalDetails&quot;) + Environment.NewLine]" Search="[IN_dictConfig(&quot;AdditionalDescription&quot;)]" />
                                                                     <FlowStep.Next>
                                                                       <x:Reference>__ReferenceID3</x:Reference>
                                                                     </FlowStep.Next>
