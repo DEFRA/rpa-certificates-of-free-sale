@@ -105,7 +105,7 @@
           <av:PointCollection x:Key="ConnectorLocation">300,334.5 300,437</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Flowchart DisplayName="Main Logic" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Flowchart_2">
+      <Flowchart DisplayName="Main Logic" sap:VirtualizedContainerService.HintSize="1324,3478" sap2010:WorkflowViewState.IdRef="Flowchart_2">
         <Flowchart.Variables>
           <Variable x:TypeArguments="s:Exception" Name="exceptionCurrent" />
           <Variable x:TypeArguments="x:Int32" Name="intRetryCounter" />
@@ -175,9 +175,9 @@
                     <InArgument x:TypeArguments="x:String">[IN_dictAttachmentFields("OrganisationName").Trim]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <ui:InterruptibleWhile DisplayName="While - Enter organisation name" sap:VirtualizedContainerService.HintSize="562,749" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+                <ui:InterruptibleWhile DisplayName="While - Enter organisation name" sap:VirtualizedContainerService.HintSize="562,853" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
                   <ui:InterruptibleWhile.Body>
-                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,584" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,688" sap2010:WorkflowViewState.IdRef="Sequence_8">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="s:String[]" Name="arrString" />
                       </Sequence.Variables>
@@ -186,7 +186,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="484,183" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="484,287" sap2010:WorkflowViewState.IdRef="TryCatch_3">
                         <TryCatch.Variables>
                           <Variable x:TypeArguments="x:Boolean" Name="strPostalPostCode" />
                         </TryCatch.Variables>
@@ -197,10 +197,10 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <TryCatch.Try>
-                          <tce:InputOrganisation sap:VirtualizedContainerService.HintSize="200,22" IN_browserCRM="[IN_browserCRM]" IN_intTimeOut="5000" IN_strOrganisation="[strOrganisationName.Trim]" IN_strPostcode="[IN_dictAttachmentFields(&quot;CompanyPostcode&quot;)]" sap2010:WorkflowViewState.IdRef="InputOrganisation_5" />
+                          <tce:InputOrganisation sap:VirtualizedContainerService.HintSize="200,22" IN_browserCRM="[IN_browserCRM]" IN_intTimeOut="[IN_dictConfig(&quot;timeoutS&quot;)]" IN_strOrganisation="[strOrganisationName.Trim]" IN_strPostcode="[IN_dictAttachmentFields(&quot;CompanyPostcode&quot;)]" sap2010:WorkflowViewState.IdRef="InputOrganisation_5" />
                         </TryCatch.Try>
                         <TryCatch.Catches>
-                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,21" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_3">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -251,7 +251,7 @@
                           </Catch>
                         </TryCatch.Catches>
                       </TryCatch>
-                      <tce:CheckOrganisationEntered IN_intTimeOut="{x:Null}" sap:VirtualizedContainerService.HintSize="484,22" IN_browserCRM="[IN_browserCRM]" sap2010:WorkflowViewState.IdRef="CheckOrganisationEntered_4" OUT_boolOrganisationExists="[boolOrganisationExists]" />
+                      <tce:CheckOrganisationEntered sap:VirtualizedContainerService.HintSize="484,22" IN_browserCRM="[IN_browserCRM]" IN_intTimeOut="[IN_dictConfig(&quot;timeoutMS&quot;)]" sap2010:WorkflowViewState.IdRef="CheckOrganisationEntered_4" OUT_boolOrganisationExists="[boolOrganisationExists]" />
                       <If Condition="[boolOrganisationExists]" DisplayName="If organisation entered" sap:VirtualizedContainerService.HintSize="484,207" sap2010:WorkflowViewState.IdRef="If_3">
                         <If.Else>
                           <Assign DisplayName="Assign - Remove last word" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_7">
@@ -367,7 +367,7 @@
                                               <av:PointCollection x:Key="ConnectorLocation">400,1483 400,1533</av:PointCollection>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <tce:InputOrderNumber sap:VirtualizedContainerService.HintSize="200,22" IN_browserCRM="[IN_browserCRM]" IN_strOrderNumber="[IN_dictAttachmentFields(&quot;Consignment&quot;).Trim]" sap2010:WorkflowViewState.IdRef="InputOrderNumber_1">
+                                          <tce:InputOrderNumber sap:VirtualizedContainerService.HintSize="200,22" IN_browserCRM="[IN_browserCRM]" IN_intTimeout="[IN_dictConfig(&quot;timeoutS&quot;)]" IN_strOrderNumber="[IN_dictAttachmentFields(&quot;Consignment&quot;).Trim]" sap2010:WorkflowViewState.IdRef="InputOrderNumber_1">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -560,8 +560,15 @@
                                                                                                     </sap:WorkflowViewStateService.ViewState>
                                                                                                     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke EnterReferenceDetails" sap:VirtualizedContainerService.HintSize="359,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Data Workflows/TraderCRM/GetCRMReference.xaml">
                                                                                                       <ui:InvokeWorkflowFile.Arguments>
-                                                                                                        <InArgument x:TypeArguments="ui:Browser" x:Key="IN_browserCRM">[IN_browserCRM]</InArgument>
-                                                                                                        <OutArgument x:TypeArguments="x:String" x:Key="OUT_strReferenceNumber">[OUT_strReferenceNumber]</OutArgument>
+                                                                                                        <InArgument x:TypeArguments="ui:Browser" x:Key="IN_browserCRM">
+                                                                                                          <mva:VisualBasicValue x:TypeArguments="ui:Browser" ExpressionText="IN_browserCRM" />
+                                                                                                        </InArgument>
+                                                                                                        <OutArgument x:TypeArguments="x:String" x:Key="OUT_strReferenceNumber">
+                                                                                                          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="OUT_strReferenceNumber" />
+                                                                                                        </OutArgument>
+                                                                                                        <InArgument x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" x:Key="IN_dictConfig">
+                                                                                                          <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" ExpressionText="IN_dictConfig" />
+                                                                                                        </InArgument>
                                                                                                       </ui:InvokeWorkflowFile.Arguments>
                                                                                                       <sap:WorkflowViewStateService.ViewState>
                                                                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
