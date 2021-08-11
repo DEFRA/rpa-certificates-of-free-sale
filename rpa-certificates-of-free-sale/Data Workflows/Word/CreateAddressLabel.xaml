@@ -147,13 +147,13 @@
                   <av:PointCollection x:Key="ConnectorLocation">300,338.5 300,388.5</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <p:WordApplicationScope DisplayName="Enter Address in to document" FilePath="[strAddressLabelPath]" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="WordApplicationScope_1">
+              <p:WordApplicationScope DisplayName="Enter Address in to document" FilePath="[strAddressLabelPath]" sap:VirtualizedContainerService.HintSize="510,692" sap2010:WorkflowViewState.IdRef="WordApplicationScope_1">
                 <p:WordApplicationScope.Body>
                   <ActivityAction x:TypeArguments="ui:WordDocument">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="ui:WordDocument" Name="WordDocumentScope" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="476,406" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="476,583" sap2010:WorkflowViewState.IdRef="Sequence_4">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -161,6 +161,7 @@
                       </sap:WorkflowViewStateService.ViewState>
                       <p:WordReplaceText DisplayName="Replace Text - Address" Found="[boolReplaced]" sap:VirtualizedContainerService.HintSize="434,137" sap2010:WorkflowViewState.IdRef="WordReplaceText_1" Replace="[IN_strAddressLabel]" Search="[IN_dictConfig(&quot;AddressLabel&quot;)]" />
                       <p:WordReplaceText DisplayName="Replace Text - number of copies" Found="[boolReplaced]" sap:VirtualizedContainerService.HintSize="434,137" sap2010:WorkflowViewState.IdRef="WordReplaceText_2" Replace="[IN_dictAttachmentFields(&quot;NumCert&quot;)]" Search="[IN_dictConfig(&quot;NumberOfCopies&quot;)]" />
+                      <p:WordReplaceText Found="{x:Null}" DisplayName="Replace Text - trd number" sap:VirtualizedContainerService.HintSize="434,137" sap2010:WorkflowViewState.IdRef="WordReplaceText_3" Replace="[IN_strReferenceNumber]" Search="[IN_dictConfig(&quot;TRD&quot;)]" />
                     </Sequence>
                   </ActivityAction>
                 </p:WordApplicationScope.Body>

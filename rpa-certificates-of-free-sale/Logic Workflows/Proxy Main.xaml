@@ -870,7 +870,7 @@
                                                                                           <av:PointCollection x:Key="ConnectorLocation">877,2299 990,2299 990,1867.08</av:PointCollection>
                                                                                         </scg:Dictionary>
                                                                                       </sap:WorkflowViewStateService.ViewState>
-                                                                                      <Sequence DisplayName="Mark Case as Failed" sap:VirtualizedContainerService.HintSize="613,1030" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                                                                                      <Sequence DisplayName="Mark Case as Failed" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_11">
                                                                                         <Sequence.Variables>
                                                                                           <Variable x:TypeArguments="x:String" Name="strExceptionType" />
                                                                                         </Sequence.Variables>

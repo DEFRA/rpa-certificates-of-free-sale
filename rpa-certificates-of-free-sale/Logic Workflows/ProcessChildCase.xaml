@@ -182,14 +182,15 @@
                       <av:PointCollection x:Key="ConnectorLocation">630,2145.5 630,2206.5</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <TryCatch DisplayName="Try EnterCertificateDetails" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_15">
+                  <TryCatch DisplayName="Try EnterCertificateDetails" sap:VirtualizedContainerService.HintSize="438,768" sap2010:WorkflowViewState.IdRef="TryCatch_15">
                     <TryCatch.Try>
-                      <Sequence sap:VirtualizedContainerService.HintSize="391,479" sap2010:WorkflowViewState.IdRef="Sequence_50">
+                      <Sequence sap:VirtualizedContainerService.HintSize="391,541" sap2010:WorkflowViewState.IdRef="Sequence_50">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
+                        <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process - Word" sap:VirtualizedContainerService.HintSize="349,22" sap2010:WorkflowViewState.IdRef="KillProcess_4" ProcessName="WINWORD" />
                         <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke EnterCertificateDetails" sap:VirtualizedContainerService.HintSize="349,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" UnSafe="False" WorkflowFileName="Data Workflows\Word\EnterCertificateDetails.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
                             <InArgument x:TypeArguments="x:String" x:Key="IN_strCertificatePath">[strCertificatePath]</InArgument>
@@ -1312,7 +1313,7 @@
                           <av:PointCollection x:Key="ConnectorLocation">630,1115.5 630,1166.5</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <TryCatch DisplayName="Try UserDetailChecks" sap:VirtualizedContainerService.HintSize="438,606" sap2010:WorkflowViewState.IdRef="TryCatch_11">
+                      <TryCatch DisplayName="Try UserDetailChecks" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_11">
                         <TryCatch.Try>
                           <Sequence sap:VirtualizedContainerService.HintSize="376,379" sap2010:WorkflowViewState.IdRef="Sequence_33">
                             <sap:WorkflowViewStateService.ViewState>
