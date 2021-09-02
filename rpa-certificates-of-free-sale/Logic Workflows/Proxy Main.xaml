@@ -130,6 +130,8 @@
               <Variable x:TypeArguments="x:Int32" Name="intCertificateCounter" />
               <Variable x:TypeArguments="x:Int32" Name="intCertsRequested" />
               <Variable x:TypeArguments="x:Int32" Name="intCertCopies" />
+              <Variable x:TypeArguments="x:Int32" Name="intAddressLabelCounter" />
+              <Variable x:TypeArguments="x:Int32" Name="intNoRequested" />
             </Flowchart.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -357,12 +359,20 @@
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
                                         <TryCatch.Try>
-                                          <Sequence sap:VirtualizedContainerService.HintSize="376,579" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                                          <Sequence sap:VirtualizedContainerService.HintSize="376,679" sap2010:WorkflowViewState.IdRef="Sequence_7">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
+                                            <Assign DisplayName="Assign - address label counter" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_48">
+                                              <Assign.To>
+                                                <OutArgument x:TypeArguments="x:Int32">[intAddressLabelCounter]</OutArgument>
+                                              </Assign.To>
+                                              <Assign.Value>
+                                                <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                                              </Assign.Value>
+                                            </Assign>
                                             <Assign DisplayName="Assign - certificate counter" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_43">
                                               <Assign.To>
                                                 <OutArgument x:TypeArguments="x:Int32">[intCertificateCounter]</OutArgument>
@@ -717,7 +727,7 @@
                                                                                     <InArgument x:TypeArguments="x:Int32" x:Key="IN_intCertificateCounter">[intCertificateCounter]</InArgument>
                                                                                     <OutArgument x:TypeArguments="x:String" x:Key="OUT_strFlow">[OUT_strFlow]</OutArgument>
                                                                                     <OutArgument x:TypeArguments="x:String" x:Key="OUT_strReasonForStoppingRobot">[strReasonForStop]</OutArgument>
-                                                                                    <InArgument x:TypeArguments="x:Int32" x:Key="IN_intCertsRequested">[intCertsRequested]</InArgument>
+                                                                                    <InArgument x:TypeArguments="x:Int32" x:Key="IN_intCertsRequested">[intNoRequested]</InArgument>
                                                                                     <InArgument x:TypeArguments="x:Int32" x:Key="IN_intCertCopies">[intCertCopies]</InArgument>
                                                                                   </ui:InvokeWorkflowFile.Arguments>
                                                                                 </ui:InvokeWorkflowFile>
@@ -1039,6 +1049,14 @@
                                                                                             <InArgument x:TypeArguments="x:Int32">0</InArgument>
                                                                                           </Assign.Value>
                                                                                         </Assign>
+                                                                                        <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_49">
+                                                                                          <Assign.To>
+                                                                                            <OutArgument x:TypeArguments="x:Int32">[intNoRequested]</OutArgument>
+                                                                                          </Assign.To>
+                                                                                          <Assign.Value>
+                                                                                            <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                                                                                          </Assign.Value>
+                                                                                        </Assign>
                                                                                       </Sequence>
                                                                                       <FlowStep.Next>
                                                                                         <x:Reference>__ReferenceID2</x:Reference>
@@ -1120,6 +1138,9 @@
                                                                                 <InArgument x:TypeArguments="x:Int32" x:Key="IN_intCertsRequested">[intCertsRequested]</InArgument>
                                                                                 <OutArgument x:TypeArguments="x:Int32" x:Key="OUT_intCertCopies">[intCertCopies]</OutArgument>
                                                                                 <InArgument x:TypeArguments="x:Int32" x:Key="IN_intCertCopies">[intCertCopies]</InArgument>
+                                                                                <OutArgument x:TypeArguments="x:Int32" x:Key="OUT_intNoRequested">[intNoRequested]</OutArgument>
+                                                                                <OutArgument x:TypeArguments="x:Int32" x:Key="OUT_intAddressLabelCounter">[intAddressLabelCounter]</OutArgument>
+                                                                                <InArgument x:TypeArguments="x:Int32" x:Key="IN_intAddressLabelCounter">[intAddressLabelCounter]</InArgument>
                                                                               </ui:InvokeWorkflowFile.Arguments>
                                                                             </ui:InvokeWorkflowFile>
                                                                             <Assign DisplayName="Assign retry counter" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_15">
