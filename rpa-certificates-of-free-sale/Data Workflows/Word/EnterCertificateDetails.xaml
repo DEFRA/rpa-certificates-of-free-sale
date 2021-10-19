@@ -17,7 +17,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1794,830</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1240,741</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>EnterCertificateDetails_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="22">
@@ -153,7 +153,7 @@
                   <av:PointCollection x:Key="ConnectorLocation">300,178.5 300,228.5</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <p:WordApplicationScope DisplayName="Word Application Scope - fill out certificate" FilePath="[IN_strCertificatePath]" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="WordApplicationScope_1">
+              <p:WordApplicationScope DisplayName="Word Application Scope - fill out certificate" FilePath="[IN_strCertificatePath]" sap:VirtualizedContainerService.HintSize="958,2041" sap2010:WorkflowViewState.IdRef="WordApplicationScope_1">
                 <p:WordApplicationScope.Body>
                   <ActivityAction x:TypeArguments="ui:WordDocument">
                     <ActivityAction.Argument>
@@ -182,7 +182,7 @@
                             <av:PointCollection x:Key="ConnectorLocation">130,1685.5 130,1715.5 300.141666666667,1715.5 300.141666666667,1746.5</av:PointCollection>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <p:WordReplaceText Found="{x:Null}" DisplayName="Replace CompanyAddress" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="WordReplaceText_3" Replace="[IN_dictAttachmentFields(&quot;CompanyAddress&quot;)]" Search="[IN_dictConfig(&quot;CompanyAddress&quot;)]" />
+                        <p:WordReplaceText Found="{x:Null}" DisplayName="Replace CompanyAddress" sap:VirtualizedContainerService.HintSize="434,137" sap2010:WorkflowViewState.IdRef="WordReplaceText_3" Replace="[IN_dictAttachmentFields(&quot;CompanyAddress&quot;) + &quot;, &quot; + IN_dictAttachmentFields(&quot;CompanyPostcode&quot;)]" Search="[IN_dictConfig(&quot;CompanyAddress&quot;)]" />
                         <FlowStep.Next>
                           <FlowDecision x:Name="__ReferenceID1" Condition="[IN_dictAttachmentFields(&quot;CertificateType&quot;).Equals(&quot;ANIMAL MANUFACTURING AND FREESALE&quot;)]" DisplayName="Schedule OA?" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_6">
                             <sap:WorkflowViewStateService.ViewState>
