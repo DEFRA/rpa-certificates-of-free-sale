@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1794,830</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1494,830</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Start_Up_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="42">
@@ -618,7 +618,7 @@
                                         <InArgument x:TypeArguments="x:Int32">[intRetryCounter + 1]</InArgument>
                                       </Assign.Value>
                                     </Assign>
-                                    <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="KillProcess_2" ProcessName="iexplore" />
+                                    <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="KillProcess_2" ProcessName="msedge" />
                                   </Sequence>
                                   <FlowStep.Next>
                                     <x:Reference>__ReferenceID2</x:Reference>
