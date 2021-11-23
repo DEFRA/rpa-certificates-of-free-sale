@@ -1,0 +1,46 @@
+{
+  "name": "rpa-certificates-of-free-sale",
+  "description": "RPA Certificates of Free Sale process which receives applications via email, logs cases in CRM and creates certificates",
+  "main": "Main.xaml",
+  "dependencies": {
+    "GetWorkflowDetailActivities": "[1.0.1]",
+    "Reusable.Components": "[1.0.7]",
+    "TraderCRM": "[1.0.23]",
+    "UiPath.Excel.Activities": "[2.8.6]",
+    "UiPath.Form.Activities": "[1.1.11]",
+    "UiPath.Mail.Activities": "[1.8.6]",
+    "UiPath.System.Activities": "[20.4.0]",
+    "UiPath.UIAutomation.Activities": "[20.4.2]",
+    "UiPath.Word.Activities": "[1.4.3]",
+    "WordVBActivities": "[1.0.4]"
+  },
+  "webServices": [],
+  "schemaVersion": "4.0",
+  "studioVersion": "20.4.3.0",
+  "projectVersion": "1.0.40",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "isPausable": true,
+    "requiresUserInteraction": true,
+    "supportsPersistence": false,
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ],
+    "executionType": "Workflow"
+  },
+  "designOptions": {
+    "projectProfile": "Developement",
+    "outputType": "Process",
+    "libraryOptions": {
+      "includeOriginalXaml": false,
+      "privateWorkflows": []
+    },
+    "fileInfoCollection": []
+  },
+  "arguments": {
+    "input": [],
+    "output": []
+  },
+  "expressionLanguage": "VisualBasic"
+}
