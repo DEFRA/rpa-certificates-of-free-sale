@@ -2815,15 +2815,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\x953922\\.nuget\\packages\\": {}
+    "C:\\Users\\m1006109\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "rpa-certificates-of-free-sale",
       "projectName": "rpa-certificates-of-free-sale",
-      "projectPath": "\\\\GFD218DF\\x953922$\\UiPath\\rpa-certificates-of-free-sale\\rpa-certificates-of-free-sale\\.local",
-      "packagesPath": "C:\\Users\\x953922\\.nuget\\packages\\",
-      "outputPath": "\\\\GFD218DF\\x953922$\\UiPath\\rpa-certificates-of-free-sale\\rpa-certificates-of-free-sale\\.local"
+      "projectPath": "C:\\Users\\m1006109\\Downloads\\COFS EDIT\\rpa-certificates-of-free-sale\\rpa-certificates-of-free-sale\\.local",
+      "packagesPath": "C:\\Users\\m1006109\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\m1006109\\Downloads\\COFS EDIT\\rpa-certificates-of-free-sale\\rpa-certificates-of-free-sale\\.local"
     },
     "frameworks": {
       "net461": {
