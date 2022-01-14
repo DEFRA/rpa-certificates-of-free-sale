@@ -18,7 +18,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1127,831</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1767,1191</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>EnterCertificateDetails_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="22">
@@ -663,7 +663,12 @@
                                                             <av:PointCollection x:Key="ConnectorLocation">140,1281 140,1311 295.641666666667,1311 295.641666666667,1526.5</av:PointCollection>
                                                           </scg:Dictionary>
                                                         </sap:WorkflowViewStateService.ViewState>
-                                                        <If Condition="[IN_intDioxin_FreeSale_Reference=0]" DisplayName="If - add reference to free sale certificate for Dioxin only" sap:VirtualizedContainerService.HintSize="913,285" sap2010:WorkflowViewState.IdRef="If_23">
+                                                        <If sap2010:Annotation.AnnotationText="Mohammed Ali - 14/01/2022&#xD;&#xA;&#xD;&#xA;using the saved variable from ProcessChildCase.xaml to implement the Dioxin TRD reference change" Condition="[IN_intDioxin_FreeSale_Reference=0]" DisplayName="If - add reference to free sale certificate for Dioxin only" sap:VirtualizedContainerService.HintSize="913,342" sap2010:WorkflowViewState.IdRef="If_23">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
                                                           <If.Then>
                                                             <p:WordReplaceText Found="{x:Null}" DisplayName="Replace TRD Number" sap:VirtualizedContainerService.HintSize="434,137" sap2010:WorkflowViewState.IdRef="WordReplaceText_38" Replace="[IN_strReferenceNumber]" Search="[IN_dictConfig(&quot;TRD&quot;)]" />
                                                           </If.Then>

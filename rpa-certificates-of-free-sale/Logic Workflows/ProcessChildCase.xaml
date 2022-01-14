@@ -23,7 +23,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1127,831</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1767,1191</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessChildCase_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="23">
@@ -201,48 +201,20 @@
                         <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process - Word" sap:VirtualizedContainerService.HintSize="350,22" sap2010:WorkflowViewState.IdRef="KillProcess_4" ProcessName="WINWORD" />
                         <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke EnterCertificateDetails" sap:VirtualizedContainerService.HintSize="350,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" UnSafe="False" WorkflowFileName="Data Workflows\Word\EnterCertificateDetails.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
-                            <InArgument x:TypeArguments="x:String" x:Key="IN_strCertificatePath">
-                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strCertificatePath" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" x:Key="IN_dictConfig">
-                              <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" ExpressionText="IN_dictConfig" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="IN_dictAttachmentFields">
-                              <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:String)" ExpressionText="dictAttachmentFields" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="x:Boolean" x:Key="IN_boolSpanishCertificate">
-                              <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="boolSpanishCertificate" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="IN_strReferenceNumber">
-                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="IN_strReferenceNumber" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="x:Int32" x:Key="IN_intProductCounter">
-                              <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intProductCounter" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="x:Boolean" x:Key="IN_boolDioxinInProgress">
-                              <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="boolDioxinInProgress" />
-                            </InArgument>
-                            <OutArgument x:TypeArguments="x:Boolean" x:Key="OUT_boolDioxinCompleted">
-                              <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="boolDioxinCompleted" />
-                            </OutArgument>
-                            <InArgument x:TypeArguments="scg:List(x:String)" x:Key="IN_listProducts">
-                              <mva:VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="listProducts" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="x:Boolean" x:Key="IN_boolSpanDioxinInProgress">
-                              <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="boolSpanDioxinInProgress" />
-                            </InArgument>
-                            <OutArgument x:TypeArguments="x:Boolean" x:Key="OUT_boolSpanDioxinCompleted">
-                              <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="boolSpanDioxinCompleted" />
-                            </OutArgument>
-                            <InArgument x:TypeArguments="x:Boolean" x:Key="IN_boolDioxinCompleted">
-                              <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="boolDioxinCompleted" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="x:Boolean" x:Key="IN_boolSpanDioxinCompleted">
-                              <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="boolSpanDioxinCompleted" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="x:Int32" x:Key="IN_intDioxin_FreeSale_Reference">
-                              <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intDioxin_FreeSale_Reference" />
-                            </InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="IN_strCertificatePath">[strCertificatePath]</InArgument>
+                            <InArgument x:TypeArguments="scg:Dictionary(x:String, ui:GenericValue)" x:Key="IN_dictConfig">[IN_dictConfig]</InArgument>
+                            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="IN_dictAttachmentFields">[dictAttachmentFields]</InArgument>
+                            <InArgument x:TypeArguments="x:Boolean" x:Key="IN_boolSpanishCertificate">[boolSpanishCertificate]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="IN_strReferenceNumber">[IN_strReferenceNumber]</InArgument>
+                            <InArgument x:TypeArguments="x:Int32" x:Key="IN_intProductCounter">[intProductCounter]</InArgument>
+                            <InArgument x:TypeArguments="x:Boolean" x:Key="IN_boolDioxinInProgress">[boolDioxinInProgress]</InArgument>
+                            <OutArgument x:TypeArguments="x:Boolean" x:Key="OUT_boolDioxinCompleted">[boolDioxinCompleted]</OutArgument>
+                            <InArgument x:TypeArguments="scg:List(x:String)" x:Key="IN_listProducts">[listProducts]</InArgument>
+                            <InArgument x:TypeArguments="x:Boolean" x:Key="IN_boolSpanDioxinInProgress">[boolSpanDioxinInProgress]</InArgument>
+                            <OutArgument x:TypeArguments="x:Boolean" x:Key="OUT_boolSpanDioxinCompleted">[boolSpanDioxinCompleted]</OutArgument>
+                            <InArgument x:TypeArguments="x:Boolean" x:Key="IN_boolDioxinCompleted">[boolDioxinCompleted]</InArgument>
+                            <InArgument x:TypeArguments="x:Boolean" x:Key="IN_boolSpanDioxinCompleted">[boolSpanDioxinCompleted]</InArgument>
+                            <InArgument x:TypeArguments="x:Int32" x:Key="IN_intDioxin_FreeSale_Reference">[intDioxin_FreeSale_Reference]</InArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -528,9 +500,9 @@
                                                       <av:PointCollection x:Key="ConnectorLocation">630,1235.5 630,1276.5</av:PointCollection>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
-                                                  <TryCatch DisplayName="Try FindCertificateTemplate" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_12">
+                                                  <TryCatch DisplayName="Try FindCertificateTemplate" sap:VirtualizedContainerService.HintSize="438,868" sap2010:WorkflowViewState.IdRef="TryCatch_12">
                                                     <TryCatch.Try>
-                                                      <Sequence sap:VirtualizedContainerService.HintSize="376,551" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                                                      <Sequence sap:VirtualizedContainerService.HintSize="376,641" sap2010:WorkflowViewState.IdRef="Sequence_34">
                                                         <sap:WorkflowViewStateService.ViewState>
                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -557,7 +529,7 @@
                                                             </scg:Dictionary>
                                                           </sap:WorkflowViewStateService.ViewState>
                                                         </ui:InvokeWorkflowFile>
-                                                        <Assign sap2010:Annotation.AnnotationText="Change requested&#xA;the TRD number inside the dioxin must match the free sale certificate number if its a dioxin" DisplayName="save free sale number" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="Assign_104">
+                                                        <Assign sap2010:Annotation.AnnotationText="Change requested&#xA;the TRD number inside the dioxin must match the free sale certificate number if its a dioxin&#xD;&#xA;&#xD;&#xA;Mohammed Ali - 14/01/2022&#xD;&#xA;&#xD;&#xA;saving cert number to remember the freesale number to reference in the dioxin cert" DisplayName="save free sale number" sap:VirtualizedContainerService.HintSize="334,222" sap2010:WorkflowViewState.IdRef="Assign_104">
                                                           <Assign.To>
                                                             <OutArgument x:TypeArguments="x:Int32">[intDioxin_FreeSale_Reference]</OutArgument>
                                                           </Assign.To>
