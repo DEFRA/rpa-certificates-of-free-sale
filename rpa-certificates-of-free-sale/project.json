@@ -5,7 +5,7 @@
   "dependencies": {
     "GetWorkflowDetailActivities": "[1.0.1]",
     "Reusable.Components": "[1.0.7]",
-    "TraderCRM": "[1.0.23]",
+    "TraderCRM": "[1.0.24]",
     "UiPath.Excel.Activities": "[2.8.6]",
     "UiPath.Form.Activities": "[1.1.11]",
     "UiPath.Mail.Activities": "[1.8.6]",
@@ -17,7 +17,7 @@
   "webServices": [],
   "schemaVersion": "4.0",
   "studioVersion": "20.4.3.0",
-  "projectVersion": "1.0.43",
+  "projectVersion": "1.0.44",
   "runtimeOptions": {
     "autoDispose": false,
     "isPausable": true,
