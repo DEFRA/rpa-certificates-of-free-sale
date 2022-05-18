@@ -190,7 +190,7 @@
                       <av:PointCollection x:Key="ConnectorLocation">630,2025.5 630,2086.5</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <TryCatch DisplayName="Try EnterCertificateDetails" sap:VirtualizedContainerService.HintSize="438,968" sap2010:WorkflowViewState.IdRef="TryCatch_15">
+                  <TryCatch DisplayName="Try EnterCertificateDetails" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_15">
                     <TryCatch.Try>
                       <Sequence sap:VirtualizedContainerService.HintSize="392,741" sap2010:WorkflowViewState.IdRef="Sequence_50">
                         <sap:WorkflowViewStateService.ViewState>
@@ -379,12 +379,12 @@
                                     </FlowStep>
                                   </FlowDecision.True>
                                   <FlowDecision.False>
-                                    <FlowDecision x:Name="__ReferenceID58" Condition="[dictAttachmentFields(&quot;Dioxin&quot;).ToLower.Equals(&quot;true&quot;) and boolSpanDioxinCompleted = False and dictAttachmentFields(&quot;Spanish&quot;).ToLower.Equals(&quot;true&quot;)]" DisplayName="Spanish Dioxin?" sap:VirtualizedContainerService.HintSize="88,87" sap2010:WorkflowViewState.IdRef="FlowDecision_51">
+                                    <FlowDecision x:Name="__ReferenceID58" Condition="[dictAttachmentFields(&quot;Dioxin&quot;).ToLower.Equals(&quot;true&quot;) and boolSpanDioxinCompleted = False and dictAttachmentFields(&quot;Spanish&quot;).ToLower.Equals(&quot;true&quot;)]" DisplayName="Spanish Dioxin?" sap:VirtualizedContainerService.HintSize="89,87" sap2010:WorkflowViewState.IdRef="FlowDecision_51">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           <av:Point x:Key="ShapeLocation">590.641666666667,2576.5</av:Point>
-                                          <av:Size x:Key="ShapeSize">88,87</av:Size>
+                                          <av:Size x:Key="ShapeSize">89,87</av:Size>
                                           <av:PointCollection x:Key="FalseConnector">678.641666666667,2620 708.641666666667,2620 708.641666666667,2696.5 652.391666666667,2696.5 652.391666666667,2726.5</av:PointCollection>
                                           <av:PointCollection x:Key="TrueConnector">590.641666666667,2620 290,2620</av:PointCollection>
                                         </scg:Dictionary>
@@ -500,7 +500,7 @@
                                                       <av:PointCollection x:Key="ConnectorLocation">630,1235.5 630,1276.5</av:PointCollection>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
-                                                  <TryCatch DisplayName="Try FindCertificateTemplate" sap:VirtualizedContainerService.HintSize="438,868" sap2010:WorkflowViewState.IdRef="TryCatch_12">
+                                                  <TryCatch DisplayName="Try FindCertificateTemplate" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_12">
                                                     <TryCatch.Try>
                                                       <Sequence sap:VirtualizedContainerService.HintSize="376,641" sap2010:WorkflowViewState.IdRef="Sequence_34">
                                                         <sap:WorkflowViewStateService.ViewState>
@@ -529,7 +529,7 @@
                                                             </scg:Dictionary>
                                                           </sap:WorkflowViewStateService.ViewState>
                                                         </ui:InvokeWorkflowFile>
-                                                        <Assign sap2010:Annotation.AnnotationText="Change requested&#xA;the TRD number inside the dioxin must match the free sale certificate number if its a dioxin&#xD;&#xA;&#xD;&#xA;Mohammed Ali - 14/01/2022&#xD;&#xA;&#xD;&#xA;saving cert number to remember the freesale number to reference in the dioxin cert" DisplayName="save free sale number" sap:VirtualizedContainerService.HintSize="334,222" sap2010:WorkflowViewState.IdRef="Assign_104">
+                                                        <Assign sap2010:Annotation.AnnotationText="Change requested&#xA;the TRD number inside the dioxin must match the free sale certificate number if its a dioxin&#xA;&#xA;Mohammed Ali - 14/01/2022&#xA;&#xA;saving cert number to remember the freesale number to reference in the dioxin cert" DisplayName="save free sale number" sap:VirtualizedContainerService.HintSize="334,222" sap2010:WorkflowViewState.IdRef="Assign_104">
                                                           <Assign.To>
                                                             <OutArgument x:TypeArguments="x:Int32">[intDioxin_FreeSale_Reference]</OutArgument>
                                                           </Assign.To>
@@ -1567,13 +1567,13 @@
               </sap:WorkflowViewStateService.ViewState>
               <TryCatch DisplayName="Try Validate Destination Country" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_10">
                 <TryCatch.Try>
-                  <Sequence sap:VirtualizedContainerService.HintSize="390,379" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                  <Sequence sap:VirtualizedContainerService.HintSize="391,379" sap2010:WorkflowViewState.IdRef="Sequence_32">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Validate Destination Country" sap:VirtualizedContainerService.HintSize="348,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Logic Workflows\ValidateDestinationCountry.xaml">
+                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Validate Destination Country" sap:VirtualizedContainerService.HintSize="349,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Logic Workflows\ValidateDestinationCountry.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
                         <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="IN_dictAttachmentFields">[dictAttachmentFields]</InArgument>
                         <InArgument x:TypeArguments="sd:DataTable" x:Key="IN_dtCountries">[IN_dtCountries]</InArgument>
@@ -1585,7 +1585,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:InvokeWorkflowFile>
-                    <Assign DisplayName="Assign retry counter" sap:VirtualizedContainerService.HintSize="348,60" sap2010:WorkflowViewState.IdRef="Assign_41">
+                    <Assign DisplayName="Assign retry counter" sap:VirtualizedContainerService.HintSize="349,60" sap2010:WorkflowViewState.IdRef="Assign_41">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:Int32">[intRetryCounter]</OutArgument>
                       </Assign.To>
@@ -1593,7 +1593,7 @@
                         <InArgument x:TypeArguments="x:Int32">0</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <Assign DisplayName="Assign ExceptionCurrent" sap:VirtualizedContainerService.HintSize="348,60" sap2010:WorkflowViewState.IdRef="Assign_42">
+                    <Assign DisplayName="Assign ExceptionCurrent" sap:VirtualizedContainerService.HintSize="349,60" sap2010:WorkflowViewState.IdRef="Assign_42">
                       <Assign.To>
                         <OutArgument x:TypeArguments="s:Exception">[exceptionCurrent]</OutArgument>
                       </Assign.To>
@@ -1777,13 +1777,13 @@
                       </sap:WorkflowViewStateService.ViewState>
                       <TryCatch DisplayName="Try Validate Application Form" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_9">
                         <TryCatch.Try>
-                          <Sequence sap:VirtualizedContainerService.HintSize="405,379" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                          <Sequence sap:VirtualizedContainerService.HintSize="406,379" sap2010:WorkflowViewState.IdRef="Sequence_30">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Validate application" sap:VirtualizedContainerService.HintSize="363,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Data Workflows\Word\ValidateApplicationForm.xaml">
+                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Validate application" sap:VirtualizedContainerService.HintSize="364,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Data Workflows\Word\ValidateApplicationForm.xaml">
                               <ui:InvokeWorkflowFile.Arguments>
                                 <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="OUT_dictAttachmentFields">[dictAttachmentFields]</OutArgument>
                                 <InArgument x:TypeArguments="x:String" x:Key="IN_strApplicationFilePath">[IN_strCaseFilePath]</InArgument>
@@ -1799,7 +1799,7 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:InvokeWorkflowFile>
-                            <Assign DisplayName="Assign retry counter" sap:VirtualizedContainerService.HintSize="363,60" sap2010:WorkflowViewState.IdRef="Assign_38">
+                            <Assign DisplayName="Assign retry counter" sap:VirtualizedContainerService.HintSize="364,60" sap2010:WorkflowViewState.IdRef="Assign_38">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="x:Int32">[intRetryCounter]</OutArgument>
                               </Assign.To>
@@ -1807,7 +1807,7 @@
                                 <InArgument x:TypeArguments="x:Int32">0</InArgument>
                               </Assign.Value>
                             </Assign>
-                            <Assign DisplayName="Assign ExceptionCurrent" sap:VirtualizedContainerService.HintSize="363,60" sap2010:WorkflowViewState.IdRef="Assign_39">
+                            <Assign DisplayName="Assign ExceptionCurrent" sap:VirtualizedContainerService.HintSize="364,60" sap2010:WorkflowViewState.IdRef="Assign_39">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="s:Exception">[exceptionCurrent]</OutArgument>
                               </Assign.To>
@@ -1818,7 +1818,7 @@
                           </Sequence>
                         </TryCatch.Try>
                         <TryCatch.Catches>
-                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="409,21" sap2010:WorkflowViewState.IdRef="Catch`1_9">
+                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="410,21" sap2010:WorkflowViewState.IdRef="Catch`1_9">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>

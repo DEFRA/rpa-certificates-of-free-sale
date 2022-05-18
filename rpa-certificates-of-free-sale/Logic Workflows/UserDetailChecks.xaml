@@ -10,7 +10,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1794,830</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1767,1191</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>UserDetailChecks_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="24">
@@ -129,7 +129,6 @@
               <Variable x:TypeArguments="x:String" Name="strContinue" />
               <Variable x:TypeArguments="moiw:Application" Name="appWord" />
               <Variable x:TypeArguments="moiw:Document" Name="docWord" />
-              <Variable x:TypeArguments="x:String" Name="strHeader" />
               <Variable x:TypeArguments="scg:List(x:String)" Default="[new List(of String)]" Name="listProducts" />
             </Flowchart.Variables>
             <sap:WorkflowViewStateService.ViewState>
@@ -235,7 +234,7 @@
                                           <av:Size x:Key="ShapeSize">200,66</av:Size>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <Sequence DisplayName="User Separates Product List" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                                      <Sequence DisplayName="User Separates Product List" sap:VirtualizedContainerService.HintSize="526,1068" sap2010:WorkflowViewState.IdRef="Sequence_8">
                                         <Sequence.Variables>
                                           <Variable x:TypeArguments="x:String" Name="strJSONOutput" />
                                           <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="matches" />
@@ -348,7 +347,7 @@
                                       </sap:WorkflowViewStateService.ViewState>
                                       <ui:InputDialog DisplayName="User Inputs new header" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InputDialog_5" IsPassword="False" Label="[&quot;Please choose the correct Header for the Additional Details: &quot; + Environment.NewLine + Environment.NewLine +&quot;The Additional Details are: &quot; + Environment.NewLine + IN_dictAttachmentFields(&quot;AdditionalDetails&quot;) + Environment.NewLine + Environment.NewLine + &quot;If these details are wrong please click 'Stop the Robot' to end processing&quot;]" Options="[{&quot;Trader declaration: &quot;, &quot;Producer: &quot;, &quot;Exporter: &quot;, &quot;Manufacturer: &quot;, &quot;Supplier: &quot;, &quot;Stop the robot&quot;}]" Title="Additional Header Change">
                                         <ui:InputDialog.Result>
-                                          <OutArgument x:TypeArguments="x:String">[strHeader]</OutArgument>
+                                          <OutArgument x:TypeArguments="x:String">[IN_dictAttachmentFields("AdditionalHeader")]</OutArgument>
                                         </ui:InputDialog.Result>
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -357,7 +356,10 @@
                                         </sap:WorkflowViewStateService.ViewState>
                                       </ui:InputDialog>
                                       <FlowStep.Next>
-                                        <FlowDecision x:Name="__ReferenceID5" Condition="[not strHeader.ToLower = &quot;stop the robot&quot;]" DisplayName="Continue?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2" True="{x:Reference __ReferenceID0}">
+                                        <FlowDecision x:Name="__ReferenceID5" DisplayName="Continue?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
+                                          <FlowDecision.Condition>
+                                            <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="not IN_dictAttachmentFields(&quot;AdditionalHeader&quot;).ToLower = &quot;stop the robot&quot;" />
+                                          </FlowDecision.Condition>
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -367,6 +369,9 @@
                                               <av:PointCollection x:Key="TrueConnector">265,944 240,944 240,1029 300,1029 300,1059</av:PointCollection>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
+                                          <FlowDecision.True>
+                                            <x:Reference>__ReferenceID0</x:Reference>
+                                          </FlowDecision.True>
                                           <FlowDecision.False>
                                             <FlowStep x:Name="__ReferenceID4">
                                               <sap:WorkflowViewStateService.ViewState>
