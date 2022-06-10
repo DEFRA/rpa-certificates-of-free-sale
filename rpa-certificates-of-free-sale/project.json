@@ -4,12 +4,12 @@
   "main": "Main.xaml",
   "dependencies": {
     "GetWorkflowDetailActivities": "[1.0.1]",
-    "Reusable.Components": "[1.0.7]",
+    "Reusable.Components": "[1.0.29]",
     "TraderCRM": "[1.0.26]",
-    "UiPath.Excel.Activities": "[2.8.6]",
-    "UiPath.Form.Activities": "[1.1.11]",
+    "UiPath.Excel.Activities": "[2.11.4]",
+    "UiPath.Form.Activities": "[1.7.1]",
     "UiPath.Mail.Activities": "[1.8.6]",
-    "UiPath.System.Activities": "[20.4.0]",
+    "UiPath.System.Activities": "[21.10.3]",
     "UiPath.UIAutomation.Activities": "[20.4.2]",
     "UiPath.Word.Activities": "[1.4.3]",
     "WordVBActivities": "[1.0.4]"

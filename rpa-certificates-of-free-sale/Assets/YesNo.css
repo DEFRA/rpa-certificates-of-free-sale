@@ -1,0 +1,13 @@
+.box_yesno {
+  display: inline;
+  text-align: right;
+}
+
+.box_continue {
+  display: none;
+}
+
+.box_ok {
+  display: none;
+}
+  
