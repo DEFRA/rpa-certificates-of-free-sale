@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1794,830</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2699,741</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>CreateLogFile_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -127,27 +127,12 @@
             <Flowchart.StartNode>
               <x:Reference>__ReferenceID1</x:Reference>
             </Flowchart.StartNode>
-            <FlowStep x:Name="__ReferenceID0">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <av:Point x:Key="ShapeLocation">200,227.5</av:Point>
-                  <av:Size x:Key="ShapeSize">200,22</av:Size>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-              <r:Create_Log_File___Preset DisplayName="Create Log File - Preset" sap:VirtualizedContainerService.HintSize="200,22" IN_strFilePath="[OUT_strLogFilePath]" sap2010:WorkflowViewState.IdRef="Create_Log_File___Preset_1">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-              </r:Create_Log_File___Preset>
-            </FlowStep>
             <FlowStep x:Name="__ReferenceID1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">168.895,127.5</av:Point>
                   <av:Size x:Key="ShapeSize">262,60</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">299.895,187.5 299.895,217.5 300,217.5 300,227.5</av:PointCollection>
+                  <av:PointCollection x:Key="ConnectorLocation">299.895,187.5 299.895,237.5</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <Assign DisplayName="Assign log file path" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_1">
@@ -164,9 +149,24 @@
                 </sap:WorkflowViewStateService.ViewState>
               </Assign>
               <FlowStep.Next>
-                <x:Reference>__ReferenceID0</x:Reference>
+                <FlowStep x:Name="__ReferenceID0">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <av:Point x:Key="ShapeLocation">199.895,237.5</av:Point>
+                      <av:Size x:Key="ShapeSize">200,22</av:Size>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <r:Create_Log_File DisplayName="Create Log File" sap:VirtualizedContainerService.HintSize="200,22" IN_TypeCSV="True" IN_strFilePath="[OUT_strLogFilePath]" sap2010:WorkflowViewState.IdRef="Create_Log_File_1">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </r:Create_Log_File>
+                </FlowStep>
               </FlowStep.Next>
             </FlowStep>
+            <x:Reference>__ReferenceID0</x:Reference>
           </Flowchart>
           <FlowStep.Next>
             <x:Reference>__ReferenceID2</x:Reference>
