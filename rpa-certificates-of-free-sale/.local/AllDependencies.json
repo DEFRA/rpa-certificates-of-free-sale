@@ -5124,15 +5124,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\m1005058\\.nuget\\packages\\": {}
+    "C:\\Users\\m1006109\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "rpa-certificates-of-free-sale",
       "projectName": "rpa-certificates-of-free-sale",
-      "projectPath": "C:\\Users\\m1005058\\OneDrive - Defra\\Jason - In Progress Work\\rpa-certificates-of-free-sale\\rpa-certificates-of-free-sale\\.local",
-      "packagesPath": "C:\\Users\\m1005058\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\m1005058\\OneDrive - Defra\\Jason - In Progress Work\\rpa-certificates-of-free-sale\\rpa-certificates-of-free-sale\\.local"
+      "projectPath": "C:\\Users\\m1006109\\Downloads\\OneDrive - Defra\\GITHUB\\rpa-certificates-of-free-sale\\rpa-certificates-of-free-sale\\.local",
+      "packagesPath": "C:\\Users\\m1006109\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\m1006109\\Downloads\\OneDrive - Defra\\GITHUB\\rpa-certificates-of-free-sale\\rpa-certificates-of-free-sale\\.local"
     },
     "frameworks": {
       "net461": {
