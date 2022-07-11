@@ -2297,6 +2297,19 @@
           }
         }
       },
+      "UiPathTeam.Mail.Converter.Activities/1.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/_._": {}
+        },
+        "runtime": {
+          "lib/Interop.ADODB.dll": {},
+          "lib/Interop.CDO.dll": {},
+          "lib/MailMangerUtil.dll": {},
+          "lib/MsgKit.dll": {},
+          "lib/OpenMcdf.dll": {}
+        }
+      },
       "WordVBActivities/1.0.4": {
         "type": "package",
         "dependencies": {
@@ -5091,6 +5104,21 @@
         "uipath.word.activities.nuspec"
       ]
     },
+    "UiPathTeam.Mail.Converter.Activities/1.0.3": {
+      "sha512": "Zb1QvzpDqwk9j1KvZKB56MoUKJRhq7IbGnhf63W6QMGbZ+JpTCVTquSLYPYcJzJYylbRp9NS+VxcyME9Pf+tLA==",
+      "type": "package",
+      "path": "uipathteam.mail.converter.activities/1.0.3",
+      "files": [
+        ".nupkg.metadata",
+        "lib/Interop.ADODB.dll",
+        "lib/Interop.CDO.dll",
+        "lib/MailMangerUtil.dll",
+        "lib/MsgKit.dll",
+        "lib/OpenMcdf.dll",
+        "uipathteam.mail.converter.activities.1.0.3.nupkg.sha512",
+        "uipathteam.mail.converter.activities.nuspec"
+      ]
+    },
     "WordVBActivities/1.0.4": {
       "sha512": "MeMxQem/2Vzqr96P6wIbs/MmmeoaBAX60/YrP7Z1jk8B+sKrf5K2w+Q7wjPVAmY7nJI1q3jXj7RHTbYBFqcjdQ==",
       "type": "package",
@@ -5120,6 +5148,7 @@
       "UiPath.System.Activities >= 21.10.3 <= 21.10.3",
       "UiPath.UIAutomation.Activities >= 20.4.2 <= 20.4.2",
       "UiPath.Word.Activities >= 1.4.3 <= 1.4.3",
+      "UiPathTeam.Mail.Converter.Activities >= 1.0.3 <= 1.0.3",
       "WordVBActivities >= 1.0.4 <= 1.0.4"
     ]
   },
@@ -5181,6 +5210,11 @@
             "include": "Runtime",
             "target": "Package",
             "version": "[1.4.3, 1.4.3]"
+          },
+          "UiPathTeam.Mail.Converter.Activities": {
+            "include": "Runtime",
+            "target": "Package",
+            "version": "[1.0.3, 1.0.3]"
           },
           "WordVBActivities": {
             "include": "Runtime",

@@ -12,12 +12,13 @@
     "UiPath.System.Activities": "[21.10.3]",
     "UiPath.UIAutomation.Activities": "[20.4.2]",
     "UiPath.Word.Activities": "[1.4.3]",
+    "UiPathTeam.Mail.Converter.Activities": "[1.0.3]",
     "WordVBActivities": "[1.0.4]"
   },
   "webServices": [],
   "schemaVersion": "4.0",
   "studioVersion": "20.4.3.0",
-  "projectVersion": "1.0.51",
+  "projectVersion": "1.0.52",
   "runtimeOptions": {
     "autoDispose": false,
     "isPausable": true,

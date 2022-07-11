@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="PopulateQueue" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:g="clr-namespace:GetWorkflowName;assembly=GetWorkflowName" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="PopulateQueue" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:g="clr-namespace:GetWorkflowName;assembly=GetWorkflowName" xmlns:m="clr-namespace:MailMangerUtil;assembly=MailMangerUtil" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="IN_dictConfig" Type="InArgument(scg:Dictionary(x:String, ui:GenericValue))" />
     <x:Property Name="OUT_strDateReceived" Type="OutArgument(x:String)" />
@@ -272,7 +272,7 @@
                                       <av:Size x:Key="ShapeSize">200,66</av:Size>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <Sequence DisplayName="Get In Progress Email" sap:VirtualizedContainerService.HintSize="769,1499" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                                  <Sequence DisplayName="Get In Progress Email" sap:VirtualizedContainerService.HintSize="769,1434" sap2010:WorkflowViewState.IdRef="Sequence_6">
                                     <Sequence.Variables>
                                       <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="listMailInProgress" />
                                     </Sequence.Variables>
@@ -282,21 +282,21 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                     <ui:GetOutlookMailMessages Filter="{x:Null}" Account="[IN_dictConfig(&quot;TraderMailbox&quot;)]" DisplayName="Get Email from In Progress" GetAttachements="False" sap:VirtualizedContainerService.HintSize="727,22" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_2" MailFolder="[IN_dictConfig(&quot;OutlookInProgress&quot;)]" MarkAsRead="False" Messages="[listMailInProgress]" OnlyUnreadMessages="False" TimeoutMS="180000" Top="-1" />
-                                    <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="727,1345" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[listMailInProgress]">
+                                    <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="727,1280" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[listMailInProgress]">
                                       <ui:ForEach.Body>
                                         <ActivityAction x:TypeArguments="snm:MailMessage">
                                           <ActivityAction.Argument>
                                             <DelegateInArgument x:TypeArguments="snm:MailMessage" Name="email" />
                                           </ActivityAction.Argument>
-                                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="691,1221" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="691,1156" sap2010:WorkflowViewState.IdRef="Sequence_8">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <If Condition="[email.Subject.Equals(strEmailSubject) and OUT_strDateReceived.Equals(email.Headers(&quot;Date&quot;))]" DisplayName="If subject and date match" sap:VirtualizedContainerService.HintSize="649,1129" sap2010:WorkflowViewState.IdRef="If_1">
+                                            <If Condition="[email.Subject.Equals(strEmailSubject) and OUT_strDateReceived.Equals(email.Headers(&quot;Date&quot;))]" DisplayName="If subject and date match" sap:VirtualizedContainerService.HintSize="649,1064" sap2010:WorkflowViewState.IdRef="If_1">
                                               <If.Then>
-                                                <Sequence sap:VirtualizedContainerService.HintSize="504,981" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                                                <Sequence sap:VirtualizedContainerService.HintSize="504,916" sap2010:WorkflowViewState.IdRef="Sequence_9">
                                                   <Sequence.Variables>
                                                     <Variable x:TypeArguments="x:String" Name="strTimeReceived" />
                                                     <Variable x:TypeArguments="scg:IEnumerable(x:String)" Name="listAttachments" />
@@ -322,7 +322,7 @@
                                                       <InArgument x:TypeArguments="x:String">[email.Headers("Date").Split(" "c)(1).Replace(":", "-")]</InArgument>
                                                     </Assign.Value>
                                                   </Assign>
-                                                  <ui:SaveMail DisplayName="Save Mail Message" FilePath="[(OUT_strWorkingFolderPath + (system.Text.RegularExpressions.Regex.Replace(email.Subject, &quot;\?|:|\*|\\|\/|\|&quot;, &quot;.&quot;)) + &quot; &quot; + strTimeReceived + &quot;.msg&quot;)]" sap:VirtualizedContainerService.HintSize="462,87" sap2010:WorkflowViewState.IdRef="SaveMail_1" MailMessage="[email]" />
+                                                  <m:MailMessageToMSGConverter SaveAttachmentFolder="{x:Null}" DisplayName="Mail message to MSG converter" sap:VirtualizedContainerService.HintSize="462,22" sap2010:WorkflowViewState.IdRef="MailMessageToMSGConverter_1" MSGFilePath="[(OUT_strWorkingFolderPath + (system.Text.RegularExpressions.Regex.Replace(email.Subject, &quot;\?|:|\*|\\|\/|\|&quot;, &quot;.&quot;)) + &quot; &quot; + strTimeReceived + &quot;.msg&quot;)]" MailMessage="[email]" />
                                                   <ui:SaveMailAttachments Attachments="[listAttachments]" DisplayName="Save Attachments" FolderPath="[OUT_strWorkingFolderPath]" sap:VirtualizedContainerService.HintSize="462,87" sap2010:WorkflowViewState.IdRef="SaveMailAttachments_1" Message="[email]" />
                                                   <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each attachment" sap:VirtualizedContainerService.HintSize="462,373" sap2010:WorkflowViewState.IdRef="ForEach`1_5" Values="[listAttachments]">
                                                     <ui:ForEach.Body>

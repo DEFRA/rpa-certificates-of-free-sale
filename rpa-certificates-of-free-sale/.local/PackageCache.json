@@ -595,6 +595,20 @@
         "C:\\Users\\m1006109\\.nuget\\packages\\wordvbactivities/1.0.4\\lib/net45/WordVBActivities.dll"
       ],
       "Path": "C:\\Users\\m1006109\\.nuget\\packages\\wordvbactivities\\1.0.4"
+    },
+    {
+      "Package": {
+        "Id": "UiPathTeam.Mail.Converter.Activities",
+        "Version": "1.0.3"
+      },
+      "Assemblies": [
+        "C:\\Users\\m1006109\\.nuget\\packages\\uipathteam.mail.converter.activities/1.0.3\\lib/Interop.ADODB.dll",
+        "C:\\Users\\m1006109\\.nuget\\packages\\uipathteam.mail.converter.activities/1.0.3\\lib/Interop.CDO.dll",
+        "C:\\Users\\m1006109\\.nuget\\packages\\uipathteam.mail.converter.activities/1.0.3\\lib/MailMangerUtil.dll",
+        "C:\\Users\\m1006109\\.nuget\\packages\\uipathteam.mail.converter.activities/1.0.3\\lib/MsgKit.dll",
+        "C:\\Users\\m1006109\\.nuget\\packages\\uipathteam.mail.converter.activities/1.0.3\\lib/OpenMcdf.dll"
+      ],
+      "Path": "C:\\Users\\m1006109\\.nuget\\packages\\uipathteam.mail.converter.activities\\1.0.3"
     }
   ],
   "Conflicts": [],
@@ -1660,6 +1674,11 @@
         }
       ]
     },
+    "UiPathTeam.Mail.Converter.Activities": {
+      "Id": "UiPathTeam.Mail.Converter.Activities",
+      "Version": "1.0.3",
+      "Dependencies": []
+    },
     "WordVBActivities": {
       "Id": "WordVBActivities",
       "Version": "1.0.4",
@@ -2571,6 +2590,20 @@
         "C:\\Users\\m1006109\\.nuget\\packages\\uipath.word.activities\\1.4.3\\lib\\net461\\UiPath.Word.dll"
       ],
       "Path": "C:\\Users\\m1006109\\.nuget\\packages\\uipath.word.activities\\1.4.3"
+    },
+    {
+      "Package": {
+        "Id": "UiPathTeam.Mail.Converter.Activities",
+        "Version": "1.0.3"
+      },
+      "Assemblies": [
+        "C:\\Users\\m1006109\\.nuget\\packages\\uipathteam.mail.converter.activities\\1.0.3\\lib\\Interop.ADODB.dll",
+        "C:\\Users\\m1006109\\.nuget\\packages\\uipathteam.mail.converter.activities\\1.0.3\\lib\\Interop.CDO.dll",
+        "C:\\Users\\m1006109\\.nuget\\packages\\uipathteam.mail.converter.activities\\1.0.3\\lib\\MailMangerUtil.dll",
+        "C:\\Users\\m1006109\\.nuget\\packages\\uipathteam.mail.converter.activities\\1.0.3\\lib\\MsgKit.dll",
+        "C:\\Users\\m1006109\\.nuget\\packages\\uipathteam.mail.converter.activities\\1.0.3\\lib\\OpenMcdf.dll"
+      ],
+      "Path": "C:\\Users\\m1006109\\.nuget\\packages\\uipathteam.mail.converter.activities\\1.0.3"
     },
     {
       "Package": {
